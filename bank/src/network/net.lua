@@ -1,6 +1,15 @@
-network = {}
+
+---@class Network
+---@field modem table
+---@field port number
+local network = {}
 network.__index = network
 
+local event = require('event')
+
+---@param modem table
+---@param port number
+---@return table
 function network:init(modem, port)
     local obj = {}
     setmetatable(obj, network)
@@ -13,4 +22,30 @@ function network:init(modem, port)
     return obj
 end
 
+---@param address string
+---@param message string
+---@return nil
+function network:send(address, message)
+    self.modem.send(address, self.port, message)
+end
+
+---@param message string
+---@return nil
+function network:broadcast(message) self.modem.broadcast(self.port, message) end
+
+---@param timeout number
+---@return string|nil, string
+function network:recive(timeout)
+    local timestart = os.time()
+    while (timestart + timeout > os.time()) or (timeout == 0) do
+        local _, _, senderAddress, port, _, message = event.pull(timeout,
+                                                                 "modem_message")
+        if senderAddress ~= nil and port == self.port then
+            return senderAddress, message
+        end
+    end
+    return nil, "timeout"
+end
+
 return network
+
