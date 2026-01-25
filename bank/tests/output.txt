@@ -1,0 +1,6 @@
+Test run @ 1970-02-08 22:39:54
+Total: 2  Passed: 0  Failed: 2
+
+Failures:
+- test_account.lua: /bank/tests/test_account.lua:59: [FAIL] balance reflects deposit (expected=400, got=0)
+- test_ledger.lua: /bank/tests/test_ledger.lua:41: [FAIL] balance increments after deposit (expected=400, got=0)

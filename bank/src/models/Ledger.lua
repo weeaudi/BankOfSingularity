@@ -24,9 +24,21 @@ local TransactionType = {
   LoginOk = 18,
 }
 
+---@class TransactionById
+---@field id integer
+---@field accountId integer
+---@field data table|nil
+---@field amount number
+---@field transactionType TransactionType
+---@field createdAt number
+
+---@class AccountBalance
+---@field accountId integer
+---@field balance number
+
 ---@class LedgerTransaction
----@field id integer|nil
----@field accountId string
+---@field id integer
+---@field accountId integer
 ---@field playerName string
 ---@field amount number
 ---@field data table|nil
@@ -89,8 +101,10 @@ function Ledger:_nextId()
   return n
 end
 
-function Ledger:_applyMaterialized(tx)
-  self.db.insert('tx_by_id', {
+---@param tx LedgerTransaction
+---@return TransactionById
+local function toTxById(tx)
+  return {
     id = tx.id,
     accountId = tx.accountId,
     playerName = tx.playerName,
@@ -98,18 +112,27 @@ function Ledger:_applyMaterialized(tx)
     amount = tx.amount,
     transactionType = tx.transactionType,
     createdAt = tx.createdAt,
-  })
+  }
+end
 
-  local acct = self.db.select('accounts'):where({ id = tx.accountId }):first()
-  local oldBal = (acct and acct.balance) or 0
+function Ledger:_applyMaterialized(tx)
+  -- Check if it's already applied
+  local existing = self.db.select('tx_by_id'):where({ id = tx.id }):first()
+  if existing then return end
+
+  -- 1) update balance
+  ---@type AccountBalance|nil
+  local balRow = self.db.select('account_balance'):where({ accountId = tx.accountId }):first()
+  local oldBal = (balRow and balRow.balance) or 0
   local newBal = oldBal + (tx.amount or 0)
 
-  if acct then
-    self.db.update('accounts', { id = tx.accountId }, { balance = newBal })
+  if balRow then
+    self.db.update('account_balance', { accountId = tx.accountId }, { balance = newBal })
   else
-    self.db.insert('accounts', { id = tx.accountId, balance = newBal })
+    self.db.insert('account_balance', { id = tx.accountId, accountId = tx.accountId, balance = newBal })
   end
 
+  -- 2) update account tx index
   local idx = self.db.select('account_tx_index'):where({ accountId = tx.accountId }):first()
   local txIds = (idx and idx.txIds) or {}
   txIds[#txIds + 1] = tx.id
@@ -126,14 +149,19 @@ function Ledger:_applyMaterialized(tx)
   if idx then
     self.db.update('account_tx_index', { accountId = tx.accountId }, { txIds = txIds })
   else
-    self.db.insert('account_tx_index', { accountId = tx.accountId, txIds = txIds })
+    self.db.insert('account_tx_index', { id = tx.accountId, accountId = tx.accountId, txIds = txIds })
   end
+
+  -- 3) insert tx_by_id
+  self.db.insert('tx_by_id', toTxById(tx))
 end
 
 function Ledger:rebuildMaterialized()
   self.db.truncate('tx_by_id')
   self.db.truncate('account_tx_index')
+  self.db.truncate('account_balance')
 
+---@diagnostic disable-next-line: param-type-mismatch
   self:scan(nil, function(tx)
     self:_applyMaterialized(tx)
   end)

@@ -12,14 +12,19 @@ print(decoded)
 
 local component = require('component')
 
-local network = devRequire('src.network.net')
+local network = devRequire('src.network.Network')
+local secureNetwork = devRequire('src.network.SecureNetwork')
+
 local modem = component.modem
 local net = network:init(modem, 12345)
+local secNet = secureNetwork:init('/bank/keys/enc_keys.dat', net,
+                                 component.data)
 
-net:broadcast("Hello, Network!")
+print(component.modem.isOpen(12345))
 
-local sender, message = net:recive(3)
-
-print("Received message from " .. tostring(sender) .. ": " .. tostring(message))
+while true do
+    local sender, message = secNet:receive(0)
+    secNet:handleIncoming(sender, message)
+end
 
 print(net)

@@ -1,4 +1,3 @@
-
 ---@class Network
 ---@field modem table
 ---@field port number
@@ -35,11 +34,16 @@ function network:broadcast(message) self.modem.broadcast(self.port, message) end
 
 ---@param timeout number
 ---@return string|nil, string
-function network:recive(timeout)
+function network:receive(timeout)
     local timestart = os.time()
     while (timestart + timeout > os.time()) or (timeout == 0) do
-        local _, _, senderAddress, port, _, message = event.pull(timeout,
-                                                                 "modem_message")
+        local _, _, senderAddress, port, _, message
+        if timeout == 0 then
+            _, _, senderAddress, port, _, message = event.pull("modem_message")
+        else
+            _, _, senderAddress, port, _, message = event.pull(1,
+                                                               "modem_message")
+        end
         if senderAddress ~= nil and port == self.port then
             return senderAddress, message
         end

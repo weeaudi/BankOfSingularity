@@ -8,7 +8,7 @@ DB.root = '/bank/db'
 
 ---@param tableName string
 ---@return string tablePath
-local function pathFor(tableName) return DB.root .. '/' .. tableName .. '.dat' end
+local function pathFor(tableName) return DB.root .. '/' .. tableName .. '.tmpdat' end
 
 ---@return nil
 local function ensureRoot()
@@ -67,11 +67,31 @@ end
 ---@return number id
 function DB.insert(tableName, row)
     local rows, lastId = loadTable(tableName)
-    lastId = lastId + 1
-    row.id = row.id or lastId
+
+    if row.id ~= nil then
+        for i = 1, #rows do
+            if rows[i].id == row.id then
+                error(('Duplicate id %s in table %s'):format(tostring(row.id), tableName))
+            end
+        end
+    else
+        lastId = lastId + 1
+        row.id = lastId
+    end
+
     rows[#rows + 1] = row
     saveTable(tableName, rows, lastId)
     return row.id
+end
+
+function DB.upsert(tableName, where, createRow, patch)
+    local existing = DB.select(tableName):where(where):first()
+    if existing then
+        DB.update(tableName, where, patch)
+        return existing.id
+    else
+        return DB.insert(tableName, createRow)
+    end
 end
 
 ---@param tableName string
@@ -177,7 +197,7 @@ end
 
 ---@return table rows
 function Query:all()
-    local rows = loadTable(self.tableName)
+    local rows, _ = loadTable(self.tableName)
 
     local filtered = {}
     for i = 1, #rows do
