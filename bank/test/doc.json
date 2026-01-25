@@ -6,11 +6,11 @@
                 "deprecated": false,
                 "file": "src/models/Account.lua",
                 "finish": [
-                    7,
+                    12,
                     17
                 ],
                 "start": [
-                    7,
+                    12,
                     10
                 ],
                 "type": "doc.class",
@@ -24,23 +24,66 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        12,
-                        37
+                        14,
+                        29
                     ],
                     "start": [
-                        12,
-                        24
+                        14,
+                        23
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                12,
-                                37
+                                14,
+                                29
                             ],
                             "start": [
-                                12,
-                                24
+                                14,
+                                23
+                            ],
+                            "type": "doc.type.name",
+                            "view": "string"
+                        }
+                    ],
+                    "view": "string"
+                },
+                "file": "src/models/Account.lua",
+                "finish": [
+                    14,
+                    29
+                ],
+                "name": "account_name",
+                "start": [
+                    14,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "string",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        15,
+                        38
+                    ],
+                    "start": [
+                        15,
+                        25
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                15,
+                                38
+                            ],
+                            "start": [
+                                15,
+                                25
                             ],
                             "type": "doc.type.name",
                             "view": "AccountStatus"
@@ -50,12 +93,12 @@
                 },
                 "file": "src/models/Account.lua",
                 "finish": [
-                    12,
-                    37
+                    15,
+                    38
                 ],
-                "name": "accountStatus",
+                "name": "account_status",
                 "start": [
-                    12,
+                    15,
                     10
                 ],
                 "type": "doc.field",
@@ -67,108 +110,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        9,
-                        28
-                    ],
-                    "start": [
-                        9,
-                        22
-                    ],
-                    "type": "doc.type",
-                    "types": [
-                        {
-                            "finish": [
-                                9,
-                                28
-                            ],
-                            "start": [
-                                9,
-                                22
-                            ],
-                            "type": "doc.type.name",
-                            "view": "string"
-                        }
-                    ],
-                    "view": "string"
-                },
-                "file": "src/models/Account.lua",
-                "finish": [
-                    9,
-                    28
-                ],
-                "name": "accountname",
-                "start": [
-                    9,
-                    10
-                ],
-                "type": "doc.field",
-                "view": "string",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        11,
-                        24
-                    ],
-                    "start": [
-                        11,
-                        18
-                    ],
-                    "type": "doc.type",
-                    "types": [
-                        {
-                            "finish": [
-                                11,
-                                24
-                            ],
-                            "start": [
-                                11,
-                                18
-                            ],
-                            "type": "doc.type.name",
-                            "view": "number"
-                        }
-                    ],
-                    "view": "number"
-                },
-                "file": "src/models/Account.lua",
-                "finish": [
-                    11,
-                    24
-                ],
-                "name": "balance",
-                "start": [
-                    11,
-                    10
-                ],
-                "type": "doc.field",
-                "view": "number",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        8,
+                        13,
                         20
                     ],
                     "start": [
-                        8,
+                        13,
                         13
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                8,
+                                13,
                                 20
                             ],
                             "start": [
-                                8,
+                                13,
                                 13
                             ],
                             "type": "doc.type.name",
@@ -179,12 +136,80 @@
                 },
                 "file": "src/models/Account.lua",
                 "finish": [
-                    8,
+                    13,
                     20
                 ],
                 "name": "id",
                 "start": [
-                    8,
+                    13,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "integer",
+                "visible": "public"
+            }
+        ],
+        "name": "Account",
+        "type": "type",
+        "view": "Account"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    35,
+                    24
+                ],
+                "start": [
+                    35,
+                    10
+                ],
+                "type": "doc.class",
+                "view": "AccountBalance",
+                "visible": "public"
+            }
+        ],
+        "fields": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        36,
+                        27
+                    ],
+                    "start": [
+                        36,
+                        20
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                36,
+                                27
+                            ],
+                            "start": [
+                                36,
+                                20
+                            ],
+                            "type": "doc.type.name",
+                            "view": "integer"
+                        }
+                    ],
+                    "view": "integer"
+                },
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    36,
+                    27
+                ],
+                "name": "accountId",
+                "start": [
+                    36,
                     10
                 ],
                 "type": "doc.field",
@@ -196,48 +221,48 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        10,
-                        21
+                        37,
+                        24
                     ],
                     "start": [
-                        10,
-                        15
+                        37,
+                        18
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                10,
-                                21
+                                37,
+                                24
                             ],
                             "start": [
-                                10,
-                                15
+                                37,
+                                18
                             ],
                             "type": "doc.type.name",
-                            "view": "string"
+                            "view": "number"
                         }
                     ],
-                    "view": "string"
+                    "view": "number"
                 },
-                "file": "src/models/Account.lua",
+                "file": "src/models/Ledger.lua",
                 "finish": [
-                    10,
-                    21
+                    37,
+                    24
                 ],
-                "name": "name",
+                "name": "balance",
                 "start": [
-                    10,
+                    37,
                     10
                 ],
                 "type": "doc.field",
-                "view": "string",
+                "view": "number",
                 "visible": "public"
             }
         ],
-        "name": "Account",
+        "name": "AccountBalance",
         "type": "type",
-        "view": "Account"
+        "view": "AccountBalance"
     },
     {
         "defines": [
@@ -245,12 +270,12 @@
                 "desc": "```lua\n{\n    Active: integer = 0,\n    Frozen: integer = 1,\n    Closed: integer = 2,\n}\n```",
                 "file": "src/models/Account.lua",
                 "finish": [
-                    0,
+                    5,
                     22
                 ],
                 "rawdesc": "```lua\n{\n    Active: integer = 0,\n    Frozen: integer = 1,\n    Closed: integer = 2,\n}\n```",
                 "start": [
-                    0,
+                    5,
                     9
                 ],
                 "type": "doc.enum",
@@ -261,6 +286,217 @@
         "name": "AccountStatus",
         "type": "type",
         "view": "AccountStatus"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": [
+                    {
+                        "finish": [
+                            38,
+                            38
+                        ],
+                        "start": [
+                            38,
+                            31
+                        ],
+                        "type": "doc.extends.name",
+                        "view": "Account"
+                    }
+                ],
+                "file": "src/models/Account.lua",
+                "finish": [
+                    38,
+                    38
+                ],
+                "start": [
+                    38,
+                    10
+                ],
+                "type": "doc.class",
+                "view": "AccountWithBalance",
+                "visible": "public"
+            }
+        ],
+        "fields": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        14,
+                        29
+                    ],
+                    "start": [
+                        14,
+                        23
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                14,
+                                29
+                            ],
+                            "start": [
+                                14,
+                                23
+                            ],
+                            "type": "doc.type.name",
+                            "view": "string"
+                        }
+                    ],
+                    "view": "string"
+                },
+                "file": "src/models/Account.lua",
+                "finish": [
+                    14,
+                    29
+                ],
+                "name": "account_name",
+                "start": [
+                    14,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "string",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        15,
+                        38
+                    ],
+                    "start": [
+                        15,
+                        25
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                15,
+                                38
+                            ],
+                            "start": [
+                                15,
+                                25
+                            ],
+                            "type": "doc.type.name",
+                            "view": "AccountStatus"
+                        }
+                    ],
+                    "view": "AccountStatus"
+                },
+                "file": "src/models/Account.lua",
+                "finish": [
+                    15,
+                    38
+                ],
+                "name": "account_status",
+                "start": [
+                    15,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "AccountStatus",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        39,
+                        24
+                    ],
+                    "start": [
+                        39,
+                        18
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                39,
+                                24
+                            ],
+                            "start": [
+                                39,
+                                18
+                            ],
+                            "type": "doc.type.name",
+                            "view": "number"
+                        }
+                    ],
+                    "view": "number"
+                },
+                "file": "src/models/Account.lua",
+                "finish": [
+                    39,
+                    24
+                ],
+                "name": "balance",
+                "start": [
+                    39,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "number",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        13,
+                        20
+                    ],
+                    "start": [
+                        13,
+                        13
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                13,
+                                20
+                            ],
+                            "start": [
+                                13,
+                                13
+                            ],
+                            "type": "doc.type.name",
+                            "view": "integer"
+                        }
+                    ],
+                    "view": "integer"
+                },
+                "file": "src/models/Account.lua",
+                "finish": [
+                    13,
+                    20
+                ],
+                "name": "id",
+                "start": [
+                    13,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "integer",
+                "visible": "public"
+            }
+        ],
+        "name": "AccountWithBalance",
+        "type": "type",
+        "view": "AccountWithBalance"
     },
     {
         "defines": [
@@ -289,12 +525,12 @@
                     "args": [
                         {
                             "finish": [
-                                104,
+                                123,
                                 28
                             ],
                             "name": "tableName",
                             "start": [
-                                104,
+                                123,
                                 19
                             ],
                             "type": "local",
@@ -302,12 +538,12 @@
                         },
                         {
                             "finish": [
-                                104,
+                                123,
                                 35
                             ],
                             "name": "where",
                             "start": [
-                                104,
+                                123,
                                 30
                             ],
                             "type": "local",
@@ -315,7 +551,7 @@
                         }
                     ],
                     "finish": [
-                        120,
+                        139,
                         3
                     ],
                     "returns": [
@@ -326,7 +562,7 @@
                         }
                     ],
                     "start": [
-                        104,
+                        123,
                         0
                     ],
                     "type": "function",
@@ -334,12 +570,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    104,
+                    123,
                     18
                 ],
                 "name": "delete",
                 "start": [
-                    104,
+                    123,
                     9
                 ],
                 "type": "setfield",
@@ -379,7 +615,7 @@
                         }
                     ],
                     "finish": [
-                        74,
+                        85,
                         3
                     ],
                     "returns": [
@@ -414,6 +650,76 @@
                 "async": false,
                 "deprecated": false,
                 "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                141,
+                                34
+                            ],
+                            "name": "tableName",
+                            "start": [
+                                141,
+                                25
+                            ],
+                            "type": "local",
+                            "view": "any"
+                        },
+                        {
+                            "finish": [
+                                141,
+                                40
+                            ],
+                            "name": "rows",
+                            "start": [
+                                141,
+                                36
+                            ],
+                            "type": "local",
+                            "view": "any"
+                        },
+                        {
+                            "finish": [
+                                141,
+                                48
+                            ],
+                            "name": "lastId",
+                            "start": [
+                                141,
+                                42
+                            ],
+                            "type": "local",
+                            "view": "any"
+                        }
+                    ],
+                    "finish": [
+                        154,
+                        3
+                    ],
+                    "start": [
+                        141,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "function DB.replaceTable(tableName: any, rows: any, lastId: any)"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    141,
+                    24
+                ],
+                "name": "replaceTable",
+                "start": [
+                    141,
+                    9
+                ],
+                "type": "setfield",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
                     "finish": [
                         4,
                         21
@@ -460,12 +766,12 @@
                     "args": [
                         {
                             "finish": [
-                                136,
+                                170,
                                 28
                             ],
                             "name": "tableName",
                             "start": [
-                                136,
+                                170,
                                 19
                             ],
                             "type": "local",
@@ -473,7 +779,7 @@
                         }
                     ],
                     "finish": [
-                        145,
+                        179,
                         3
                     ],
                     "returns": [
@@ -483,7 +789,7 @@
                         }
                     ],
                     "start": [
-                        136,
+                        170,
                         0
                     ],
                     "type": "function",
@@ -491,12 +797,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    136,
+                    170,
                     18
                 ],
                 "name": "select",
                 "start": [
-                    136,
+                    170,
                     9
                 ],
                 "type": "setfield",
@@ -510,12 +816,12 @@
                     "args": [
                         {
                             "finish": [
-                                97,
+                                118,
                                 30
                             ],
                             "name": "tableName",
                             "start": [
-                                97,
+                                118,
                                 21
                             ],
                             "type": "local",
@@ -523,11 +829,11 @@
                         }
                     ],
                     "finish": [
-                        99,
-                        3
+                        118,
+                        63
                     ],
                     "start": [
-                        97,
+                        118,
                         0
                     ],
                     "type": "function",
@@ -535,12 +841,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    97,
+                    118,
                     20
                 ],
                 "name": "truncate",
                 "start": [
-                    97,
+                    118,
                     9
                 ],
                 "type": "setfield",
@@ -554,12 +860,12 @@
                     "args": [
                         {
                             "finish": [
-                                80,
+                                101,
                                 28
                             ],
                             "name": "tableName",
                             "start": [
-                                80,
+                                101,
                                 19
                             ],
                             "type": "local",
@@ -567,12 +873,12 @@
                         },
                         {
                             "finish": [
-                                80,
+                                101,
                                 35
                             ],
                             "name": "where",
                             "start": [
-                                80,
+                                101,
                                 30
                             ],
                             "type": "local",
@@ -580,12 +886,12 @@
                         },
                         {
                             "finish": [
-                                80,
+                                101,
                                 42
                             ],
                             "name": "patch",
                             "start": [
-                                80,
+                                101,
                                 37
                             ],
                             "type": "local",
@@ -593,7 +899,7 @@
                         }
                     ],
                     "finish": [
-                        95,
+                        116,
                         3
                     ],
                     "returns": [
@@ -604,7 +910,7 @@
                         }
                     ],
                     "start": [
-                        80,
+                        101,
                         0
                     ],
                     "type": "function",
@@ -612,12 +918,101 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    80,
+                    101,
                     18
                 ],
                 "name": "update",
                 "start": [
-                    80,
+                    101,
+                    9
+                ],
+                "type": "setfield",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                87,
+                                28
+                            ],
+                            "name": "tableName",
+                            "start": [
+                                87,
+                                19
+                            ],
+                            "type": "local",
+                            "view": "any"
+                        },
+                        {
+                            "finish": [
+                                87,
+                                35
+                            ],
+                            "name": "where",
+                            "start": [
+                                87,
+                                30
+                            ],
+                            "type": "local",
+                            "view": "any"
+                        },
+                        {
+                            "finish": [
+                                87,
+                                46
+                            ],
+                            "name": "createRow",
+                            "start": [
+                                87,
+                                37
+                            ],
+                            "type": "local",
+                            "view": "any"
+                        },
+                        {
+                            "finish": [
+                                87,
+                                53
+                            ],
+                            "name": "patch",
+                            "start": [
+                                87,
+                                48
+                            ],
+                            "type": "local",
+                            "view": "any"
+                        }
+                    ],
+                    "finish": [
+                        95,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "number"
+                        }
+                    ],
+                    "start": [
+                        87,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "function DB.upsert(tableName: any, where: any, createRow: any, patch: any)\n  -> number"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    87,
+                    18
+                ],
+                "name": "upsert",
+                "start": [
+                    87,
                     9
                 ],
                 "type": "setfield",
@@ -634,13 +1029,393 @@
             {
                 "async": false,
                 "deprecated": false,
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    92,
+                    29
+                ],
+                "start": [
+                    92,
+                    10
+                ],
+                "type": "doc.class",
+                "view": "EncryptedConnection",
+                "visible": "public"
+            }
+        ],
+        "fields": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        99,
+                        49
+                    ],
+                    "start": [
+                        99,
+                        30
+                    ],
+                    "type": "getlocal",
+                    "view": "EncryptedConnection"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    99,
+                    27
+                ],
+                "name": "__index",
+                "start": [
+                    99,
+                    0
+                ],
+                "type": "setfield",
+                "view": "EncryptedConnection",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        93,
+                        24
+                    ],
+                    "start": [
+                        93,
+                        18
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                93,
+                                24
+                            ],
+                            "start": [
+                                93,
+                                18
+                            ],
+                            "type": "doc.type.name",
+                            "view": "string"
+                        }
+                    ],
+                    "view": "string"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    93,
+                    24
+                ],
+                "name": "address",
+                "start": [
+                    93,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "string",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        95,
+                        31
+                    ],
+                    "start": [
+                        95,
+                        26
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                95,
+                                31
+                            ],
+                            "start": [
+                                95,
+                                26
+                            ],
+                            "type": "doc.type.name",
+                            "view": "table"
+                        }
+                    ],
+                    "view": "table"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    95,
+                    31
+                ],
+                "name": "remotePublicKey",
+                "start": [
+                    95,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "table",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        94,
+                        37
+                    ],
+                    "start": [
+                        94,
+                        24
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                94,
+                                37
+                            ],
+                            "start": [
+                                94,
+                                24
+                            ],
+                            "type": "doc.type.name",
+                            "view": "SecureNetwork"
+                        }
+                    ],
+                    "view": "SecureNetwork"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    94,
+                    37
+                ],
+                "name": "secureNetwork",
+                "start": [
+                    94,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "SecureNetwork",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        96,
+                        35
+                    ],
+                    "start": [
+                        96,
+                        21
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                96,
+                                35
+                            ],
+                            "start": [
+                                96,
+                                21
+                            ],
+                            "type": "doc.type.name",
+                            "view": "EncryptionKeys"
+                        }
+                    ],
+                    "view": "EncryptionKeys"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    96,
+                    35
+                ],
+                "name": "sessionKey",
+                "start": [
+                    96,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "EncryptionKeys",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        97,
+                        26
+                    ],
+                    "start": [
+                        97,
+                        20
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                97,
+                                26
+                            ],
+                            "start": [
+                                97,
+                                20
+                            ],
+                            "type": "doc.type.name",
+                            "view": "string"
+                        }
+                    ],
+                    "view": "string"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    97,
+                    26
+                ],
+                "name": "sharedKey",
+                "start": [
+                    97,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "string",
+                "visible": "public"
+            }
+        ],
+        "name": "EncryptedConnection",
+        "type": "type",
+        "view": "EncryptedConnection"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    8,
+                    24
+                ],
+                "start": [
+                    8,
+                    10
+                ],
+                "type": "doc.class",
+                "view": "EncryptionKeys",
+                "visible": "public"
+            }
+        ],
+        "fields": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        10,
+                        30
+                    ],
+                    "start": [
+                        10,
+                        25
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                10,
+                                30
+                            ],
+                            "start": [
+                                10,
+                                25
+                            ],
+                            "type": "doc.type.name",
+                            "view": "table"
+                        }
+                    ],
+                    "view": "table"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    10,
+                    30
+                ],
+                "name": "private",
+                "start": [
+                    10,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "table",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        9,
+                        29
+                    ],
+                    "start": [
+                        9,
+                        24
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                9,
+                                29
+                            ],
+                            "start": [
+                                9,
+                                24
+                            ],
+                            "type": "doc.type.name",
+                            "view": "table"
+                        }
+                    ],
+                    "view": "table"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    9,
+                    29
+                ],
+                "name": "public",
+                "start": [
+                    9,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "table",
+                "visible": "public"
+            }
+        ],
+        "name": "EncryptionKeys",
+        "type": "type",
+        "view": "EncryptionKeys"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    35,
+                    48,
                     16
                 ],
                 "start": [
-                    35,
+                    48,
                     10
                 ],
                 "type": "doc.class",
@@ -654,11 +1429,11 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        41,
+                        55,
                         23
                     ],
                     "start": [
-                        41,
+                        55,
                         17
                     ],
                     "type": "getlocal",
@@ -666,12 +1441,12 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    41,
+                    55,
                     14
                 ],
                 "name": "__index",
                 "start": [
-                    41,
+                    55,
                     0
                 ],
                 "type": "setfield",
@@ -685,12 +1460,12 @@
                     "args": [
                         {
                             "finish": [
-                                91,
+                                128,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                91,
+                                128,
                                 8
                             ],
                             "type": "self",
@@ -698,12 +1473,12 @@
                         },
                         {
                             "finish": [
-                                91,
+                                128,
                                 37
                             ],
                             "name": "tx",
                             "start": [
-                                91,
+                                128,
                                 35
                             ],
                             "type": "local",
@@ -711,11 +1486,11 @@
                         }
                     ],
                     "finish": [
-                        93,
+                        181,
                         3
                     ],
                     "start": [
-                        91,
+                        128,
                         0
                     ],
                     "type": "function",
@@ -723,12 +1498,12 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    91,
+                    128,
                     34
                 ],
                 "name": "_applyMaterialized",
                 "start": [
-                    91,
+                    128,
                     9
                 ],
                 "type": "setmethod",
@@ -742,12 +1517,12 @@
                     "args": [
                         {
                             "finish": [
-                                69,
+                                84,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                69,
+                                84,
                                 8
                             ],
                             "type": "self",
@@ -755,7 +1530,7 @@
                         }
                     ],
                     "finish": [
-                        89,
+                        114,
                         3
                     ],
                     "returns": [
@@ -765,7 +1540,7 @@
                         }
                     ],
                     "start": [
-                        69,
+                        84,
                         0
                     ],
                     "type": "function",
@@ -773,12 +1548,12 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    69,
+                    84,
                     23
                 ],
                 "name": "_nextId",
                 "start": [
-                    69,
+                    84,
                     9
                 ],
                 "type": "setmethod",
@@ -793,12 +1568,12 @@
                     "args": [
                         {
                             "finish": [
-                                102,
+                                239,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                102,
+                                239,
                                 8
                             ],
                             "type": "self",
@@ -806,12 +1581,12 @@
                         },
                         {
                             "finish": [
-                                102,
+                                239,
                                 25
                             ],
                             "name": "tx",
                             "start": [
-                                102,
+                                239,
                                 23
                             ],
                             "type": "local",
@@ -820,7 +1595,7 @@
                     ],
                     "desc": " Append a transaction to the ledger",
                     "finish": [
-                        152,
+                        251,
                         3
                     ],
                     "rawdesc": " Append a transaction to the ledger",
@@ -832,7 +1607,7 @@
                         }
                     ],
                     "start": [
-                        102,
+                        239,
                         0
                     ],
                     "type": "function",
@@ -840,13 +1615,13 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    102,
+                    239,
                     22
                 ],
                 "name": "append",
                 "rawdesc": " Append a transaction to the ledger",
                 "start": [
-                    102,
+                    239,
                     9
                 ],
                 "type": "setmethod",
@@ -858,22 +1633,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        36,
+                        49,
                         18
                     ],
                     "start": [
-                        36,
+                        49,
                         13
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                36,
+                                49,
                                 18
                             ],
                             "start": [
-                                36,
+                                49,
                                 13
                             ],
                             "type": "doc.type.name",
@@ -884,12 +1659,12 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    36,
+                    49,
                     18
                 ],
                 "name": "db",
                 "start": [
-                    36,
+                    49,
                     10
                 ],
                 "type": "doc.field",
@@ -901,22 +1676,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        38,
+                        51,
                         24
                     ],
                     "start": [
-                        38,
+                        51,
                         18
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                38,
+                                51,
                                 24
                             ],
                             "start": [
-                                38,
+                                51,
                                 18
                             ],
                             "type": "doc.type.name",
@@ -927,12 +1702,12 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    38,
+                    51,
                     24
                 ],
                 "name": "logPath",
                 "start": [
-                    38,
+                    51,
                     10
                 ],
                 "type": "doc.field",
@@ -944,22 +1719,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        39,
+                        52,
                         25
                     ],
                     "start": [
-                        39,
+                        52,
                         19
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                39,
+                                52,
                                 25
                             ],
                             "start": [
-                                39,
+                                52,
                                 19
                             ],
                             "type": "doc.type.name",
@@ -970,12 +1745,12 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    39,
+                    52,
                     25
                 ],
                 "name": "metaPath",
                 "start": [
-                    39,
+                    52,
                     10
                 ],
                 "type": "doc.field",
@@ -989,12 +1764,12 @@
                     "args": [
                         {
                             "finish": [
-                                46,
+                                60,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                46,
+                                60,
                                 8
                             ],
                             "type": "self",
@@ -1002,12 +1777,12 @@
                         },
                         {
                             "finish": [
-                                46,
+                                60,
                                 22
                             ],
                             "name": "db",
                             "start": [
-                                46,
+                                60,
                                 20
                             ],
                             "type": "local",
@@ -1015,12 +1790,12 @@
                         },
                         {
                             "finish": [
-                                46,
+                                60,
                                 28
                             ],
                             "name": "root",
                             "start": [
-                                46,
+                                60,
                                 24
                             ],
                             "type": "local",
@@ -1028,7 +1803,7 @@
                         }
                     ],
                     "finish": [
-                        55,
+                        70,
                         3
                     ],
                     "returns": [
@@ -1038,7 +1813,7 @@
                         }
                     ],
                     "start": [
-                        46,
+                        60,
                         0
                     ],
                     "type": "function",
@@ -1046,12 +1821,99 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    46,
+                    60,
                     19
                 ],
                 "name": "new",
                 "start": [
-                    46,
+                    60,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        53,
+                        32
+                    ],
+                    "start": [
+                        53,
+                        25
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                53,
+                                32
+                            ],
+                            "start": [
+                                53,
+                                25
+                            ],
+                            "type": "doc.type.name",
+                            "view": "integer"
+                        }
+                    ],
+                    "view": "integer"
+                },
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    53,
+                    32
+                ],
+                "name": "nextId",
+                "start": [
+                    53,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "integer",
+                "visible": "private"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                234,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                234,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Ledger"
+                        }
+                    ],
+                    "finish": [
+                        234,
+                        79
+                    ],
+                    "start": [
+                        234,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Ledger:rebuildMaterialized()"
+                },
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    234,
+                    35
+                ],
+                "name": "rebuildMaterialized",
+                "start": [
+                    234,
                     9
                 ],
                 "type": "setmethod",
@@ -1065,12 +1927,12 @@
                     "args": [
                         {
                             "finish": [
-                                95,
+                                183,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                95,
+                                183,
                                 8
                             ],
                             "type": "self",
@@ -1078,24 +1940,24 @@
                         }
                     ],
                     "finish": [
-                        97,
+                        232,
                         3
                     ],
                     "start": [
-                        95,
+                        183,
                         0
                     ],
                     "type": "function",
-                    "view": "(method) Ledger:rebuildMaterialized()"
+                    "view": "(method) Ledger:rebuildMaterializedFast()"
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    95,
-                    35
+                    183,
+                    39
                 ],
-                "name": "rebuildMaterialized",
+                "name": "rebuildMaterializedFast",
                 "start": [
-                    95,
+                    183,
                     9
                 ],
                 "type": "setmethod",
@@ -1107,22 +1969,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        37,
+                        50,
                         21
                     ],
                     "start": [
-                        37,
+                        50,
                         15
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                37,
+                                50,
                                 21
                             ],
                             "start": [
-                                37,
+                                50,
                                 15
                             ],
                             "type": "doc.type.name",
@@ -1133,12 +1995,12 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    37,
+                    50,
                     21
                 ],
                 "name": "root",
                 "start": [
-                    37,
+                    50,
                     10
                 ],
                 "type": "doc.field",
@@ -1153,12 +2015,12 @@
                     "args": [
                         {
                             "finish": [
-                                158,
+                                257,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                158,
+                                257,
                                 8
                             ],
                             "type": "self",
@@ -1166,34 +2028,47 @@
                         },
                         {
                             "finish": [
-                                158,
+                                257,
                                 26
                             ],
                             "name": "where",
                             "start": [
-                                158,
+                                257,
                                 21
                             ],
                             "type": "local",
-                            "view": "table|fun(tx: LedgerTransaction):boolean|nil"
+                            "view": "table|fun(row: table):boolean|nil"
                         },
                         {
                             "finish": [
-                                158,
+                                257,
                                 33
                             ],
                             "name": "onRow",
                             "start": [
-                                158,
+                                257,
                                 28
                             ],
                             "type": "local",
                             "view": "fun(tx: LedgerTransaction):nil"
+                        },
+                        {
+                            "finish": [
+                                257,
+                                39
+                            ],
+                            "name": "opts",
+                            "start": [
+                                257,
+                                35
+                            ],
+                            "type": "local",
+                            "view": "any"
                         }
                     ],
                     "desc": " Stream transactions; avoids loading whole ledger",
                     "finish": [
-                        180,
+                        319,
                         3
                     ],
                     "rawdesc": " Stream transactions; avoids loading whole ledger",
@@ -1204,21 +2079,21 @@
                         }
                     ],
                     "start": [
-                        158,
+                        257,
                         0
                     ],
                     "type": "function",
-                    "view": "(method) Ledger:scan(where: table|fun(tx: LedgerTransaction):boolean|nil, onRow: fun(tx: LedgerTransaction):nil)\n  -> nil"
+                    "view": "(method) Ledger:scan(where: table|fun(row: table):boolean|nil, onRow: fun(tx: LedgerTransaction):nil, opts: any)\n  -> nil"
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    158,
+                    257,
                     20
                 ],
                 "name": "scan",
                 "rawdesc": " Stream transactions; avoids loading whole ledger",
                 "start": [
-                    158,
+                    257,
                     9
                 ],
                 "type": "setmethod",
@@ -1237,11 +2112,11 @@
                 "deprecated": false,
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    26,
+                    39,
                     27
                 ],
                 "start": [
-                    26,
+                    39,
                     10
                 ],
                 "type": "doc.class",
@@ -1255,23 +2130,262 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        28,
-                        26
+                        41,
+                        27
                     ],
                     "start": [
-                        28,
+                        41,
                         20
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                28,
+                                41,
+                                27
+                            ],
+                            "start": [
+                                41,
+                                20
+                            ],
+                            "type": "doc.type.name",
+                            "view": "integer"
+                        }
+                    ],
+                    "view": "integer"
+                },
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    41,
+                    27
+                ],
+                "name": "accountId",
+                "start": [
+                    41,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "integer",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        43,
+                        23
+                    ],
+                    "start": [
+                        43,
+                        17
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                43,
+                                23
+                            ],
+                            "start": [
+                                43,
+                                17
+                            ],
+                            "type": "doc.type.name",
+                            "view": "number"
+                        }
+                    ],
+                    "view": "number"
+                },
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    43,
+                    23
+                ],
+                "name": "amount",
+                "start": [
+                    43,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "number",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        46,
+                        30
+                    ],
+                    "start": [
+                        46,
+                        20
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                46,
                                 26
                             ],
                             "start": [
-                                28,
+                                46,
                                 20
+                            ],
+                            "type": "doc.type.name",
+                            "view": "number"
+                        },
+                        {
+                            "finish": [
+                                46,
+                                30
+                            ],
+                            "start": [
+                                46,
+                                27
+                            ],
+                            "type": "doc.type.name",
+                            "view": "nil"
+                        }
+                    ],
+                    "view": "number|nil"
+                },
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    46,
+                    30
+                ],
+                "name": "createdAt",
+                "start": [
+                    46,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "number|nil",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        44,
+                        24
+                    ],
+                    "start": [
+                        44,
+                        15
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                44,
+                                20
+                            ],
+                            "start": [
+                                44,
+                                15
+                            ],
+                            "type": "doc.type.name",
+                            "view": "table"
+                        },
+                        {
+                            "finish": [
+                                44,
+                                24
+                            ],
+                            "start": [
+                                44,
+                                21
+                            ],
+                            "type": "doc.type.name",
+                            "view": "nil"
+                        }
+                    ],
+                    "view": "table|nil"
+                },
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    44,
+                    24
+                ],
+                "name": "data",
+                "start": [
+                    44,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "table|nil",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        40,
+                        20
+                    ],
+                    "start": [
+                        40,
+                        13
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                40,
+                                20
+                            ],
+                            "start": [
+                                40,
+                                13
+                            ],
+                            "type": "doc.type.name",
+                            "view": "integer"
+                        }
+                    ],
+                    "view": "integer"
+                },
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    40,
+                    20
+                ],
+                "name": "id",
+                "start": [
+                    40,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "integer",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        42,
+                        27
+                    ],
+                    "start": [
+                        42,
+                        21
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                42,
+                                27
+                            ],
+                            "start": [
+                                42,
+                                21
                             ],
                             "type": "doc.type.name",
                             "view": "string"
@@ -1281,12 +2395,12 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    28,
-                    26
+                    42,
+                    27
                 ],
-                "name": "accountId",
+                "name": "playerName",
                 "start": [
-                    28,
+                    42,
                     10
                 ],
                 "type": "doc.field",
@@ -1298,22 +2412,1839 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        30,
-                        23
+                        45,
+                        41
                     ],
                     "start": [
-                        30,
+                        45,
+                        26
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                45,
+                                41
+                            ],
+                            "start": [
+                                45,
+                                26
+                            ],
+                            "type": "doc.type.name",
+                            "view": "TransactionType"
+                        }
+                    ],
+                    "view": "TransactionType"
+                },
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    45,
+                    41
+                ],
+                "name": "transactionType",
+                "start": [
+                    45,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "TransactionType",
+                "visible": "public"
+            }
+        ],
+        "name": "LedgerTransaction",
+        "type": "type",
+        "view": "LedgerTransaction"
+    },
+    {
+        "DOC": "/home/aidcraft/Downloads/PrismLauncher-Linux-Qt6-Portable-10.0.2/instances/GT_New_Horizons_2.8.4_Java_17-25/.minecraft/saves/New World/opencomputers/7ca9de04-356f-4102-9e91-276bca5235b8/bank",
+        "defines": [],
+        "fields": [],
+        "name": "LuaLS",
+        "type": "luals.config"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "file": "src/network/Network.lua",
+                "finish": [
+                    0,
+                    17
+                ],
+                "start": [
+                    0,
+                    10
+                ],
+                "type": "doc.class",
+                "view": "Network",
+                "visible": "public"
+            }
+        ],
+        "fields": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        4,
+                        25
+                    ],
+                    "start": [
+                        4,
+                        18
+                    ],
+                    "type": "getlocal",
+                    "view": "Network"
+                },
+                "file": "src/network/Network.lua",
+                "finish": [
+                    4,
+                    15
+                ],
+                "name": "__index",
+                "start": [
+                    4,
+                    0
+                ],
+                "type": "setfield",
+                "view": "Network",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                32,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                32,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Network"
+                        },
+                        {
+                            "finish": [
+                                32,
+                                34
+                            ],
+                            "name": "message",
+                            "start": [
+                                32,
+                                27
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        }
+                    ],
+                    "finish": [
+                        32,
+                        80
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "nil"
+                        }
+                    ],
+                    "start": [
+                        32,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Network:broadcast(message: string)\n  -> nil"
+                },
+                "file": "src/network/Network.lua",
+                "finish": [
+                    32,
+                    26
+                ],
+                "name": "broadcast",
+                "start": [
+                    32,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                11,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                11,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Network"
+                        },
+                        {
+                            "finish": [
+                                11,
+                                27
+                            ],
+                            "name": "modem",
+                            "start": [
+                                11,
+                                22
+                            ],
+                            "type": "local",
+                            "view": "table"
+                        },
+                        {
+                            "finish": [
+                                11,
+                                33
+                            ],
+                            "name": "port",
+                            "start": [
+                                11,
+                                29
+                            ],
+                            "type": "local",
+                            "view": "number"
+                        }
+                    ],
+                    "finish": [
+                        21,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "table"
+                        }
+                    ],
+                    "start": [
+                        11,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Network:init(modem: table, port: number)\n  -> table"
+                },
+                "file": "src/network/Network.lua",
+                "finish": [
+                    11,
+                    21
+                ],
+                "name": "init",
+                "start": [
+                    11,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        1,
+                        21
+                    ],
+                    "start": [
+                        1,
+                        16
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                1,
+                                21
+                            ],
+                            "start": [
+                                1,
+                                16
+                            ],
+                            "type": "doc.type.name",
+                            "view": "table"
+                        }
+                    ],
+                    "view": "table"
+                },
+                "file": "src/network/Network.lua",
+                "finish": [
+                    1,
+                    21
+                ],
+                "name": "modem",
+                "start": [
+                    1,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "table",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        2,
+                        21
+                    ],
+                    "start": [
+                        2,
+                        15
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                2,
+                                21
+                            ],
+                            "start": [
+                                2,
+                                15
+                            ],
+                            "type": "doc.type.name",
+                            "view": "number"
+                        }
+                    ],
+                    "view": "number"
+                },
+                "file": "src/network/Network.lua",
+                "finish": [
+                    2,
+                    21
+                ],
+                "name": "port",
+                "start": [
+                    2,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "number",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                36,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                36,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Network"
+                        },
+                        {
+                            "finish": [
+                                36,
+                                32
+                            ],
+                            "name": "timeout",
+                            "start": [
+                                36,
+                                25
+                            ],
+                            "type": "local",
+                            "view": "number"
+                        }
+                    ],
+                    "finish": [
+                        51,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "string|nil"
+                        },
+                        {
+                            "type": "function.return",
+                            "view": "string"
+                        }
+                    ],
+                    "start": [
+                        36,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Network:receive(timeout: number)\n  -> string|nil\n  2. string"
+                },
+                "file": "src/network/Network.lua",
+                "finish": [
+                    36,
+                    24
+                ],
+                "name": "receive",
+                "start": [
+                    36,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                26,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                26,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Network"
+                        },
+                        {
+                            "finish": [
+                                26,
+                                29
+                            ],
+                            "name": "address",
+                            "start": [
+                                26,
+                                22
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                26,
+                                38
+                            ],
+                            "name": "message",
+                            "start": [
+                                26,
+                                31
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        }
+                    ],
+                    "finish": [
+                        28,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "nil"
+                        }
+                    ],
+                    "start": [
+                        26,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Network:send(address: string, message: string)\n  -> nil"
+                },
+                "file": "src/network/Network.lua",
+                "finish": [
+                    26,
+                    21
+                ],
+                "name": "send",
+                "start": [
+                    26,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            }
+        ],
+        "name": "Network",
+        "type": "type",
+        "view": "Network"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "file": "src/db/database.lua",
+                "finish": [
+                    158,
+                    15
+                ],
+                "start": [
+                    158,
+                    10
+                ],
+                "type": "doc.class",
+                "view": "Query",
+                "visible": "public"
+            }
+        ],
+        "fields": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        166,
+                        21
+                    ],
+                    "start": [
+                        166,
+                        16
+                    ],
+                    "type": "getlocal",
+                    "view": "Query"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    166,
+                    13
+                ],
+                "name": "__index",
+                "start": [
+                    166,
+                    0
+                ],
+                "type": "setfield",
+                "view": "Query",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        163,
+                        28
+                    ],
+                    "start": [
+                        163,
                         17
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                30,
+                                163,
+                                24
+                            ],
+                            "start": [
+                                163,
+                                17
+                            ],
+                            "type": "doc.type.name",
+                            "view": "integer"
+                        },
+                        {
+                            "finish": [
+                                163,
+                                28
+                            ],
+                            "start": [
+                                163,
+                                25
+                            ],
+                            "type": "doc.type.name",
+                            "view": "nil"
+                        }
+                    ],
+                    "view": "integer|nil"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    163,
+                    28
+                ],
+                "name": "_limit",
+                "start": [
+                    163,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "integer|nil",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        164,
+                        25
+                    ],
+                    "start": [
+                        164,
+                        18
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                164,
+                                25
+                            ],
+                            "start": [
+                                164,
+                                18
+                            ],
+                            "type": "doc.type.name",
+                            "view": "integer"
+                        }
+                    ],
+                    "view": "integer"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    164,
+                    25
+                ],
+                "name": "_offset",
+                "start": [
+                    164,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "integer",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        162,
+                        36
+                    ],
+                    "start": [
+                        162,
+                        20
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                162,
+                                27
+                            ],
+                            "start": [
+                                162,
+                                20
+                            ],
+                            "type": "doc.type.string",
+                            "view": "\"asc\""
+                        },
+                        {
+                            "finish": [
+                                162,
+                                36
+                            ],
+                            "start": [
+                                162,
+                                28
+                            ],
+                            "type": "doc.type.string",
+                            "view": "\"desc\""
+                        }
+                    ],
+                    "view": "\"asc\"|\"desc\""
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    162,
+                    36
+                ],
+                "name": "_orderDir",
+                "start": [
+                    162,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "\"asc\"|\"desc\"",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        161,
+                        30
+                    ],
+                    "start": [
+                        161,
+                        20
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                161,
+                                26
+                            ],
+                            "start": [
+                                161,
+                                20
+                            ],
+                            "type": "doc.type.name",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                161,
+                                30
+                            ],
+                            "start": [
+                                161,
+                                27
+                            ],
+                            "type": "doc.type.name",
+                            "view": "nil"
+                        }
+                    ],
+                    "view": "string|nil"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    161,
+                    30
+                ],
+                "name": "_orderKey",
+                "start": [
+                    161,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "string|nil",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        160,
+                        28
+                    ],
+                    "start": [
+                        160,
+                        17
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                160,
+                                28
+                            ],
+                            "start": [
+                                160,
+                                17
+                            ],
+                            "type": "doc.type.name",
+                            "view": "table|fun(row: table):boolean|nil"
+                        }
+                    ],
+                    "view": "table|fun(row: table):boolean|nil"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    160,
+                    28
+                ],
+                "name": "_where",
+                "start": [
+                    160,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "table|fun(row: table):boolean|nil",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                212,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                212,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Query"
+                        }
+                    ],
+                    "finish": [
+                        238,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "name": "rows",
+                            "type": "function.return",
+                            "view": "table"
+                        }
+                    ],
+                    "start": [
+                        212,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Query:all()\n  -> rows: table"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    212,
+                    18
+                ],
+                "name": "all",
+                "start": [
+                    212,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                241,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                241,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Query"
+                        }
+                    ],
+                    "finish": [
+                        245,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "name": "row",
+                            "type": "function.return",
+                            "view": "table|nil"
+                        }
+                    ],
+                    "start": [
+                        241,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Query:first()\n  -> row: table|nil"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    241,
+                    20
+                ],
+                "name": "first",
+                "start": [
+                    241,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                199,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                199,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Query"
+                        },
+                        {
+                            "finish": [
+                                199,
+                                22
+                            ],
+                            "name": "n",
+                            "start": [
+                                199,
+                                21
+                            ],
+                            "type": "local",
+                            "view": "integer"
+                        }
+                    ],
+                    "finish": [
+                        202,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "name": "self",
+                            "type": "function.return",
+                            "view": "Query"
+                        }
+                    ],
+                    "start": [
+                        199,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Query:limit(n: integer)\n  -> self: Query"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    199,
+                    20
+                ],
+                "name": "limit",
+                "start": [
+                    199,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                206,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                206,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Query"
+                        },
+                        {
+                            "finish": [
+                                206,
+                                23
+                            ],
+                            "name": "n",
+                            "start": [
+                                206,
+                                22
+                            ],
+                            "type": "local",
+                            "view": "integer"
+                        }
+                    ],
+                    "finish": [
+                        209,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "name": "self",
+                            "type": "function.return",
+                            "view": "Query"
+                        }
+                    ],
+                    "start": [
+                        206,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Query:offset(n: integer)\n  -> self: Query"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    206,
+                    21
+                ],
+                "name": "offset",
+                "start": [
+                    206,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "desc": "```lua\ndir:\n    | \"asc\"\n    | \"desc\"\n```",
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                191,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                191,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Query"
+                        },
+                        {
+                            "finish": [
+                                191,
+                                26
+                            ],
+                            "name": "key",
+                            "start": [
+                                191,
+                                23
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                191,
+                                31
+                            ],
+                            "name": "dir",
+                            "start": [
+                                191,
+                                28
+                            ],
+                            "type": "local",
+                            "view": "\"asc\"|\"desc\"|nil"
+                        }
+                    ],
+                    "desc": "```lua\ndir:\n    | \"asc\"\n    | \"desc\"\n```",
+                    "finish": [
+                        195,
+                        3
+                    ],
+                    "rawdesc": "```lua\ndir:\n    | \"asc\"\n    | \"desc\"\n```",
+                    "returns": [
+                        {
+                            "name": "self",
+                            "type": "function.return",
+                            "view": "Query"
+                        }
+                    ],
+                    "start": [
+                        191,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Query:orderBy(key: string, dir: \"asc\"|\"desc\"|nil)\n  -> self: Query"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    191,
+                    22
+                ],
+                "name": "orderBy",
+                "rawdesc": "```lua\ndir:\n    | \"asc\"\n    | \"desc\"\n```",
+                "start": [
+                    191,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        159,
+                        26
+                    ],
+                    "start": [
+                        159,
+                        20
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                159,
+                                26
+                            ],
+                            "start": [
+                                159,
+                                20
+                            ],
+                            "type": "doc.type.name",
+                            "view": "string"
+                        }
+                    ],
+                    "view": "string"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    159,
+                    26
+                ],
+                "name": "tableName",
+                "start": [
+                    159,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "string",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                183,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                183,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Query"
+                        },
+                        {
+                            "finish": [
+                                183,
+                                22
+                            ],
+                            "name": "w",
+                            "start": [
+                                183,
+                                21
+                            ],
+                            "type": "local",
+                            "view": "table|fun(row: table):boolean|nil"
+                        }
+                    ],
+                    "finish": [
+                        186,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "name": "self",
+                            "type": "function.return",
+                            "view": "Query"
+                        }
+                    ],
+                    "start": [
+                        183,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Query:where(w: table|fun(row: table):boolean|nil)\n  -> self: Query"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    183,
+                    20
+                ],
+                "name": "where",
+                "start": [
+                    183,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            }
+        ],
+        "name": "Query",
+        "type": "type",
+        "view": "Query"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    12,
+                    23
+                ],
+                "start": [
+                    12,
+                    10
+                ],
+                "type": "doc.class",
+                "view": "SecureNetwork",
+                "visible": "public"
+            }
+        ],
+        "fields": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        17,
+                        37
+                    ],
+                    "start": [
+                        17,
+                        24
+                    ],
+                    "type": "getlocal",
+                    "view": "SecureNetwork"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    17,
+                    21
+                ],
+                "name": "__index",
+                "start": [
+                    17,
+                    0
+                ],
+                "type": "setfield",
+                "view": "SecureNetwork",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        13,
+                        48
+                    ],
+                    "start": [
+                        13,
+                        34
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                13,
+                                48
+                            ],
+                            "start": [
+                                13,
+                                34
+                            ],
+                            "type": "doc.type.name",
+                            "view": "EncryptionKeys"
+                        }
+                    ],
+                    "view": "EncryptionKeys"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    13,
+                    48
+                ],
+                "name": "_encryptionKeys",
+                "start": [
+                    13,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "EncryptionKeys",
+                "visible": "private"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        14,
+                        34
+                    ],
+                    "start": [
+                        14,
+                        27
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                14,
+                                34
+                            ],
+                            "start": [
+                                14,
+                                27
+                            ],
+                            "type": "doc.type.name",
+                            "view": "Network"
+                        }
+                    ],
+                    "view": "Network"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    14,
+                    34
+                ],
+                "name": "_network",
+                "start": [
+                    14,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "Network",
+                "visible": "private"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                103,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                103,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "SecureNetwork"
+                        },
+                        {
+                            "finish": [
+                                103,
+                                38
+                            ],
+                            "name": "address",
+                            "start": [
+                                103,
+                                31
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        }
+                    ],
+                    "finish": [
+                        140,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "EncryptedConnection"
+                        }
+                    ],
+                    "start": [
+                        103,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) SecureNetwork:connect(address: string)\n  -> EncryptedConnection"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    103,
+                    30
+                ],
+                "name": "connect",
+                "start": [
+                    103,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        15,
+                        31
+                    ],
+                    "start": [
+                        15,
+                        26
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                15,
+                                31
+                            ],
+                            "start": [
+                                15,
+                                26
+                            ],
+                            "type": "doc.type.name",
+                            "view": "table"
+                        }
+                    ],
+                    "view": "table"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    15,
+                    31
+                ],
+                "name": "dataCard",
+                "start": [
+                    15,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "table",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                145,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                145,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "SecureNetwork"
+                        },
+                        {
+                            "finish": [
+                                145,
+                                51
+                            ],
+                            "name": "senderAddress",
+                            "start": [
+                                145,
+                                38
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                145,
+                                60
+                            ],
+                            "name": "message",
+                            "start": [
+                                145,
+                                53
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        }
+                    ],
+                    "finish": [
+                        171,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "EncryptedConnection|nil"
+                        }
+                    ],
+                    "start": [
+                        145,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) SecureNetwork:handleIncoming(senderAddress: string, message: string)\n  -> EncryptedConnection|nil"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    145,
+                    37
+                ],
+                "name": "handleIncoming",
+                "start": [
+                    145,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                56,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                56,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "SecureNetwork"
+                        },
+                        {
+                            "finish": [
+                                56,
+                                45
+                            ],
+                            "name": "encryptionKeyFile",
+                            "start": [
+                                56,
+                                28
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                56,
+                                54
+                            ],
+                            "name": "network",
+                            "start": [
+                                56,
+                                47
+                            ],
+                            "type": "local",
+                            "view": "Network"
+                        },
+                        {
+                            "finish": [
+                                56,
+                                64
+                            ],
+                            "name": "dataCard",
+                            "start": [
+                                56,
+                                56
+                            ],
+                            "type": "local",
+                            "view": "table"
+                        }
+                    ],
+                    "finish": [
+                        77,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "SecureNetwork"
+                        }
+                    ],
+                    "start": [
+                        56,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) SecureNetwork:init(encryptionKeyFile: string, network: Network, dataCard: table)\n  -> SecureNetwork"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    56,
+                    27
+                ],
+                "name": "init",
+                "start": [
+                    56,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                81,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                81,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "SecureNetwork"
+                        },
+                        {
+                            "finish": [
+                                81,
+                                38
+                            ],
+                            "name": "timeout",
+                            "start": [
+                                81,
+                                31
+                            ],
+                            "type": "local",
+                            "view": "integer"
+                        }
+                    ],
+                    "finish": [
+                        83,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "string|nil"
+                        },
+                        {
+                            "type": "function.return",
+                            "view": "string"
+                        }
+                    ],
+                    "start": [
+                        81,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) SecureNetwork:receive(timeout: integer)\n  -> string|nil\n  2. string"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    81,
+                    30
+                ],
+                "name": "receive",
+                "start": [
+                    81,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                88,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                88,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "SecureNetwork"
+                        },
+                        {
+                            "finish": [
+                                88,
+                                35
+                            ],
+                            "name": "address",
+                            "start": [
+                                88,
+                                28
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                88,
+                                44
+                            ],
+                            "name": "message",
+                            "start": [
+                                88,
+                                37
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        }
+                    ],
+                    "finish": [
+                        90,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "nil"
+                        }
+                    ],
+                    "start": [
+                        88,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) SecureNetwork:send(address: string, message: string)\n  -> nil"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    88,
+                    27
+                ],
+                "name": "send",
+                "start": [
+                    88,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            }
+        ],
+        "name": "SecureNetwork",
+        "type": "type",
+        "view": "SecureNetwork"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    27,
+                    25
+                ],
+                "start": [
+                    27,
+                    10
+                ],
+                "type": "doc.class",
+                "view": "TransactionById",
+                "visible": "public"
+            }
+        ],
+        "fields": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        29,
+                        27
+                    ],
+                    "start": [
+                        29,
+                        20
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                29,
+                                27
+                            ],
+                            "start": [
+                                29,
+                                20
+                            ],
+                            "type": "doc.type.name",
+                            "view": "integer"
+                        }
+                    ],
+                    "view": "integer"
+                },
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    29,
+                    27
+                ],
+                "name": "accountId",
+                "start": [
+                    29,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "integer",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        31,
+                        23
+                    ],
+                    "start": [
+                        31,
+                        17
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                31,
                                 23
                             ],
                             "start": [
-                                30,
+                                31,
                                 17
                             ],
                             "type": "doc.type.name",
@@ -1324,12 +4255,12 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    30,
+                    31,
                     23
                 ],
                 "name": "amount",
                 "start": [
-                    30,
+                    31,
                     10
                 ],
                 "type": "doc.field",
@@ -1342,7 +4273,7 @@
                 "extends": {
                     "finish": [
                         33,
-                        30
+                        26
                     ],
                     "start": [
                         33,
@@ -1361,26 +4292,14 @@
                             ],
                             "type": "doc.type.name",
                             "view": "number"
-                        },
-                        {
-                            "finish": [
-                                33,
-                                30
-                            ],
-                            "start": [
-                                33,
-                                27
-                            ],
-                            "type": "doc.type.name",
-                            "view": "nil"
                         }
                     ],
-                    "view": "number|nil"
+                    "view": "number"
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
                     33,
-                    30
+                    26
                 ],
                 "name": "createdAt",
                 "start": [
@@ -1388,7 +4307,7 @@
                     10
                 ],
                 "type": "doc.field",
-                "view": "number|nil",
+                "view": "number",
                 "visible": "public"
             },
             {
@@ -1396,22 +4315,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        31,
+                        30,
                         24
                     ],
                     "start": [
-                        31,
+                        30,
                         15
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                31,
+                                30,
                                 20
                             ],
                             "start": [
-                                31,
+                                30,
                                 15
                             ],
                             "type": "doc.type.name",
@@ -1419,11 +4338,11 @@
                         },
                         {
                             "finish": [
-                                31,
+                                30,
                                 24
                             ],
                             "start": [
-                                31,
+                                30,
                                 21
                             ],
                             "type": "doc.type.name",
@@ -1434,12 +4353,12 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    31,
+                    30,
                     24
                 ],
                 "name": "data",
                 "start": [
-                    31,
+                    30,
                     10
                 ],
                 "type": "doc.field",
@@ -1451,97 +4370,42 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        27,
-                        24
+                        28,
+                        20
                     ],
                     "start": [
-                        27,
+                        28,
                         13
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                27,
+                                28,
                                 20
                             ],
                             "start": [
-                                27,
+                                28,
                                 13
                             ],
                             "type": "doc.type.name",
                             "view": "integer"
-                        },
-                        {
-                            "finish": [
-                                27,
-                                24
-                            ],
-                            "start": [
-                                27,
-                                21
-                            ],
-                            "type": "doc.type.name",
-                            "view": "nil"
                         }
                     ],
-                    "view": "integer|nil"
+                    "view": "integer"
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    27,
-                    24
+                    28,
+                    20
                 ],
                 "name": "id",
                 "start": [
-                    27,
+                    28,
                     10
                 ],
                 "type": "doc.field",
-                "view": "integer|nil",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        29,
-                        27
-                    ],
-                    "start": [
-                        29,
-                        21
-                    ],
-                    "type": "doc.type",
-                    "types": [
-                        {
-                            "finish": [
-                                29,
-                                27
-                            ],
-                            "start": [
-                                29,
-                                21
-                            ],
-                            "type": "doc.type.name",
-                            "view": "string"
-                        }
-                    ],
-                    "view": "string"
-                },
-                "file": "src/models/Ledger.lua",
-                "finish": [
-                    29,
-                    27
-                ],
-                "name": "playerName",
-                "start": [
-                    29,
-                    10
-                ],
-                "type": "doc.field",
-                "view": "string",
+                "view": "integer",
                 "visible": "public"
             },
             {
@@ -1588,1161 +4452,9 @@
                 "visible": "public"
             }
         ],
-        "name": "LedgerTransaction",
+        "name": "TransactionById",
         "type": "type",
-        "view": "LedgerTransaction"
-    },
-    {
-        "DOC": "/home/aidcraft/Downloads/PrismLauncher-Linux-Qt6-Portable-10.0.2/instances/GT_New_Horizons_2.8.4_Java_17-25/.minecraft/saves/New World/opencomputers/7ca9de04-356f-4102-9e91-276bca5235b8/bank",
-        "defines": [],
-        "fields": [],
-        "name": "LuaLS",
-        "type": "luals.config"
-    },
-    {
-        "defines": [
-            {
-                "async": false,
-                "deprecated": false,
-                "file": "src/network/net.lua",
-                "finish": [
-                    1,
-                    17
-                ],
-                "start": [
-                    1,
-                    10
-                ],
-                "type": "doc.class",
-                "view": "Network",
-                "visible": "public"
-            }
-        ],
-        "fields": [
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        5,
-                        25
-                    ],
-                    "start": [
-                        5,
-                        18
-                    ],
-                    "type": "getlocal",
-                    "view": "Network"
-                },
-                "file": "src/network/net.lua",
-                "finish": [
-                    5,
-                    15
-                ],
-                "name": "__index",
-                "start": [
-                    5,
-                    0
-                ],
-                "type": "setfield",
-                "view": "Network",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "args": [
-                        {
-                            "finish": [
-                                33,
-                                8
-                            ],
-                            "name": "self",
-                            "start": [
-                                33,
-                                8
-                            ],
-                            "type": "self",
-                            "view": "Network"
-                        },
-                        {
-                            "finish": [
-                                33,
-                                34
-                            ],
-                            "name": "message",
-                            "start": [
-                                33,
-                                27
-                            ],
-                            "type": "local",
-                            "view": "string"
-                        }
-                    ],
-                    "finish": [
-                        33,
-                        80
-                    ],
-                    "returns": [
-                        {
-                            "type": "function.return",
-                            "view": "nil"
-                        }
-                    ],
-                    "start": [
-                        33,
-                        0
-                    ],
-                    "type": "function",
-                    "view": "(method) Network:broadcast(message: string)\n  -> nil"
-                },
-                "file": "src/network/net.lua",
-                "finish": [
-                    33,
-                    26
-                ],
-                "name": "broadcast",
-                "start": [
-                    33,
-                    9
-                ],
-                "type": "setmethod",
-                "view": "function",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "args": [
-                        {
-                            "finish": [
-                                12,
-                                8
-                            ],
-                            "name": "self",
-                            "start": [
-                                12,
-                                8
-                            ],
-                            "type": "self",
-                            "view": "Network"
-                        },
-                        {
-                            "finish": [
-                                12,
-                                27
-                            ],
-                            "name": "modem",
-                            "start": [
-                                12,
-                                22
-                            ],
-                            "type": "local",
-                            "view": "table"
-                        },
-                        {
-                            "finish": [
-                                12,
-                                33
-                            ],
-                            "name": "port",
-                            "start": [
-                                12,
-                                29
-                            ],
-                            "type": "local",
-                            "view": "number"
-                        }
-                    ],
-                    "finish": [
-                        22,
-                        3
-                    ],
-                    "returns": [
-                        {
-                            "type": "function.return",
-                            "view": "table"
-                        }
-                    ],
-                    "start": [
-                        12,
-                        0
-                    ],
-                    "type": "function",
-                    "view": "(method) Network:init(modem: table, port: number)\n  -> table"
-                },
-                "file": "src/network/net.lua",
-                "finish": [
-                    12,
-                    21
-                ],
-                "name": "init",
-                "start": [
-                    12,
-                    9
-                ],
-                "type": "setmethod",
-                "view": "function",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        2,
-                        21
-                    ],
-                    "start": [
-                        2,
-                        16
-                    ],
-                    "type": "doc.type",
-                    "types": [
-                        {
-                            "finish": [
-                                2,
-                                21
-                            ],
-                            "start": [
-                                2,
-                                16
-                            ],
-                            "type": "doc.type.name",
-                            "view": "table"
-                        }
-                    ],
-                    "view": "table"
-                },
-                "file": "src/network/net.lua",
-                "finish": [
-                    2,
-                    21
-                ],
-                "name": "modem",
-                "start": [
-                    2,
-                    10
-                ],
-                "type": "doc.field",
-                "view": "table",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        3,
-                        21
-                    ],
-                    "start": [
-                        3,
-                        15
-                    ],
-                    "type": "doc.type",
-                    "types": [
-                        {
-                            "finish": [
-                                3,
-                                21
-                            ],
-                            "start": [
-                                3,
-                                15
-                            ],
-                            "type": "doc.type.name",
-                            "view": "number"
-                        }
-                    ],
-                    "view": "number"
-                },
-                "file": "src/network/net.lua",
-                "finish": [
-                    3,
-                    21
-                ],
-                "name": "port",
-                "start": [
-                    3,
-                    10
-                ],
-                "type": "doc.field",
-                "view": "number",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "args": [
-                        {
-                            "finish": [
-                                37,
-                                8
-                            ],
-                            "name": "self",
-                            "start": [
-                                37,
-                                8
-                            ],
-                            "type": "self",
-                            "view": "Network"
-                        },
-                        {
-                            "finish": [
-                                37,
-                                31
-                            ],
-                            "name": "timeout",
-                            "start": [
-                                37,
-                                24
-                            ],
-                            "type": "local",
-                            "view": "number"
-                        }
-                    ],
-                    "finish": [
-                        47,
-                        3
-                    ],
-                    "returns": [
-                        {
-                            "type": "function.return",
-                            "view": "string|nil"
-                        },
-                        {
-                            "type": "function.return",
-                            "view": "string"
-                        }
-                    ],
-                    "start": [
-                        37,
-                        0
-                    ],
-                    "type": "function",
-                    "view": "(method) Network:recive(timeout: number)\n  -> string|nil\n  2. string"
-                },
-                "file": "src/network/net.lua",
-                "finish": [
-                    37,
-                    23
-                ],
-                "name": "recive",
-                "start": [
-                    37,
-                    9
-                ],
-                "type": "setmethod",
-                "view": "function",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "args": [
-                        {
-                            "finish": [
-                                27,
-                                8
-                            ],
-                            "name": "self",
-                            "start": [
-                                27,
-                                8
-                            ],
-                            "type": "self",
-                            "view": "Network"
-                        },
-                        {
-                            "finish": [
-                                27,
-                                29
-                            ],
-                            "name": "address",
-                            "start": [
-                                27,
-                                22
-                            ],
-                            "type": "local",
-                            "view": "string"
-                        },
-                        {
-                            "finish": [
-                                27,
-                                38
-                            ],
-                            "name": "message",
-                            "start": [
-                                27,
-                                31
-                            ],
-                            "type": "local",
-                            "view": "string"
-                        }
-                    ],
-                    "finish": [
-                        29,
-                        3
-                    ],
-                    "returns": [
-                        {
-                            "type": "function.return",
-                            "view": "nil"
-                        }
-                    ],
-                    "start": [
-                        27,
-                        0
-                    ],
-                    "type": "function",
-                    "view": "(method) Network:send(address: string, message: string)\n  -> nil"
-                },
-                "file": "src/network/net.lua",
-                "finish": [
-                    27,
-                    21
-                ],
-                "name": "send",
-                "start": [
-                    27,
-                    9
-                ],
-                "type": "setmethod",
-                "view": "function",
-                "visible": "public"
-            }
-        ],
-        "name": "Network",
-        "type": "type",
-        "view": "Network"
-    },
-    {
-        "defines": [
-            {
-                "async": false,
-                "deprecated": false,
-                "file": "src/db/database.lua",
-                "finish": [
-                    124,
-                    15
-                ],
-                "start": [
-                    124,
-                    10
-                ],
-                "type": "doc.class",
-                "view": "Query",
-                "visible": "public"
-            }
-        ],
-        "fields": [
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        132,
-                        21
-                    ],
-                    "start": [
-                        132,
-                        16
-                    ],
-                    "type": "getlocal",
-                    "view": "Query"
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    132,
-                    13
-                ],
-                "name": "__index",
-                "start": [
-                    132,
-                    0
-                ],
-                "type": "setfield",
-                "view": "Query",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        129,
-                        28
-                    ],
-                    "start": [
-                        129,
-                        17
-                    ],
-                    "type": "doc.type",
-                    "types": [
-                        {
-                            "finish": [
-                                129,
-                                24
-                            ],
-                            "start": [
-                                129,
-                                17
-                            ],
-                            "type": "doc.type.name",
-                            "view": "integer"
-                        },
-                        {
-                            "finish": [
-                                129,
-                                28
-                            ],
-                            "start": [
-                                129,
-                                25
-                            ],
-                            "type": "doc.type.name",
-                            "view": "nil"
-                        }
-                    ],
-                    "view": "integer|nil"
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    129,
-                    28
-                ],
-                "name": "_limit",
-                "start": [
-                    129,
-                    10
-                ],
-                "type": "doc.field",
-                "view": "integer|nil",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        130,
-                        25
-                    ],
-                    "start": [
-                        130,
-                        18
-                    ],
-                    "type": "doc.type",
-                    "types": [
-                        {
-                            "finish": [
-                                130,
-                                25
-                            ],
-                            "start": [
-                                130,
-                                18
-                            ],
-                            "type": "doc.type.name",
-                            "view": "integer"
-                        }
-                    ],
-                    "view": "integer"
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    130,
-                    25
-                ],
-                "name": "_offset",
-                "start": [
-                    130,
-                    10
-                ],
-                "type": "doc.field",
-                "view": "integer",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        128,
-                        36
-                    ],
-                    "start": [
-                        128,
-                        20
-                    ],
-                    "type": "doc.type",
-                    "types": [
-                        {
-                            "finish": [
-                                128,
-                                27
-                            ],
-                            "start": [
-                                128,
-                                20
-                            ],
-                            "type": "doc.type.string",
-                            "view": "\"asc\""
-                        },
-                        {
-                            "finish": [
-                                128,
-                                36
-                            ],
-                            "start": [
-                                128,
-                                28
-                            ],
-                            "type": "doc.type.string",
-                            "view": "\"desc\""
-                        }
-                    ],
-                    "view": "\"asc\"|\"desc\""
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    128,
-                    36
-                ],
-                "name": "_orderDir",
-                "start": [
-                    128,
-                    10
-                ],
-                "type": "doc.field",
-                "view": "\"asc\"|\"desc\"",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        127,
-                        30
-                    ],
-                    "start": [
-                        127,
-                        20
-                    ],
-                    "type": "doc.type",
-                    "types": [
-                        {
-                            "finish": [
-                                127,
-                                26
-                            ],
-                            "start": [
-                                127,
-                                20
-                            ],
-                            "type": "doc.type.name",
-                            "view": "string"
-                        },
-                        {
-                            "finish": [
-                                127,
-                                30
-                            ],
-                            "start": [
-                                127,
-                                27
-                            ],
-                            "type": "doc.type.name",
-                            "view": "nil"
-                        }
-                    ],
-                    "view": "string|nil"
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    127,
-                    30
-                ],
-                "name": "_orderKey",
-                "start": [
-                    127,
-                    10
-                ],
-                "type": "doc.field",
-                "view": "string|nil",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        126,
-                        28
-                    ],
-                    "start": [
-                        126,
-                        17
-                    ],
-                    "type": "doc.type",
-                    "types": [
-                        {
-                            "finish": [
-                                126,
-                                28
-                            ],
-                            "start": [
-                                126,
-                                17
-                            ],
-                            "type": "doc.type.name",
-                            "view": "table|fun(row: table):boolean|nil"
-                        }
-                    ],
-                    "view": "table|fun(row: table):boolean|nil"
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    126,
-                    28
-                ],
-                "name": "_where",
-                "start": [
-                    126,
-                    10
-                ],
-                "type": "doc.field",
-                "view": "table|fun(row: table):boolean|nil",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "args": [
-                        {
-                            "finish": [
-                                178,
-                                8
-                            ],
-                            "name": "self",
-                            "start": [
-                                178,
-                                8
-                            ],
-                            "type": "self",
-                            "view": "Query"
-                        }
-                    ],
-                    "finish": [
-                        204,
-                        3
-                    ],
-                    "returns": [
-                        {
-                            "name": "rows",
-                            "type": "function.return",
-                            "view": "table"
-                        }
-                    ],
-                    "start": [
-                        178,
-                        0
-                    ],
-                    "type": "function",
-                    "view": "(method) Query:all()\n  -> rows: table"
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    178,
-                    18
-                ],
-                "name": "all",
-                "start": [
-                    178,
-                    9
-                ],
-                "type": "setmethod",
-                "view": "function",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "args": [
-                        {
-                            "finish": [
-                                207,
-                                8
-                            ],
-                            "name": "self",
-                            "start": [
-                                207,
-                                8
-                            ],
-                            "type": "self",
-                            "view": "Query"
-                        }
-                    ],
-                    "finish": [
-                        211,
-                        3
-                    ],
-                    "returns": [
-                        {
-                            "name": "row",
-                            "type": "function.return",
-                            "view": "table|nil"
-                        }
-                    ],
-                    "start": [
-                        207,
-                        0
-                    ],
-                    "type": "function",
-                    "view": "(method) Query:first()\n  -> row: table|nil"
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    207,
-                    20
-                ],
-                "name": "first",
-                "start": [
-                    207,
-                    9
-                ],
-                "type": "setmethod",
-                "view": "function",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "args": [
-                        {
-                            "finish": [
-                                165,
-                                8
-                            ],
-                            "name": "self",
-                            "start": [
-                                165,
-                                8
-                            ],
-                            "type": "self",
-                            "view": "Query"
-                        },
-                        {
-                            "finish": [
-                                165,
-                                22
-                            ],
-                            "name": "n",
-                            "start": [
-                                165,
-                                21
-                            ],
-                            "type": "local",
-                            "view": "integer"
-                        }
-                    ],
-                    "finish": [
-                        168,
-                        3
-                    ],
-                    "returns": [
-                        {
-                            "name": "self",
-                            "type": "function.return",
-                            "view": "Query"
-                        }
-                    ],
-                    "start": [
-                        165,
-                        0
-                    ],
-                    "type": "function",
-                    "view": "(method) Query:limit(n: integer)\n  -> self: Query"
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    165,
-                    20
-                ],
-                "name": "limit",
-                "start": [
-                    165,
-                    9
-                ],
-                "type": "setmethod",
-                "view": "function",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "args": [
-                        {
-                            "finish": [
-                                172,
-                                8
-                            ],
-                            "name": "self",
-                            "start": [
-                                172,
-                                8
-                            ],
-                            "type": "self",
-                            "view": "Query"
-                        },
-                        {
-                            "finish": [
-                                172,
-                                23
-                            ],
-                            "name": "n",
-                            "start": [
-                                172,
-                                22
-                            ],
-                            "type": "local",
-                            "view": "integer"
-                        }
-                    ],
-                    "finish": [
-                        175,
-                        3
-                    ],
-                    "returns": [
-                        {
-                            "name": "self",
-                            "type": "function.return",
-                            "view": "Query"
-                        }
-                    ],
-                    "start": [
-                        172,
-                        0
-                    ],
-                    "type": "function",
-                    "view": "(method) Query:offset(n: integer)\n  -> self: Query"
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    172,
-                    21
-                ],
-                "name": "offset",
-                "start": [
-                    172,
-                    9
-                ],
-                "type": "setmethod",
-                "view": "function",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "desc": "```lua\ndir:\n    | \"asc\"\n    | \"desc\"\n```",
-                "extends": {
-                    "args": [
-                        {
-                            "finish": [
-                                157,
-                                8
-                            ],
-                            "name": "self",
-                            "start": [
-                                157,
-                                8
-                            ],
-                            "type": "self",
-                            "view": "Query"
-                        },
-                        {
-                            "finish": [
-                                157,
-                                26
-                            ],
-                            "name": "key",
-                            "start": [
-                                157,
-                                23
-                            ],
-                            "type": "local",
-                            "view": "string"
-                        },
-                        {
-                            "finish": [
-                                157,
-                                31
-                            ],
-                            "name": "dir",
-                            "start": [
-                                157,
-                                28
-                            ],
-                            "type": "local",
-                            "view": "\"asc\"|\"desc\"|nil"
-                        }
-                    ],
-                    "desc": "```lua\ndir:\n    | \"asc\"\n    | \"desc\"\n```",
-                    "finish": [
-                        161,
-                        3
-                    ],
-                    "rawdesc": "```lua\ndir:\n    | \"asc\"\n    | \"desc\"\n```",
-                    "returns": [
-                        {
-                            "name": "self",
-                            "type": "function.return",
-                            "view": "Query"
-                        }
-                    ],
-                    "start": [
-                        157,
-                        0
-                    ],
-                    "type": "function",
-                    "view": "(method) Query:orderBy(key: string, dir: \"asc\"|\"desc\"|nil)\n  -> self: Query"
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    157,
-                    22
-                ],
-                "name": "orderBy",
-                "rawdesc": "```lua\ndir:\n    | \"asc\"\n    | \"desc\"\n```",
-                "start": [
-                    157,
-                    9
-                ],
-                "type": "setmethod",
-                "view": "function",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "finish": [
-                        125,
-                        26
-                    ],
-                    "start": [
-                        125,
-                        20
-                    ],
-                    "type": "doc.type",
-                    "types": [
-                        {
-                            "finish": [
-                                125,
-                                26
-                            ],
-                            "start": [
-                                125,
-                                20
-                            ],
-                            "type": "doc.type.name",
-                            "view": "string"
-                        }
-                    ],
-                    "view": "string"
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    125,
-                    26
-                ],
-                "name": "tableName",
-                "start": [
-                    125,
-                    10
-                ],
-                "type": "doc.field",
-                "view": "string",
-                "visible": "public"
-            },
-            {
-                "async": false,
-                "deprecated": false,
-                "extends": {
-                    "args": [
-                        {
-                            "finish": [
-                                149,
-                                8
-                            ],
-                            "name": "self",
-                            "start": [
-                                149,
-                                8
-                            ],
-                            "type": "self",
-                            "view": "Query"
-                        },
-                        {
-                            "finish": [
-                                149,
-                                22
-                            ],
-                            "name": "w",
-                            "start": [
-                                149,
-                                21
-                            ],
-                            "type": "local",
-                            "view": "table|fun(row: table):boolean|nil"
-                        }
-                    ],
-                    "finish": [
-                        152,
-                        3
-                    ],
-                    "returns": [
-                        {
-                            "name": "self",
-                            "type": "function.return",
-                            "view": "Query"
-                        }
-                    ],
-                    "start": [
-                        149,
-                        0
-                    ],
-                    "type": "function",
-                    "view": "(method) Query:where(w: table|fun(row: table):boolean|nil)\n  -> self: Query"
-                },
-                "file": "src/db/database.lua",
-                "finish": [
-                    149,
-                    20
-                ],
-                "name": "where",
-                "start": [
-                    149,
-                    9
-                ],
-                "type": "setmethod",
-                "view": "function",
-                "visible": "public"
-            }
-        ],
-        "name": "Query",
-        "type": "type",
-        "view": "Query"
+        "view": "TransactionById"
     },
     {
         "defines": [
@@ -2750,12 +4462,12 @@
                 "desc": "```lua\n{\n    Deposit: integer = 0,\n    Withdraw: integer = 1,\n    Transfer: integer = 2,\n    Mint: integer = 3,\n    Burn: integer = 4,\n    Adjust: integer = 5,\n    Refund: integer = 6,\n    Chargeback: integer = 7,\n    Hold: integer = 8,\n    Release: integer = 9,\n    Commit: integer = 10,\n    Freeze: integer = 11,\n    Unfreeze: integer = 12,\n    PinChange: integer = 13,\n    CardIssue: integer = 14,\n    CardRevoke: integer = 15,\n    Denied: integer = 16,\n    LoginFail: integer = 17,\n    LoginOk: integer = 18,\n}\n```",
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    3,
+                    4,
                     24
                 ],
                 "rawdesc": "```lua\n{\n    Deposit: integer = 0,\n    Withdraw: integer = 1,\n    Transfer: integer = 2,\n    Mint: integer = 3,\n    Burn: integer = 4,\n    Adjust: integer = 5,\n    Refund: integer = 6,\n    Chargeback: integer = 7,\n    Hold: integer = 8,\n    Release: integer = 9,\n    Commit: integer = 10,\n    Freeze: integer = 11,\n    Unfreeze: integer = 12,\n    PinChange: integer = 13,\n    CardIssue: integer = 14,\n    CardRevoke: integer = 15,\n    Denied: integer = 16,\n    LoginFail: integer = 17,\n    LoginOk: integer = 18,\n}\n```",
                 "start": [
-                    3,
+                    4,
                     9
                 ],
                 "type": "doc.enum",
@@ -2793,6 +4505,45 @@
             {
                 "async": false,
                 "deprecated": false,
+                "desc": "\n\n\n[View documents](command:extension.lua.doc?[\"en-us/54/manual.html/pdf-file\"])\n",
+                "extends": {
+                    "desc": "\n\n\n[View documents](command:extension.lua.doc?[\"en-us/54/manual.html/pdf-file\"])\n",
+                    "finish": [
+                        89,
+                        47
+                    ],
+                    "rawdesc": "\n\n\n[View documents](command:extension.lua.doc?[\"en-us/54/manual.html/pdf-file\"])\n",
+                    "start": [
+                        89,
+                        12
+                    ],
+                    "type": "select",
+                    "view": "file*"
+                },
+                "file": "src/models/Ledger.lua",
+                "finish": [
+                    89,
+                    9
+                ],
+                "rawdesc": "\n\n\n[View documents](command:extension.lua.doc?[\"en-us/54/manual.html/pdf-file\"])\n",
+                "start": [
+                    89,
+                    8
+                ],
+                "type": "setglobal",
+                "view": "file*",
+                "visible": "public"
+            }
+        ],
+        "name": "h",
+        "type": "variable",
+        "view": "unknown"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
                 "desc": " test_db.lua",
                 "extends": {
                     "finish": [
@@ -2822,6 +4573,234 @@
             }
         ],
         "name": "package.loaded.src.db.database",
+        "type": "variable",
+        "view": "unknown"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        0,
+                        42
+                    ],
+                    "start": [
+                        0,
+                        39
+                    ],
+                    "type": "nil",
+                    "view": "nil"
+                },
+                "file": "tests/simple.lua",
+                "finish": [
+                    0,
+                    36
+                ],
+                "start": [
+                    0,
+                    0
+                ],
+                "type": "setindex",
+                "view": "unknown",
+                "visible": "public"
+            }
+        ],
+        "name": "package.loaded.src.models.Account",
+        "type": "variable",
+        "view": "unknown"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        1,
+                        41
+                    ],
+                    "start": [
+                        1,
+                        38
+                    ],
+                    "type": "nil",
+                    "view": "nil"
+                },
+                "file": "tests/simple.lua",
+                "finish": [
+                    1,
+                    35
+                ],
+                "start": [
+                    1,
+                    0
+                ],
+                "type": "setindex",
+                "view": "unknown",
+                "visible": "public"
+            }
+        ],
+        "name": "package.loaded.src.models.Ledger",
+        "type": "variable",
+        "view": "unknown"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        2,
+                        43
+                    ],
+                    "start": [
+                        2,
+                        40
+                    ],
+                    "type": "nil",
+                    "view": "nil"
+                },
+                "file": "tests/simple.lua",
+                "finish": [
+                    2,
+                    37
+                ],
+                "start": [
+                    2,
+                    0
+                ],
+                "type": "setindex",
+                "view": "unknown",
+                "visible": "public"
+            }
+        ],
+        "name": "package.loaded.src.models.database",
+        "type": "variable",
+        "view": "unknown"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        11,
+                        14
+                    ],
+                    "start": [
+                        5,
+                        2
+                    ],
+                    "type": "binary",
+                    "view": "string"
+                },
+                "file": "tests/run_all.lua",
+                "finish": [
+                    4,
+                    12
+                ],
+                "name": "path",
+                "start": [
+                    4,
+                    0
+                ],
+                "type": "setfield",
+                "view": "string",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        9,
+                        14
+                    ],
+                    "start": [
+                        3,
+                        2
+                    ],
+                    "type": "binary",
+                    "view": "string"
+                },
+                "file": "tests/test_account.lua",
+                "finish": [
+                    2,
+                    12
+                ],
+                "name": "path",
+                "start": [
+                    2,
+                    0
+                ],
+                "type": "setfield",
+                "view": "string",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        9,
+                        14
+                    ],
+                    "start": [
+                        3,
+                        2
+                    ],
+                    "type": "binary",
+                    "view": "string"
+                },
+                "file": "tests/test_ledger.lua",
+                "finish": [
+                    2,
+                    12
+                ],
+                "name": "path",
+                "start": [
+                    2,
+                    0
+                ],
+                "type": "setfield",
+                "view": "string",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        10,
+                        14
+                    ],
+                    "start": [
+                        4,
+                        2
+                    ],
+                    "type": "binary",
+                    "view": "string"
+                },
+                "file": "tests/tester.lua",
+                "finish": [
+                    3,
+                    12
+                ],
+                "name": "path",
+                "start": [
+                    3,
+                    0
+                ],
+                "type": "setfield",
+                "view": "string",
+                "visible": "public"
+            }
+        ],
+        "name": "package.path",
         "type": "variable",
         "view": "unknown"
     }

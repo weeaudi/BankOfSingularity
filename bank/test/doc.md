@@ -1,17 +1,67 @@
 # Account
 
-## accountStatus
+## account_name
+
+
+```lua
+string
+```
+
+## account_status
 
 
 ```lua
 AccountStatus
 ```
 
-## accountname
+## id
+
+
+```lua
+integer
+```
+
+
+---
+
+# AccountBalance
+
+## accountId
+
+
+```lua
+integer
+```
+
+## balance
+
+
+```lua
+number
+```
+
+
+---
+
+# AccountStatus
+
+
+---
+
+# AccountWithBalance
+
+## account_name
 
 
 ```lua
 string
+```
+
+## account_status
+
+
+```lua
+AccountStatus
 ```
 
 ## balance
@@ -27,18 +77,6 @@ number
 ```lua
 integer
 ```
-
-## name
-
-
-```lua
-string
-```
-
-
----
-
-# AccountStatus
 
 
 ---
@@ -59,6 +97,13 @@ function DB.delete(tableName: string, where: table|fun(row: table):boolean|nil)
 ```lua
 function DB.insert(tableName: string, row: table)
   -> id: number
+```
+
+## replaceTable
+
+
+```lua
+function DB.replaceTable(tableName: any, rows: any, lastId: any)
 ```
 
 ## root
@@ -89,6 +134,80 @@ function DB.truncate(tableName: any)
 ```lua
 function DB.update(tableName: string, where: table|fun(row: table):boolean|nil, patch: table)
   -> changed: number
+```
+
+## upsert
+
+
+```lua
+function DB.upsert(tableName: any, where: any, createRow: any, patch: any)
+  -> number
+```
+
+
+---
+
+# EncryptedConnection
+
+## __index
+
+
+```lua
+EncryptedConnection
+```
+
+## address
+
+
+```lua
+string
+```
+
+## remotePublicKey
+
+
+```lua
+table
+```
+
+## secureNetwork
+
+
+```lua
+SecureNetwork
+```
+
+## sessionKey
+
+
+```lua
+EncryptionKeys
+```
+
+## sharedKey
+
+
+```lua
+string
+```
+
+
+---
+
+# EncryptionKeys
+
+## private
+
+
+```lua
+table
+```
+
+## public
+
+
+```lua
+table
 ```
 
 
@@ -157,11 +276,25 @@ string
   -> Ledger
 ```
 
+## nextId
+
+
+```lua
+integer
+```
+
 ## rebuildMaterialized
 
 
 ```lua
 (method) Ledger:rebuildMaterialized()
+```
+
+## rebuildMaterializedFast
+
+
+```lua
+(method) Ledger:rebuildMaterializedFast()
 ```
 
 ## root
@@ -175,7 +308,7 @@ string
 
 
 ```lua
-(method) Ledger:scan(where: table|fun(tx: LedgerTransaction):boolean|nil, onRow: fun(tx: LedgerTransaction):nil)
+(method) Ledger:scan(where: table|fun(row: table):boolean|nil, onRow: fun(tx: LedgerTransaction):nil, opts: any)
   -> nil
 ```
 
@@ -190,7 +323,7 @@ string
 
 
 ```lua
-string
+integer
 ```
 
 ## amount
@@ -218,7 +351,7 @@ table|nil
 
 
 ```lua
-integer|nil
+integer
 ```
 
 ## playerName
@@ -235,7 +368,7 @@ string
 TransactionType
 ```
 
- 
+
 ---
 
 # LuaLS
@@ -282,11 +415,11 @@ table
 number
 ```
 
-## recive
+## receive
 
 
 ```lua
-(method) Network:recive(timeout: number)
+(method) Network:receive(timeout: number)
   -> string|nil
   2. string
 ```
@@ -410,6 +543,127 @@ string
 
 ---
 
+# SecureNetwork
+
+## __index
+
+
+```lua
+SecureNetwork
+```
+
+## _encryptionKeys
+
+
+```lua
+EncryptionKeys
+```
+
+## _network
+
+
+```lua
+Network
+```
+
+## connect
+
+
+```lua
+(method) SecureNetwork:connect(address: string)
+  -> EncryptedConnection
+```
+
+## dataCard
+
+
+```lua
+table
+```
+
+## handleIncoming
+
+
+```lua
+(method) SecureNetwork:handleIncoming(senderAddress: string, message: string)
+  -> EncryptedConnection|nil
+```
+
+## init
+
+
+```lua
+(method) SecureNetwork:init(encryptionKeyFile: string, network: Network, dataCard: table)
+  -> SecureNetwork
+```
+
+## receive
+
+
+```lua
+(method) SecureNetwork:receive(timeout: integer)
+  -> string|nil
+  2. string
+```
+
+## send
+
+
+```lua
+(method) SecureNetwork:send(address: string, message: string)
+  -> nil
+```
+
+
+---
+
+# TransactionById
+
+## accountId
+
+
+```lua
+integer
+```
+
+## amount
+
+
+```lua
+number
+```
+
+## createdAt
+
+
+```lua
+number
+```
+
+## data
+
+
+```lua
+table|nil
+```
+
+## id
+
+
+```lua
+integer
+```
+
+## transactionType
+
+
+```lua
+TransactionType
+```
+
+
+---
+
 # TransactionType
 
 
@@ -420,9 +674,74 @@ string
 
 ---
 
+# h
+
+
+```lua
+file*
+```
+
+
+---
+
 # package.loaded.src.db.database
 
 
 ```lua
 nil
+```
+
+
+---
+
+# package.loaded.src.models.Account
+
+
+```lua
+nil
+```
+
+
+---
+
+# package.loaded.src.models.Ledger
+
+
+```lua
+nil
+```
+
+
+---
+
+# package.loaded.src.models.database
+
+
+```lua
+nil
+```
+
+
+---
+
+# package.path
+
+
+```lua
+string
+```
+
+
+```lua
+string
+```
+
+
+```lua
+string
+```
+
+
+```lua
+string
 ```

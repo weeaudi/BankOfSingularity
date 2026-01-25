@@ -8,11 +8,11 @@ DB.root = '/bank/db'
 
 ---@param tableName string
 ---@return string tablePath
-local function pathFor(tableName) return DB.root .. '/' .. tableName .. '.tmpdat' end
+local function pathFor(tableName) return DB.root .. '/' .. tableName .. '.dat' end
 
 ---@return nil
 local function ensureRoot()
----@diagnostic disable-next-line: undefined-field
+    ---@diagnostic disable-next-line: undefined-field
     if not fs.exists(DB.root) then fs.makeDirectory(DB.root) end
 end
 
@@ -24,7 +24,7 @@ end
 local function loadTable(tableName)
     ensureRoot()
     local p = pathFor(tableName)
----@diagnostic disable-next-line: undefined-field
+    ---@diagnostic disable-next-line: undefined-field
     if not fs.exists(p) then return {}, 0 end
 
     local h = assert(io.open(p, 'r'))
@@ -71,7 +71,8 @@ function DB.insert(tableName, row)
     if row.id ~= nil then
         for i = 1, #rows do
             if rows[i].id == row.id then
-                error(('Duplicate id %s in table %s'):format(tostring(row.id), tableName))
+                error(('Duplicate id %s in table %s'):format(tostring(row.id),
+                                                             tableName))
             end
         end
     else
@@ -115,9 +116,7 @@ function DB.update(tableName, where, patch)
     return changed
 end
 
-function DB.truncate(tableName)
-    saveTable(tableName, {}, 0)
-end
+function DB.truncate(tableName) saveTable(tableName, {}, 0) end
 
 ---@param tableName string
 ---@param where WhereClause
@@ -138,6 +137,21 @@ function DB.delete(tableName, where)
     if deleted > 0 then saveTable(tableName, out, lastId) end
 
     return deleted
+end
+
+function DB.replaceTable(tableName, rows, lastId)
+    ensureRoot()
+    local p = pathFor(tableName)
+
+    local maxId = lastId or 0
+    for i = 1, #rows do
+        local id = rows[i].id
+        if type(id) == "number" and id > maxId then maxId = id end
+    end
+
+    local h = assert(io.open(p, "w"))
+    h:write(serialization.serialize({rows = rows, lastId = maxId}))
+    h:close()
 end
 
 -- Query builder
