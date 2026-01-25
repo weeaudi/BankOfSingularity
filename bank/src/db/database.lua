@@ -16,7 +16,7 @@ local function ensureRoot()
     if not fs.exists(DB.root) then fs.makeDirectory(DB.root) end
 end
 
----@alias WhereClause table|fun(row: table): boolean|nil
+---@alias WhereClause table|nil|fun(row: table): boolean
 
 ---@param tableName string
 ---@return table rows

@@ -271,14 +271,17 @@ function Ledger:scan(where, onRow, opts)
         if line == "" then return end
         stats.linesSeen = stats.linesSeen + 1
 
+        ---@diagnostic disable-next-line: undefined-field
         local t0 = computer.uptime()
         local tx = serialization.unserialize(line)
+        ---@diagnostic disable-next-line: undefined-field
         local t1 = computer.uptime()
 
         if type(tx) == "table" and matches(tx) then
             stats.rowsMatched = stats.rowsMatched + 1
             onRow(tx)
         end
+        ---@diagnostic disable-next-line: undefined-field
         local t2 = computer.uptime()
 
         stats.parseTime = (stats.parseTime or 0) + (t1 - t0)

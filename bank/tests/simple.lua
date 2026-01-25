@@ -55,8 +55,10 @@ local tx3 = {
 
 print('Rebuilding materialized data...')
 
+---@diagnostic disable-next-line: undefined-field
 local time = computer.uptime()
 ldgr:rebuildMaterialized()
+---@diagnostic disable-next-line: undefined-field
 local dt = computer.uptime() - time
 print('Rebuilding materialized took ' .. dt .. 'seconds')
 
