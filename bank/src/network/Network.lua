@@ -1,14 +1,16 @@
+--- Module handling network communications using an OC modem component
 ---@class Network
----@field modem table
----@field port number
+---@field modem table OC modem component
+---@field port number port number used for communications
 local network = {}
 network.__index = network
 
 local event = require('event')
 
----@param modem table
----@param port number
----@return table
+--- initializes a network instance and opens the specified port
+---@param modem table OC modem component
+---@param port number port number to use
+---@return Network network instance 
 function network:init(modem, port)
     local obj = {}
     setmetatable(obj, network)
@@ -21,18 +23,21 @@ function network:init(modem, port)
     return obj
 end
 
----@param address string
----@param message string
+--- Sends a message to the specified address using the newtork's port
+---@param address string OC modem address to send to
+---@param message string message to send
 ---@return nil
 function network:send(address, message)
     self.modem.send(address, self.port, message)
 end
 
----@param message string
+--- Sends a broadcast message on the network's port
+---@param message string message to broadcast
 ---@return nil
 function network:broadcast(message) self.modem.broadcast(self.port, message) end
 
----@param timeout number
+--- Receives a message on the network's port
+---@param timeout number timeout in seconds; 0 for no timeout
 ---@return string|nil, string
 function network:receive(timeout)
     local timestart = os.time()

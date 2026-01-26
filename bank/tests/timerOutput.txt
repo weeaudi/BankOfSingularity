@@ -1,0 +1,13 @@
+Insertion loop (1500) [insertMany]: 0.10000000000036 secondsGet all users: 0.39999999999964 secondsGet one user by id (worst-case-ish): 0.39999999999964 secondsGet unindexed user (worst-case: miss): 0.35000000000036 secondsGet one user on indexed field (worst-case: miss): 0.35000000000036 secondsTest where optimizations (indexed uid worst-case: miss): 0.35000000000036 secondsInsertion loop (1500) [insertMany]: 0.14999999999964 secondsGet all users: 0.39999999999964 secondsGet one user by id (worst-case-ish): 0.35000000000036 secondsGet unindexed user (worst-case: miss): 0.35000000000036 secondsGet one user on indexed field (worst-case: miss): 0.34999999999854 secondsTest where optimizations (indexed uid worst-case: miss): 0.40000000000146 secondsInsertion loop (1500) [insertMany]: 0.10000000000036 secondsGet all users: 0.39999999999964 secondsGet one user by id (worst-case-ish): 0.40000000000146 secondsGet unindexed user (worst-case: miss): 0.34999999999854 secondsGet one user on indexed field (worst-case: miss): 0.35000000000036 secondsTest where optimizations (indexed uid worst-case: miss): 0.35000000000036 secondsInsertion loop (1500) [insertMany]: 0.10000000000036 seconds
+Insertion loop (1500) [insertMany]: 0.10000000000036 seconds
+Insertion loop (1500) [insertMany]: 0.10000000000036 seconds
+Insertion loop (1500) [insertMany]: 0.10000000000036 seconds
+Insertion loop (1) [insertMany]: 0.049999999999272 seconds
+Insertion loop (1) [insertMany]: 0.049999999999272 seconds
+Insertion loop (1) [insertMany]: 0.049999999999272 seconds
+Insertion loop (3) [insertMany]: 0.10000000000036 seconds
+Insertion loop (3) [insertMany]: 0.049999999999272 seconds
+Insertion loop (3) [insertMany]: 0.19999999999891 seconds
+Insertion loop (3) [insertMany]: 0.050000000001091 seconds
+Insertion loop (3) [insertMany]: 0.050000000001091 seconds
+Insertion loop (1000) [insertMany]: 0.10000000000036 seconds

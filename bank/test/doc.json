@@ -503,13 +503,476 @@
             {
                 "async": false,
                 "deprecated": false,
+                "file": "bank.lua",
+                "finish": [
+                    27,
+                    14
+                ],
+                "start": [
+                    27,
+                    10
+                ],
+                "type": "doc.class",
+                "view": "Bank",
+                "visible": "public"
+            }
+        ],
+        "fields": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        33,
+                        19
+                    ],
+                    "start": [
+                        33,
+                        15
+                    ],
+                    "type": "getlocal",
+                    "view": "Bank"
+                },
+                "file": "bank.lua",
+                "finish": [
+                    33,
+                    12
+                ],
+                "name": "__index",
+                "start": [
+                    33,
+                    0
+                ],
+                "type": "setfield",
+                "view": "Bank",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        29,
+                        30
+                    ],
+                    "start": [
+                        29,
+                        24
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                29,
+                                30
+                            ],
+                            "start": [
+                                29,
+                                24
+                            ],
+                            "type": "doc.type.name",
+                            "view": "string"
+                        }
+                    ],
+                    "view": "string"
+                },
+                "file": "bank.lua",
+                "finish": [
+                    29,
+                    30
+                ],
+                "name": "bankId",
+                "start": [
+                    29,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "string",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        31,
+                        63
+                    ],
+                    "start": [
+                        31,
+                        29
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                31,
+                                63
+                            ],
+                            "start": [
+                                31,
+                                29
+                            ],
+                            "type": "doc.type.sign",
+                            "view": "table<string, EncryptedConnection>"
+                        }
+                    ],
+                    "view": "table<string, EncryptedConnection>"
+                },
+                "file": "bank.lua",
+                "finish": [
+                    31,
+                    63
+                ],
+                "name": "connections",
+                "start": [
+                    31,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "table<string, EncryptedConnection>",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                54,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                54,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Bank"
+                        },
+                        {
+                            "finish": [
+                                54,
+                                27
+                            ],
+                            "name": "handle",
+                            "start": [
+                                54,
+                                21
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                54,
+                                35
+                            ],
+                            "name": "sender",
+                            "start": [
+                                54,
+                                29
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                54,
+                                44
+                            ],
+                            "name": "message",
+                            "start": [
+                                54,
+                                37
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        }
+                    ],
+                    "finish": [
+                        58,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "boolean"
+                        }
+                    ],
+                    "start": [
+                        54,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Bank:handle(handle: string, sender: string, message: string)\n  -> boolean"
+                },
+                "file": "bank.lua",
+                "finish": [
+                    54,
+                    20
+                ],
+                "name": "handle",
+                "start": [
+                    54,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "desc": "\\",
+                "extends": {
+                    "finish": [
+                        30,
+                        55
+                    ],
+                    "start": [
+                        30,
+                        26
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                30,
+                                55
+                            ],
+                            "start": [
+                                30,
+                                26
+                            ],
+                            "type": "doc.type.sign",
+                            "view": "table<string, fun(bank: Bank, sender: string, message: string):boolean>"
+                        }
+                    ],
+                    "view": "table<string, fun(bank: Bank, sender: string, message: string):boolean>"
+                },
+                "file": "bank.lua",
+                "finish": [
+                    30,
+                    55
+                ],
+                "name": "handlers",
+                "rawdesc": "\\",
+                "start": [
+                    30,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "table<string, fun(bank: Bank, sender: string, message: string):boolean>",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                38,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                38,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Bank"
+                        },
+                        {
+                            "finish": [
+                                38,
+                                31
+                            ],
+                            "name": "secureNetwork",
+                            "start": [
+                                38,
+                                18
+                            ],
+                            "type": "local",
+                            "view": "SecureNetwork"
+                        },
+                        {
+                            "finish": [
+                                38,
+                                39
+                            ],
+                            "name": "bankId",
+                            "start": [
+                                38,
+                                33
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        }
+                    ],
+                    "finish": [
+                        45,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "Bank"
+                        }
+                    ],
+                    "start": [
+                        38,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Bank:new(secureNetwork: SecureNetwork, bankId: string)\n  -> Bank"
+                },
+                "file": "bank.lua",
+                "finish": [
+                    38,
+                    17
+                ],
+                "name": "new",
+                "start": [
+                    38,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                49,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                49,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "Bank"
+                        },
+                        {
+                            "finish": [
+                                49,
+                                36
+                            ],
+                            "name": "handle",
+                            "start": [
+                                49,
+                                30
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                49,
+                                45
+                            ],
+                            "name": "handler",
+                            "start": [
+                                49,
+                                38
+                            ],
+                            "type": "local",
+                            "view": "fun(bank: Bank, sender: string, message: string):boolean"
+                        }
+                    ],
+                    "finish": [
+                        49,
+                        82
+                    ],
+                    "start": [
+                        49,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) Bank:registerHandler(handle: string, handler: fun(bank: Bank, sender: string, message: string):boolean)"
+                },
+                "file": "bank.lua",
+                "finish": [
+                    49,
+                    29
+                ],
+                "name": "registerHandler",
+                "start": [
+                    49,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        28,
+                        44
+                    ],
+                    "start": [
+                        28,
+                        31
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                28,
+                                44
+                            ],
+                            "start": [
+                                28,
+                                31
+                            ],
+                            "type": "doc.type.name",
+                            "view": "SecureNetwork"
+                        }
+                    ],
+                    "view": "SecureNetwork"
+                },
+                "file": "bank.lua",
+                "finish": [
+                    28,
+                    44
+                ],
+                "name": "secureNetwork",
+                "start": [
+                    28,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "SecureNetwork",
+                "visible": "public"
+            }
+        ],
+        "name": "Bank",
+        "type": "type",
+        "view": "Bank"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
                 "file": "src/db/database.lua",
                 "finish": [
-                    3,
+                    7,
                     12
                 ],
                 "start": [
-                    3,
+                    7,
                     10
                 ],
                 "type": "doc.class",
@@ -521,16 +984,89 @@
             {
                 "async": false,
                 "deprecated": false,
+                "desc": " Create a new table",
                 "extends": {
                     "args": [
                         {
                             "finish": [
-                                123,
+                                142,
+                                33
+                            ],
+                            "name": "tableName",
+                            "start": [
+                                142,
+                                24
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                142,
+                                39
+                            ],
+                            "name": "meta",
+                            "start": [
+                                142,
+                                35
+                            ],
+                            "type": "local",
+                            "view": "table|nil"
+                        }
+                    ],
+                    "desc": " Create a new table",
+                    "finish": [
+                        155,
+                        3
+                    ],
+                    "rawdesc": " Create a new table",
+                    "returns": [
+                        {
+                            "name": "success",
+                            "type": "function.return",
+                            "view": "boolean"
+                        },
+                        {
+                            "name": "err",
+                            "type": "function.return",
+                            "view": "string|nil"
+                        }
+                    ],
+                    "start": [
+                        142,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "function DB.createTable(tableName: string, meta: table|nil)\n  -> success: boolean\n  2. err: string|nil"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    142,
+                    23
+                ],
+                "name": "createTable",
+                "rawdesc": " Create a new table",
+                "start": [
+                    142,
+                    9
+                ],
+                "type": "setfield",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                320,
                                 28
                             ],
                             "name": "tableName",
                             "start": [
-                                123,
+                                320,
                                 19
                             ],
                             "type": "local",
@@ -538,12 +1074,12 @@
                         },
                         {
                             "finish": [
-                                123,
+                                320,
                                 35
                             ],
                             "name": "where",
                             "start": [
-                                123,
+                                320,
                                 30
                             ],
                             "type": "local",
@@ -551,7 +1087,7 @@
                         }
                     ],
                     "finish": [
-                        139,
+                        341,
                         3
                     ],
                     "returns": [
@@ -562,7 +1098,7 @@
                         }
                     ],
                     "start": [
-                        123,
+                        320,
                         0
                     ],
                     "type": "function",
@@ -570,12 +1106,101 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    123,
+                    320,
                     18
                 ],
                 "name": "delete",
                 "start": [
-                    123,
+                    320,
+                    9
+                ],
+                "type": "setfield",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "desc": " Perform a lookup on a table using an indexed field.\n\n@*param* `tableName` — The name of the database being searched\n\n@*param* `field` — The indexed field\n\n@*param* `value` — The value being searched\n\n@*return* `row` — The matching row, or nil if not found/index is missing",
+                "extends": {
+                    "args": [
+                        {
+                            "desc": "The name of the database being searched",
+                            "finish": [
+                                162,
+                                39
+                            ],
+                            "name": "tableName",
+                            "rawdesc": "The name of the database being searched",
+                            "start": [
+                                162,
+                                30
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "desc": "The indexed field",
+                            "finish": [
+                                162,
+                                46
+                            ],
+                            "name": "field",
+                            "rawdesc": "The indexed field",
+                            "start": [
+                                162,
+                                41
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "desc": "The value being searched",
+                            "finish": [
+                                162,
+                                53
+                            ],
+                            "name": "value",
+                            "rawdesc": "The value being searched",
+                            "start": [
+                                162,
+                                48
+                            ],
+                            "type": "local",
+                            "view": "any"
+                        }
+                    ],
+                    "desc": " Perform a lookup on a table using an indexed field.\n\n@*param* `tableName` — The name of the database being searched\n\n@*param* `field` — The indexed field\n\n@*param* `value` — The value being searched\n\n@*return* `row` — The matching row, or nil if not found/index is missing",
+                    "finish": [
+                        167,
+                        3
+                    ],
+                    "rawdesc": " Perform a lookup on a table using an indexed field.",
+                    "returns": [
+                        {
+                            "desc": "The matching row, or nil if not found/index is missing",
+                            "name": "row",
+                            "rawdesc": "The matching row, or nil if not found/index is missing",
+                            "type": "function.return",
+                            "view": "table|nil"
+                        }
+                    ],
+                    "start": [
+                        162,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "function DB.getByIndexedField(tableName: string, field: string, value: any)\n  -> row: table|nil"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    162,
+                    29
+                ],
+                "name": "getByIndexedField",
+                "rawdesc": " Perform a lookup on a table using an indexed field.",
+                "start": [
+                    162,
                     9
                 ],
                 "type": "setfield",
@@ -589,12 +1214,12 @@
                     "args": [
                         {
                             "finish": [
-                                67,
+                                172,
                                 28
                             ],
                             "name": "tableName",
                             "start": [
-                                67,
+                                172,
                                 19
                             ],
                             "type": "local",
@@ -602,12 +1227,12 @@
                         },
                         {
                             "finish": [
-                                67,
+                                172,
                                 33
                             ],
                             "name": "row",
                             "start": [
-                                67,
+                                172,
                                 30
                             ],
                             "type": "local",
@@ -615,7 +1240,7 @@
                         }
                     ],
                     "finish": [
-                        85,
+                        247,
                         3
                     ],
                     "returns": [
@@ -626,7 +1251,7 @@
                         }
                     ],
                     "start": [
-                        67,
+                        172,
                         0
                     ],
                     "type": "function",
@@ -634,12 +1259,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    67,
+                    172,
                     18
                 ],
                 "name": "insert",
                 "start": [
-                    67,
+                    172,
                     9
                 ],
                 "type": "setfield",
@@ -653,12 +1278,12 @@
                     "args": [
                         {
                             "finish": [
-                                141,
+                                343,
                                 34
                             ],
                             "name": "tableName",
                             "start": [
-                                141,
+                                343,
                                 25
                             ],
                             "type": "local",
@@ -666,12 +1291,12 @@
                         },
                         {
                             "finish": [
-                                141,
+                                343,
                                 40
                             ],
                             "name": "rows",
                             "start": [
-                                141,
+                                343,
                                 36
                             ],
                             "type": "local",
@@ -679,12 +1304,12 @@
                         },
                         {
                             "finish": [
-                                141,
+                                343,
                                 48
                             ],
                             "name": "lastId",
                             "start": [
-                                141,
+                                343,
                                 42
                             ],
                             "type": "local",
@@ -692,11 +1317,11 @@
                         }
                     ],
                     "finish": [
-                        154,
+                        355,
                         3
                     ],
                     "start": [
-                        141,
+                        343,
                         0
                     ],
                     "type": "function",
@@ -704,12 +1329,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    141,
+                    343,
                     24
                 ],
                 "name": "replaceTable",
                 "start": [
-                    141,
+                    343,
                     9
                 ],
                 "type": "setfield",
@@ -721,22 +1346,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        4,
+                        8,
                         21
                     ],
                     "start": [
-                        4,
+                        8,
                         15
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                4,
+                                8,
                                 21
                             ],
                             "start": [
-                                4,
+                                8,
                                 15
                             ],
                             "type": "doc.type.name",
@@ -747,12 +1372,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    4,
+                    8,
                     21
                 ],
                 "name": "root",
                 "start": [
-                    4,
+                    8,
                     10
                 ],
                 "type": "doc.field",
@@ -766,12 +1391,12 @@
                     "args": [
                         {
                             "finish": [
-                                170,
+                                387,
                                 28
                             ],
                             "name": "tableName",
                             "start": [
-                                170,
+                                387,
                                 19
                             ],
                             "type": "local",
@@ -779,7 +1404,7 @@
                         }
                     ],
                     "finish": [
-                        179,
+                        396,
                         3
                     ],
                     "returns": [
@@ -789,7 +1414,7 @@
                         }
                     ],
                     "start": [
-                        170,
+                        387,
                         0
                     ],
                     "type": "function",
@@ -797,12 +1422,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    170,
+                    387,
                     18
                 ],
                 "name": "select",
                 "start": [
-                    170,
+                    387,
                     9
                 ],
                 "type": "setfield",
@@ -816,12 +1441,12 @@
                     "args": [
                         {
                             "finish": [
-                                118,
+                                308,
                                 30
                             ],
                             "name": "tableName",
                             "start": [
-                                118,
+                                308,
                                 21
                             ],
                             "type": "local",
@@ -829,11 +1454,11 @@
                         }
                     ],
                     "finish": [
-                        118,
-                        63
+                        315,
+                        3
                     ],
                     "start": [
-                        118,
+                        308,
                         0
                     ],
                     "type": "function",
@@ -841,12 +1466,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    118,
+                    308,
                     20
                 ],
                 "name": "truncate",
                 "start": [
-                    118,
+                    308,
                     9
                 ],
                 "type": "setfield",
@@ -856,16 +1481,17 @@
             {
                 "async": false,
                 "deprecated": false,
+                "desc": " Update rows in a table that match a WhereClause, applying the given patch.\n Ensures unique constraints remain valid and keeps meta indexes consistent.\n\n@*return* `changed` — Number of rows modified",
                 "extends": {
                     "args": [
                         {
                             "finish": [
-                                101,
+                                276,
                                 28
                             ],
                             "name": "tableName",
                             "start": [
-                                101,
+                                276,
                                 19
                             ],
                             "type": "local",
@@ -873,12 +1499,12 @@
                         },
                         {
                             "finish": [
-                                101,
+                                276,
                                 35
                             ],
                             "name": "where",
                             "start": [
-                                101,
+                                276,
                                 30
                             ],
                             "type": "local",
@@ -886,44 +1512,62 @@
                         },
                         {
                             "finish": [
-                                101,
+                                276,
                                 42
                             ],
                             "name": "patch",
                             "start": [
-                                101,
+                                276,
                                 37
                             ],
                             "type": "local",
                             "view": "table"
+                        },
+                        {
+                            "finish": [
+                                276,
+                                48
+                            ],
+                            "name": "opts",
+                            "start": [
+                                276,
+                                44
+                            ],
+                            "type": "local",
+                            "view": "DbUpdateOptions|nil"
                         }
                     ],
+                    "desc": " Update rows in a table that match a WhereClause, applying the given patch.\n Ensures unique constraints remain valid and keeps meta indexes consistent.\n\n@*return* `changed` — Number of rows modified",
                     "finish": [
-                        116,
+                        306,
                         3
                     ],
+                    "rawdesc": " Update rows in a table that match a WhereClause, applying the given patch.\n Ensures unique constraints remain valid and keeps meta indexes consistent.",
                     "returns": [
                         {
+                            "desc": "Number of rows modified",
                             "name": "changed",
+                            "rawdesc": "Number of rows modified",
                             "type": "function.return",
                             "view": "number"
                         }
                     ],
                     "start": [
-                        101,
+                        276,
                         0
                     ],
                     "type": "function",
-                    "view": "function DB.update(tableName: string, where: table|fun(row: table):boolean|nil, patch: table)\n  -> changed: number"
+                    "view": "function DB.update(tableName: string, where: table|fun(row: table):boolean|nil, patch: table, opts: DbUpdateOptions|nil)\n  -> changed: number"
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    101,
+                    276,
                     18
                 ],
                 "name": "update",
+                "rawdesc": " Update rows in a table that match a WhereClause, applying the given patch.\n Ensures unique constraints remain valid and keeps meta indexes consistent.",
                 "start": [
-                    101,
+                    276,
                     9
                 ],
                 "type": "setfield",
@@ -933,86 +1577,93 @@
             {
                 "async": false,
                 "deprecated": false,
+                "desc": " Insert or update a row based on a lookup clause.\n If a matching row exists, updates it using `patch` and returns its `id`.\n If none exists, inserts `createRow` and returns the new `id`.\n\n@*return* `id` — The existing or newly-created row id",
                 "extends": {
                     "args": [
                         {
                             "finish": [
-                                87,
+                                257,
                                 28
                             ],
                             "name": "tableName",
                             "start": [
-                                87,
+                                257,
                                 19
                             ],
                             "type": "local",
-                            "view": "any"
+                            "view": "string"
                         },
                         {
                             "finish": [
-                                87,
+                                257,
                                 35
                             ],
                             "name": "where",
                             "start": [
-                                87,
+                                257,
                                 30
                             ],
                             "type": "local",
-                            "view": "any"
+                            "view": "table|fun(row: table):boolean|nil"
                         },
                         {
                             "finish": [
-                                87,
+                                257,
                                 46
                             ],
                             "name": "createRow",
                             "start": [
-                                87,
+                                257,
                                 37
                             ],
                             "type": "local",
-                            "view": "any"
+                            "view": "table"
                         },
                         {
                             "finish": [
-                                87,
+                                257,
                                 53
                             ],
                             "name": "patch",
                             "start": [
-                                87,
+                                257,
                                 48
                             ],
                             "type": "local",
-                            "view": "any"
+                            "view": "table"
                         }
                     ],
+                    "desc": " Insert or update a row based on a lookup clause.\n If a matching row exists, updates it using `patch` and returns its `id`.\n If none exists, inserts `createRow` and returns the new `id`.\n\n@*return* `id` — The existing or newly-created row id",
                     "finish": [
-                        95,
+                        264,
                         3
                     ],
+                    "rawdesc": " Insert or update a row based on a lookup clause.\n If a matching row exists, updates it using `patch` and returns its `id`.\n If none exists, inserts `createRow` and returns the new `id`.",
                     "returns": [
                         {
+                            "desc": "The existing or newly-created row id",
+                            "name": "id",
+                            "rawdesc": "The existing or newly-created row id",
                             "type": "function.return",
                             "view": "number"
                         }
                     ],
                     "start": [
-                        87,
+                        257,
                         0
                     ],
                     "type": "function",
-                    "view": "function DB.upsert(tableName: any, where: any, createRow: any, patch: any)\n  -> number"
+                    "view": "function DB.upsert(tableName: string, where: table|fun(row: table):boolean|nil, createRow: table, patch: table)\n  -> id: number"
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    87,
+                    257,
                     18
                 ],
                 "name": "upsert",
+                "rawdesc": " Insert or update a row based on a lookup clause.\n If a matching row exists, updates it using `patch` and returns its `id`.\n If none exists, inserts `createRow` and returns the new `id`.",
                 "start": [
-                    87,
+                    257,
                     9
                 ],
                 "type": "setfield",
@@ -1029,13 +1680,216 @@
             {
                 "async": false,
                 "deprecated": false,
+                "file": "src/db/database.lua",
+                "finish": [
+                    3,
+                    17
+                ],
+                "start": [
+                    3,
+                    10
+                ],
+                "type": "doc.class",
+                "view": "DbTable",
+                "visible": "public"
+            }
+        ],
+        "fields": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        5,
+                        24
+                    ],
+                    "start": [
+                        5,
+                        15
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                5,
+                                20
+                            ],
+                            "start": [
+                                5,
+                                15
+                            ],
+                            "type": "doc.type.name",
+                            "view": "table"
+                        },
+                        {
+                            "finish": [
+                                5,
+                                24
+                            ],
+                            "start": [
+                                5,
+                                21
+                            ],
+                            "type": "doc.type.name",
+                            "view": "nil"
+                        }
+                    ],
+                    "view": "table|nil"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    5,
+                    24
+                ],
+                "name": "meta",
+                "start": [
+                    5,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "table|nil",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        4,
+                        20
+                    ],
+                    "start": [
+                        4,
+                        15
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                4,
+                                20
+                            ],
+                            "start": [
+                                4,
+                                15
+                            ],
+                            "type": "doc.type.name",
+                            "view": "table"
+                        }
+                    ],
+                    "view": "table"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    4,
+                    20
+                ],
+                "name": "rows",
+                "start": [
+                    4,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "table",
+                "visible": "public"
+            }
+        ],
+        "name": "DbTable",
+        "type": "type",
+        "view": "DbTable"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "file": "src/db/database.lua",
+                "finish": [
+                    266,
+                    25
+                ],
+                "start": [
+                    266,
+                    10
+                ],
+                "type": "doc.class",
+                "view": "DbUpdateOptions",
+                "visible": "public"
+            }
+        ],
+        "fields": [
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        267,
+                        34
+                    ],
+                    "start": [
+                        267,
+                        23
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                267,
+                                30
+                            ],
+                            "start": [
+                                267,
+                                23
+                            ],
+                            "type": "doc.type.name",
+                            "view": "boolean"
+                        },
+                        {
+                            "finish": [
+                                267,
+                                34
+                            ],
+                            "start": [
+                                267,
+                                31
+                            ],
+                            "type": "doc.type.name",
+                            "view": "nil"
+                        }
+                    ],
+                    "view": "boolean|nil"
+                },
+                "file": "src/db/database.lua",
+                "finish": [
+                    267,
+                    34
+                ],
+                "name": "rebuildIndex",
+                "start": [
+                    267,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "boolean|nil",
+                "visible": "public"
+            }
+        ],
+        "name": "DbUpdateOptions",
+        "type": "type",
+        "view": "DbUpdateOptions"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    92,
+                    134,
                     29
                 ],
                 "start": [
-                    92,
+                    134,
                     10
                 ],
                 "type": "doc.class",
@@ -1049,11 +1903,11 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        99,
+                        141,
                         49
                     ],
                     "start": [
-                        99,
+                        141,
                         30
                     ],
                     "type": "getlocal",
@@ -1061,12 +1915,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    99,
+                    141,
                     27
                 ],
                 "name": "__index",
                 "start": [
-                    99,
+                    141,
                     0
                 ],
                 "type": "setfield",
@@ -1078,22 +1932,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        93,
+                        135,
                         24
                     ],
                     "start": [
-                        93,
+                        135,
                         18
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                93,
+                                135,
                                 24
                             ],
                             "start": [
-                                93,
+                                135,
                                 18
                             ],
                             "type": "doc.type.name",
@@ -1104,12 +1958,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    93,
+                    135,
                     24
                 ],
                 "name": "address",
                 "start": [
-                    93,
+                    135,
                     10
                 ],
                 "type": "doc.field",
@@ -1121,22 +1975,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        95,
+                        137,
                         31
                     ],
                     "start": [
-                        95,
+                        137,
                         26
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                95,
+                                137,
                                 31
                             ],
                             "start": [
-                                95,
+                                137,
                                 26
                             ],
                             "type": "doc.type.name",
@@ -1147,12 +2001,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    95,
+                    137,
                     31
                 ],
                 "name": "remotePublicKey",
                 "start": [
-                    95,
+                    137,
                     10
                 ],
                 "type": "doc.field",
@@ -1164,22 +2018,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        94,
+                        136,
                         37
                     ],
                     "start": [
-                        94,
+                        136,
                         24
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                94,
+                                136,
                                 37
                             ],
                             "start": [
-                                94,
+                                136,
                                 24
                             ],
                             "type": "doc.type.name",
@@ -1190,12 +2044,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    94,
+                    136,
                     37
                 ],
                 "name": "secureNetwork",
                 "start": [
-                    94,
+                    136,
                     10
                 ],
                 "type": "doc.field",
@@ -1207,22 +2061,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        96,
+                        138,
                         35
                     ],
                     "start": [
-                        96,
+                        138,
                         21
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                96,
+                                138,
                                 35
                             ],
                             "start": [
-                                96,
+                                138,
                                 21
                             ],
                             "type": "doc.type.name",
@@ -1233,12 +2087,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    96,
+                    138,
                     35
                 ],
                 "name": "sessionKey",
                 "start": [
-                    96,
+                    138,
                     10
                 ],
                 "type": "doc.field",
@@ -1250,22 +2104,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        97,
+                        139,
                         26
                     ],
                     "start": [
-                        97,
+                        139,
                         20
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                97,
+                                139,
                                 26
                             ],
                             "start": [
-                                97,
+                                139,
                                 20
                             ],
                             "type": "doc.type.name",
@@ -1276,12 +2130,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    97,
+                    139,
                     26
                 ],
                 "name": "sharedKey",
                 "start": [
-                    97,
+                    139,
                     10
                 ],
                 "type": "doc.field",
@@ -1300,11 +2154,11 @@
                 "deprecated": false,
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    8,
+                    9,
                     24
                 ],
                 "start": [
-                    8,
+                    9,
                     10
                 ],
                 "type": "doc.class",
@@ -1318,22 +2172,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        10,
+                        11,
                         30
                     ],
                     "start": [
-                        10,
+                        11,
                         25
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                10,
+                                11,
                                 30
                             ],
                             "start": [
-                                10,
+                                11,
                                 25
                             ],
                             "type": "doc.type.name",
@@ -1344,12 +2198,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    10,
+                    11,
                     30
                 ],
                 "name": "private",
                 "start": [
-                    10,
+                    11,
                     10
                 ],
                 "type": "doc.field",
@@ -1361,22 +2215,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        9,
+                        10,
                         29
                     ],
                     "start": [
-                        9,
+                        10,
                         24
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                9,
+                                10,
                                 29
                             ],
                             "start": [
-                                9,
+                                10,
                                 24
                             ],
                             "type": "doc.type.name",
@@ -1387,12 +2241,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    9,
+                    10,
                     29
                 ],
                 "name": "public",
                 "start": [
-                    9,
+                    10,
                     10
                 ],
                 "type": "doc.field",
@@ -1486,7 +2340,7 @@
                         }
                     ],
                     "finish": [
-                        181,
+                        179,
                         3
                     ],
                     "start": [
@@ -1568,12 +2422,12 @@
                     "args": [
                         {
                             "finish": [
-                                239,
+                                233,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                239,
+                                233,
                                 8
                             ],
                             "type": "self",
@@ -1581,12 +2435,12 @@
                         },
                         {
                             "finish": [
-                                239,
+                                233,
                                 25
                             ],
                             "name": "tx",
                             "start": [
-                                239,
+                                233,
                                 23
                             ],
                             "type": "local",
@@ -1595,7 +2449,7 @@
                     ],
                     "desc": " Append a transaction to the ledger",
                     "finish": [
-                        251,
+                        245,
                         3
                     ],
                     "rawdesc": " Append a transaction to the ledger",
@@ -1607,7 +2461,7 @@
                         }
                     ],
                     "start": [
-                        239,
+                        233,
                         0
                     ],
                     "type": "function",
@@ -1615,13 +2469,13 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    239,
+                    233,
                     22
                 ],
                 "name": "append",
                 "rawdesc": " Append a transaction to the ledger",
                 "start": [
-                    239,
+                    233,
                     9
                 ],
                 "type": "setmethod",
@@ -1883,12 +2737,12 @@
                     "args": [
                         {
                             "finish": [
-                                234,
+                                228,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                234,
+                                228,
                                 8
                             ],
                             "type": "self",
@@ -1896,11 +2750,11 @@
                         }
                     ],
                     "finish": [
-                        234,
+                        228,
                         79
                     ],
                     "start": [
-                        234,
+                        228,
                         0
                     ],
                     "type": "function",
@@ -1908,12 +2762,12 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    234,
+                    228,
                     35
                 ],
                 "name": "rebuildMaterialized",
                 "start": [
-                    234,
+                    228,
                     9
                 ],
                 "type": "setmethod",
@@ -1927,12 +2781,12 @@
                     "args": [
                         {
                             "finish": [
-                                183,
+                                181,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                183,
+                                181,
                                 8
                             ],
                             "type": "self",
@@ -1940,11 +2794,11 @@
                         }
                     ],
                     "finish": [
-                        232,
+                        226,
                         3
                     ],
                     "start": [
-                        183,
+                        181,
                         0
                     ],
                     "type": "function",
@@ -1952,12 +2806,12 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    183,
+                    181,
                     39
                 ],
                 "name": "rebuildMaterializedFast",
                 "start": [
-                    183,
+                    181,
                     9
                 ],
                 "type": "setmethod",
@@ -2015,12 +2869,12 @@
                     "args": [
                         {
                             "finish": [
-                                257,
+                                251,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                257,
+                                251,
                                 8
                             ],
                             "type": "self",
@@ -2028,12 +2882,12 @@
                         },
                         {
                             "finish": [
-                                257,
+                                251,
                                 26
                             ],
                             "name": "where",
                             "start": [
-                                257,
+                                251,
                                 21
                             ],
                             "type": "local",
@@ -2041,12 +2895,12 @@
                         },
                         {
                             "finish": [
-                                257,
+                                251,
                                 33
                             ],
                             "name": "onRow",
                             "start": [
-                                257,
+                                251,
                                 28
                             ],
                             "type": "local",
@@ -2054,12 +2908,12 @@
                         },
                         {
                             "finish": [
-                                257,
+                                251,
                                 39
                             ],
                             "name": "opts",
                             "start": [
-                                257,
+                                251,
                                 35
                             ],
                             "type": "local",
@@ -2068,7 +2922,7 @@
                     ],
                     "desc": " Stream transactions; avoids loading whole ledger",
                     "finish": [
-                        319,
+                        316,
                         3
                     ],
                     "rawdesc": " Stream transactions; avoids loading whole ledger",
@@ -2079,7 +2933,7 @@
                         }
                     ],
                     "start": [
-                        257,
+                        251,
                         0
                     ],
                     "type": "function",
@@ -2087,13 +2941,13 @@
                 },
                 "file": "src/models/Ledger.lua",
                 "finish": [
-                    257,
+                    251,
                     20
                 ],
                 "name": "scan",
                 "rawdesc": " Stream transactions; avoids loading whole ledger",
                 "start": [
-                    257,
+                    251,
                     9
                 ],
                 "type": "setmethod",
@@ -2465,15 +3319,38 @@
     {
         "defines": [
             {
-                "async": false,
-                "deprecated": false,
-                "file": "src/network/Network.lua",
+                "file": "bank.lua",
                 "finish": [
-                    0,
-                    17
+                    25,
+                    82
                 ],
                 "start": [
-                    0,
+                    25,
+                    10
+                ],
+                "type": "doc.alias",
+                "view": "fun(bank: Bank, sender: string, message: string):boolean"
+            }
+        ],
+        "fields": [],
+        "name": "MessageHandler",
+        "type": "type",
+        "view": "MessageHandler"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
+                "desc": " Module handling network communications using an OC modem component",
+                "file": "src/network/Network.lua",
+                "finish": [
+                    1,
+                    17
+                ],
+                "rawdesc": " Module handling network communications using an OC modem component",
+                "start": [
+                    1,
                     10
                 ],
                 "type": "doc.class",
@@ -2481,17 +3358,21 @@
                 "visible": "public"
             }
         ],
+        "desc": " Module handling network communications using an OC modem component",
         "fields": [
             {
                 "async": false,
                 "deprecated": false,
+                "desc": " Module handling network communications using an OC modem component",
                 "extends": {
+                    "desc": " Module handling network communications using an OC modem component",
                     "finish": [
-                        4,
+                        5,
                         25
                     ],
+                    "rawdesc": " Module handling network communications using an OC modem component",
                     "start": [
-                        4,
+                        5,
                         18
                     ],
                     "type": "getlocal",
@@ -2499,12 +3380,13 @@
                 },
                 "file": "src/network/Network.lua",
                 "finish": [
-                    4,
+                    5,
                     15
                 ],
                 "name": "__index",
+                "rawdesc": " Module handling network communications using an OC modem component",
                 "start": [
-                    4,
+                    5,
                     0
                 ],
                 "type": "setfield",
@@ -2514,39 +3396,46 @@
             {
                 "async": false,
                 "deprecated": false,
+                "desc": " Sends a broadcast message on the network's port\n\n@*param* `message` — message to broadcast",
                 "extends": {
                     "args": [
                         {
+                            "desc": " Module handling network communications using an OC modem component",
                             "finish": [
-                                32,
+                                36,
                                 8
                             ],
                             "name": "self",
+                            "rawdesc": " Module handling network communications using an OC modem component",
                             "start": [
-                                32,
+                                36,
                                 8
                             ],
                             "type": "self",
                             "view": "Network"
                         },
                         {
+                            "desc": "message to broadcast",
                             "finish": [
-                                32,
+                                36,
                                 34
                             ],
                             "name": "message",
+                            "rawdesc": "message to broadcast",
                             "start": [
-                                32,
+                                36,
                                 27
                             ],
                             "type": "local",
                             "view": "string"
                         }
                     ],
+                    "desc": " Sends a broadcast message on the network's port\n\n@*param* `message` — message to broadcast",
                     "finish": [
-                        32,
+                        36,
                         80
                     ],
+                    "rawdesc": " Sends a broadcast message on the network's port",
                     "returns": [
                         {
                             "type": "function.return",
@@ -2554,7 +3443,7 @@
                         }
                     ],
                     "start": [
-                        32,
+                        36,
                         0
                     ],
                     "type": "function",
@@ -2562,12 +3451,13 @@
                 },
                 "file": "src/network/Network.lua",
                 "finish": [
-                    32,
+                    36,
                     26
                 ],
                 "name": "broadcast",
+                "rawdesc": " Sends a broadcast message on the network's port",
                 "start": [
-                    32,
+                    36,
                     9
                 ],
                 "type": "setmethod",
@@ -2577,73 +3467,86 @@
             {
                 "async": false,
                 "deprecated": false,
+                "desc": " initializes a network instance and opens the specified port\n\n@*param* `modem` — OC modem component\n\n@*param* `port` — port number to use\n\n@*return* `network` — instance",
                 "extends": {
                     "args": [
                         {
+                            "desc": " Module handling network communications using an OC modem component",
                             "finish": [
-                                11,
+                                13,
                                 8
                             ],
                             "name": "self",
+                            "rawdesc": " Module handling network communications using an OC modem component",
                             "start": [
-                                11,
+                                13,
                                 8
                             ],
                             "type": "self",
                             "view": "Network"
                         },
                         {
+                            "desc": "OC modem component",
                             "finish": [
-                                11,
+                                13,
                                 27
                             ],
                             "name": "modem",
+                            "rawdesc": "OC modem component",
                             "start": [
-                                11,
+                                13,
                                 22
                             ],
                             "type": "local",
                             "view": "table"
                         },
                         {
+                            "desc": "port number to use",
                             "finish": [
-                                11,
+                                13,
                                 33
                             ],
                             "name": "port",
+                            "rawdesc": "port number to use",
                             "start": [
-                                11,
+                                13,
                                 29
                             ],
                             "type": "local",
                             "view": "number"
                         }
                     ],
+                    "desc": " initializes a network instance and opens the specified port\n\n@*param* `modem` — OC modem component\n\n@*param* `port` — port number to use\n\n@*return* `network` — instance",
                     "finish": [
-                        21,
+                        23,
                         3
                     ],
+                    "rawdesc": " initializes a network instance and opens the specified port",
                     "returns": [
                         {
+                            "desc": "instance",
+                            "name": "network",
+                            "rawdesc": "instance",
                             "type": "function.return",
-                            "view": "table"
+                            "view": "Network"
                         }
                     ],
                     "start": [
-                        11,
+                        13,
                         0
                     ],
                     "type": "function",
-                    "view": "(method) Network:init(modem: table, port: number)\n  -> table"
+                    "view": "(method) Network:init(modem: table, port: number)\n  -> network: Network"
                 },
                 "file": "src/network/Network.lua",
                 "finish": [
-                    11,
+                    13,
                     21
                 ],
                 "name": "init",
+                "rawdesc": " initializes a network instance and opens the specified port",
                 "start": [
-                    11,
+                    13,
                     9
                 ],
                 "type": "setmethod",
@@ -2653,24 +3556,25 @@
             {
                 "async": false,
                 "deprecated": false,
+                "desc": "OC modem component",
                 "extends": {
                     "finish": [
-                        1,
+                        2,
                         21
                     ],
                     "start": [
-                        1,
+                        2,
                         16
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                1,
+                                2,
                                 21
                             ],
                             "start": [
-                                1,
+                                2,
                                 16
                             ],
                             "type": "doc.type.name",
@@ -2681,12 +3585,13 @@
                 },
                 "file": "src/network/Network.lua",
                 "finish": [
-                    1,
+                    2,
                     21
                 ],
                 "name": "modem",
+                "rawdesc": "OC modem component",
                 "start": [
-                    1,
+                    2,
                     10
                 ],
                 "type": "doc.field",
@@ -2696,24 +3601,25 @@
             {
                 "async": false,
                 "deprecated": false,
+                "desc": "port number used for communications",
                 "extends": {
                     "finish": [
-                        2,
+                        3,
                         21
                     ],
                     "start": [
-                        2,
+                        3,
                         15
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                2,
+                                3,
                                 21
                             ],
                             "start": [
-                                2,
+                                3,
                                 15
                             ],
                             "type": "doc.type.name",
@@ -2724,12 +3630,13 @@
                 },
                 "file": "src/network/Network.lua",
                 "finish": [
-                    2,
+                    3,
                     21
                 ],
                 "name": "port",
+                "rawdesc": "port number used for communications",
                 "start": [
-                    2,
+                    3,
                     10
                 ],
                 "type": "doc.field",
@@ -2739,39 +3646,46 @@
             {
                 "async": false,
                 "deprecated": false,
+                "desc": " Receives a message on the network's port\n\n@*param* `timeout` — timeout in seconds; 0 for no timeout",
                 "extends": {
                     "args": [
                         {
+                            "desc": " Module handling network communications using an OC modem component",
                             "finish": [
-                                36,
+                                41,
                                 8
                             ],
                             "name": "self",
+                            "rawdesc": " Module handling network communications using an OC modem component",
                             "start": [
-                                36,
+                                41,
                                 8
                             ],
                             "type": "self",
                             "view": "Network"
                         },
                         {
+                            "desc": "timeout in seconds; 0 for no timeout",
                             "finish": [
-                                36,
+                                41,
                                 32
                             ],
                             "name": "timeout",
+                            "rawdesc": "timeout in seconds; 0 for no timeout",
                             "start": [
-                                36,
+                                41,
                                 25
                             ],
                             "type": "local",
                             "view": "number"
                         }
                     ],
+                    "desc": " Receives a message on the network's port\n\n@*param* `timeout` — timeout in seconds; 0 for no timeout",
                     "finish": [
-                        51,
+                        56,
                         3
                     ],
+                    "rawdesc": " Receives a message on the network's port",
                     "returns": [
                         {
                             "type": "function.return",
@@ -2783,7 +3697,7 @@
                         }
                     ],
                     "start": [
-                        36,
+                        41,
                         0
                     ],
                     "type": "function",
@@ -2791,12 +3705,13 @@
                 },
                 "file": "src/network/Network.lua",
                 "finish": [
-                    36,
+                    41,
                     24
                 ],
                 "name": "receive",
+                "rawdesc": " Receives a message on the network's port",
                 "start": [
-                    36,
+                    41,
                     9
                 ],
                 "type": "setmethod",
@@ -2806,52 +3721,61 @@
             {
                 "async": false,
                 "deprecated": false,
+                "desc": " Sends a message to the specified address using the newtork's port\n\n@*param* `address` — OC modem address to send to\n\n@*param* `message` — message to send",
                 "extends": {
                     "args": [
                         {
+                            "desc": " Module handling network communications using an OC modem component",
                             "finish": [
-                                26,
+                                29,
                                 8
                             ],
                             "name": "self",
+                            "rawdesc": " Module handling network communications using an OC modem component",
                             "start": [
-                                26,
+                                29,
                                 8
                             ],
                             "type": "self",
                             "view": "Network"
                         },
                         {
+                            "desc": "OC modem address to send to",
                             "finish": [
-                                26,
+                                29,
                                 29
                             ],
                             "name": "address",
+                            "rawdesc": "OC modem address to send to",
                             "start": [
-                                26,
+                                29,
                                 22
                             ],
                             "type": "local",
                             "view": "string"
                         },
                         {
+                            "desc": "message to send",
                             "finish": [
-                                26,
+                                29,
                                 38
                             ],
                             "name": "message",
+                            "rawdesc": "message to send",
                             "start": [
-                                26,
+                                29,
                                 31
                             ],
                             "type": "local",
                             "view": "string"
                         }
                     ],
+                    "desc": " Sends a message to the specified address using the newtork's port\n\n@*param* `address` — OC modem address to send to\n\n@*param* `message` — message to send",
                     "finish": [
-                        28,
+                        31,
                         3
                     ],
+                    "rawdesc": " Sends a message to the specified address using the newtork's port",
                     "returns": [
                         {
                             "type": "function.return",
@@ -2859,7 +3783,7 @@
                         }
                     ],
                     "start": [
-                        26,
+                        29,
                         0
                     ],
                     "type": "function",
@@ -2867,12 +3791,13 @@
                 },
                 "file": "src/network/Network.lua",
                 "finish": [
-                    26,
+                    29,
                     21
                 ],
                 "name": "send",
+                "rawdesc": " Sends a message to the specified address using the newtork's port",
                 "start": [
-                    26,
+                    29,
                     9
                 ],
                 "type": "setmethod",
@@ -2881,6 +3806,7 @@
             }
         ],
         "name": "Network",
+        "rawdesc": " Module handling network communications using an OC modem component",
         "type": "type",
         "view": "Network"
     },
@@ -2889,13 +3815,48 @@
             {
                 "async": false,
                 "deprecated": false,
+                "extends": {
+                    "finish": [
+                        228,
+                        15
+                    ],
+                    "start": [
+                        228,
+                        13
+                    ],
+                    "type": "table",
+                    "view": "table"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    228,
+                    10
+                ],
+                "start": [
+                    228,
+                    0
+                ],
+                "type": "setglobal",
+                "view": "table",
+                "visible": "public"
+            }
+        ],
+        "name": "NonceTable",
+        "type": "variable",
+        "view": "unknown"
+    },
+    {
+        "defines": [
+            {
+                "async": false,
+                "deprecated": false,
                 "file": "src/db/database.lua",
                 "finish": [
-                    158,
+                    375,
                     15
                 ],
                 "start": [
-                    158,
+                    375,
                     10
                 ],
                 "type": "doc.class",
@@ -2909,11 +3870,11 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        166,
+                        383,
                         21
                     ],
                     "start": [
-                        166,
+                        383,
                         16
                     ],
                     "type": "getlocal",
@@ -2921,12 +3882,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    166,
+                    383,
                     13
                 ],
                 "name": "__index",
                 "start": [
-                    166,
+                    383,
                     0
                 ],
                 "type": "setfield",
@@ -2938,22 +3899,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        163,
+                        380,
                         28
                     ],
                     "start": [
-                        163,
+                        380,
                         17
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                163,
+                                380,
                                 24
                             ],
                             "start": [
-                                163,
+                                380,
                                 17
                             ],
                             "type": "doc.type.name",
@@ -2961,11 +3922,11 @@
                         },
                         {
                             "finish": [
-                                163,
+                                380,
                                 28
                             ],
                             "start": [
-                                163,
+                                380,
                                 25
                             ],
                             "type": "doc.type.name",
@@ -2976,12 +3937,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    163,
+                    380,
                     28
                 ],
                 "name": "_limit",
                 "start": [
-                    163,
+                    380,
                     10
                 ],
                 "type": "doc.field",
@@ -2993,22 +3954,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        164,
+                        381,
                         25
                     ],
                     "start": [
-                        164,
+                        381,
                         18
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                164,
+                                381,
                                 25
                             ],
                             "start": [
-                                164,
+                                381,
                                 18
                             ],
                             "type": "doc.type.name",
@@ -3019,12 +3980,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    164,
+                    381,
                     25
                 ],
                 "name": "_offset",
                 "start": [
-                    164,
+                    381,
                     10
                 ],
                 "type": "doc.field",
@@ -3036,22 +3997,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        162,
+                        379,
                         36
                     ],
                     "start": [
-                        162,
+                        379,
                         20
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                162,
+                                379,
                                 27
                             ],
                             "start": [
-                                162,
+                                379,
                                 20
                             ],
                             "type": "doc.type.string",
@@ -3059,11 +4020,11 @@
                         },
                         {
                             "finish": [
-                                162,
+                                379,
                                 36
                             ],
                             "start": [
-                                162,
+                                379,
                                 28
                             ],
                             "type": "doc.type.string",
@@ -3074,12 +4035,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    162,
+                    379,
                     36
                 ],
                 "name": "_orderDir",
                 "start": [
-                    162,
+                    379,
                     10
                 ],
                 "type": "doc.field",
@@ -3091,22 +4052,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        161,
+                        378,
                         30
                     ],
                     "start": [
-                        161,
+                        378,
                         20
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                161,
+                                378,
                                 26
                             ],
                             "start": [
-                                161,
+                                378,
                                 20
                             ],
                             "type": "doc.type.name",
@@ -3114,11 +4075,11 @@
                         },
                         {
                             "finish": [
-                                161,
+                                378,
                                 30
                             ],
                             "start": [
-                                161,
+                                378,
                                 27
                             ],
                             "type": "doc.type.name",
@@ -3129,12 +4090,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    161,
+                    378,
                     30
                 ],
                 "name": "_orderKey",
                 "start": [
-                    161,
+                    378,
                     10
                 ],
                 "type": "doc.field",
@@ -3146,22 +4107,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        160,
+                        377,
                         28
                     ],
                     "start": [
-                        160,
+                        377,
                         17
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                160,
+                                377,
                                 28
                             ],
                             "start": [
-                                160,
+                                377,
                                 17
                             ],
                             "type": "doc.type.name",
@@ -3172,12 +4133,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    160,
+                    377,
                     28
                 ],
                 "name": "_where",
                 "start": [
-                    160,
+                    377,
                     10
                 ],
                 "type": "doc.field",
@@ -3191,12 +4152,12 @@
                     "args": [
                         {
                             "finish": [
-                                212,
+                                429,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                212,
+                                429,
                                 8
                             ],
                             "type": "self",
@@ -3204,7 +4165,7 @@
                         }
                     ],
                     "finish": [
-                        238,
+                        470,
                         3
                     ],
                     "returns": [
@@ -3215,7 +4176,7 @@
                         }
                     ],
                     "start": [
-                        212,
+                        429,
                         0
                     ],
                     "type": "function",
@@ -3223,12 +4184,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    212,
+                    429,
                     18
                 ],
                 "name": "all",
                 "start": [
-                    212,
+                    429,
                     9
                 ],
                 "type": "setmethod",
@@ -3242,12 +4203,12 @@
                     "args": [
                         {
                             "finish": [
-                                241,
+                                473,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                241,
+                                473,
                                 8
                             ],
                             "type": "self",
@@ -3255,7 +4216,7 @@
                         }
                     ],
                     "finish": [
-                        245,
+                        477,
                         3
                     ],
                     "returns": [
@@ -3266,7 +4227,7 @@
                         }
                     ],
                     "start": [
-                        241,
+                        473,
                         0
                     ],
                     "type": "function",
@@ -3274,12 +4235,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    241,
+                    473,
                     20
                 ],
                 "name": "first",
                 "start": [
-                    241,
+                    473,
                     9
                 ],
                 "type": "setmethod",
@@ -3293,12 +4254,12 @@
                     "args": [
                         {
                             "finish": [
-                                199,
+                                416,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                199,
+                                416,
                                 8
                             ],
                             "type": "self",
@@ -3306,12 +4267,12 @@
                         },
                         {
                             "finish": [
-                                199,
+                                416,
                                 22
                             ],
                             "name": "n",
                             "start": [
-                                199,
+                                416,
                                 21
                             ],
                             "type": "local",
@@ -3319,7 +4280,7 @@
                         }
                     ],
                     "finish": [
-                        202,
+                        419,
                         3
                     ],
                     "returns": [
@@ -3330,7 +4291,7 @@
                         }
                     ],
                     "start": [
-                        199,
+                        416,
                         0
                     ],
                     "type": "function",
@@ -3338,12 +4299,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    199,
+                    416,
                     20
                 ],
                 "name": "limit",
                 "start": [
-                    199,
+                    416,
                     9
                 ],
                 "type": "setmethod",
@@ -3357,12 +4318,12 @@
                     "args": [
                         {
                             "finish": [
-                                206,
+                                423,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                206,
+                                423,
                                 8
                             ],
                             "type": "self",
@@ -3370,12 +4331,12 @@
                         },
                         {
                             "finish": [
-                                206,
+                                423,
                                 23
                             ],
                             "name": "n",
                             "start": [
-                                206,
+                                423,
                                 22
                             ],
                             "type": "local",
@@ -3383,7 +4344,7 @@
                         }
                     ],
                     "finish": [
-                        209,
+                        426,
                         3
                     ],
                     "returns": [
@@ -3394,7 +4355,7 @@
                         }
                     ],
                     "start": [
-                        206,
+                        423,
                         0
                     ],
                     "type": "function",
@@ -3402,12 +4363,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    206,
+                    423,
                     21
                 ],
                 "name": "offset",
                 "start": [
-                    206,
+                    423,
                     9
                 ],
                 "type": "setmethod",
@@ -3422,12 +4383,12 @@
                     "args": [
                         {
                             "finish": [
-                                191,
+                                408,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                191,
+                                408,
                                 8
                             ],
                             "type": "self",
@@ -3435,12 +4396,12 @@
                         },
                         {
                             "finish": [
-                                191,
+                                408,
                                 26
                             ],
                             "name": "key",
                             "start": [
-                                191,
+                                408,
                                 23
                             ],
                             "type": "local",
@@ -3448,12 +4409,12 @@
                         },
                         {
                             "finish": [
-                                191,
+                                408,
                                 31
                             ],
                             "name": "dir",
                             "start": [
-                                191,
+                                408,
                                 28
                             ],
                             "type": "local",
@@ -3462,7 +4423,7 @@
                     ],
                     "desc": "```lua\ndir:\n    | \"asc\"\n    | \"desc\"\n```",
                     "finish": [
-                        195,
+                        412,
                         3
                     ],
                     "rawdesc": "```lua\ndir:\n    | \"asc\"\n    | \"desc\"\n```",
@@ -3474,7 +4435,7 @@
                         }
                     ],
                     "start": [
-                        191,
+                        408,
                         0
                     ],
                     "type": "function",
@@ -3482,13 +4443,13 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    191,
+                    408,
                     22
                 ],
                 "name": "orderBy",
                 "rawdesc": "```lua\ndir:\n    | \"asc\"\n    | \"desc\"\n```",
                 "start": [
-                    191,
+                    408,
                     9
                 ],
                 "type": "setmethod",
@@ -3500,22 +4461,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        159,
+                        376,
                         26
                     ],
                     "start": [
-                        159,
+                        376,
                         20
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                159,
+                                376,
                                 26
                             ],
                             "start": [
-                                159,
+                                376,
                                 20
                             ],
                             "type": "doc.type.name",
@@ -3526,12 +4487,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    159,
+                    376,
                     26
                 ],
                 "name": "tableName",
                 "start": [
-                    159,
+                    376,
                     10
                 ],
                 "type": "doc.field",
@@ -3545,12 +4506,12 @@
                     "args": [
                         {
                             "finish": [
-                                183,
+                                400,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                183,
+                                400,
                                 8
                             ],
                             "type": "self",
@@ -3558,12 +4519,12 @@
                         },
                         {
                             "finish": [
-                                183,
+                                400,
                                 22
                             ],
                             "name": "w",
                             "start": [
-                                183,
+                                400,
                                 21
                             ],
                             "type": "local",
@@ -3571,7 +4532,7 @@
                         }
                     ],
                     "finish": [
-                        186,
+                        403,
                         3
                     ],
                     "returns": [
@@ -3582,7 +4543,7 @@
                         }
                     ],
                     "start": [
-                        183,
+                        400,
                         0
                     ],
                     "type": "function",
@@ -3590,12 +4551,12 @@
                 },
                 "file": "src/db/database.lua",
                 "finish": [
-                    183,
+                    400,
                     20
                 ],
                 "name": "where",
                 "start": [
-                    183,
+                    400,
                     9
                 ],
                 "type": "setmethod",
@@ -3614,11 +4575,11 @@
                 "deprecated": false,
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    12,
+                    13,
                     23
                 ],
                 "start": [
-                    12,
+                    13,
                     10
                 ],
                 "type": "doc.class",
@@ -3632,11 +4593,11 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        17,
+                        20,
                         37
                     ],
                     "start": [
-                        17,
+                        20,
                         24
                     ],
                     "type": "getlocal",
@@ -3644,12 +4605,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    17,
+                    20,
                     21
                 ],
                 "name": "__index",
                 "start": [
-                    17,
+                    20,
                     0
                 ],
                 "type": "setfield",
@@ -3661,22 +4622,65 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        13,
+                        16,
+                        34
+                    ],
+                    "start": [
+                        16,
+                        28
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                16,
+                                34
+                            ],
+                            "start": [
+                                16,
+                                28
+                            ],
+                            "type": "doc.type.name",
+                            "view": "string"
+                        }
+                    ],
+                    "view": "string"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    16,
+                    34
+                ],
+                "name": "_clientId",
+                "start": [
+                    16,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "string",
+                "visible": "private"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        15,
                         48
                     ],
                     "start": [
-                        13,
+                        15,
                         34
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                13,
+                                15,
                                 48
                             ],
                             "start": [
-                                13,
+                                15,
                                 34
                             ],
                             "type": "doc.type.name",
@@ -3687,12 +4691,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    13,
+                    15,
                     48
                 ],
                 "name": "_encryptionKeys",
                 "start": [
-                    13,
+                    15,
                     10
                 ],
                 "type": "doc.field",
@@ -3702,24 +4706,29 @@
             {
                 "async": false,
                 "deprecated": false,
+                "desc": " Module handling network communications using an OC modem component",
                 "extends": {
+                    "desc": " Module handling network communications using an OC modem component",
                     "finish": [
-                        14,
+                        17,
                         34
                     ],
+                    "rawdesc": " Module handling network communications using an OC modem component",
                     "start": [
-                        14,
+                        17,
                         27
                     ],
                     "type": "doc.type",
                     "types": [
                         {
+                            "desc": " Module handling network communications using an OC modem component",
                             "finish": [
-                                14,
+                                17,
                                 34
                             ],
+                            "rawdesc": " Module handling network communications using an OC modem component",
                             "start": [
-                                14,
+                                17,
                                 27
                             ],
                             "type": "doc.type.name",
@@ -3730,12 +4739,13 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    14,
+                    17,
                     34
                 ],
                 "name": "_network",
+                "rawdesc": " Module handling network communications using an OC modem component",
                 "start": [
-                    14,
+                    17,
                     10
                 ],
                 "type": "doc.field",
@@ -3749,12 +4759,12 @@
                     "args": [
                         {
                             "finish": [
-                                103,
+                                145,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                103,
+                                145,
                                 8
                             ],
                             "type": "self",
@@ -3762,12 +4772,12 @@
                         },
                         {
                             "finish": [
-                                103,
+                                145,
                                 38
                             ],
                             "name": "address",
                             "start": [
-                                103,
+                                145,
                                 31
                             ],
                             "type": "local",
@@ -3775,7 +4785,7 @@
                         }
                     ],
                     "finish": [
-                        140,
+                        218,
                         3
                     ],
                     "returns": [
@@ -3785,7 +4795,7 @@
                         }
                     ],
                     "start": [
-                        103,
+                        145,
                         0
                     ],
                     "type": "function",
@@ -3793,12 +4803,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    103,
+                    145,
                     30
                 ],
                 "name": "connect",
                 "start": [
-                    103,
+                    145,
                     9
                 ],
                 "type": "setmethod",
@@ -3810,22 +4820,22 @@
                 "deprecated": false,
                 "extends": {
                     "finish": [
-                        15,
+                        18,
                         31
                     ],
                     "start": [
-                        15,
+                        18,
                         26
                     ],
                     "type": "doc.type",
                     "types": [
                         {
                             "finish": [
-                                15,
+                                18,
                                 31
                             ],
                             "start": [
-                                15,
+                                18,
                                 26
                             ],
                             "type": "doc.type.name",
@@ -3836,12 +4846,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    15,
+                    18,
                     31
                 ],
                 "name": "dataCard",
                 "start": [
-                    15,
+                    18,
                     10
                 ],
                 "type": "doc.field",
@@ -3855,12 +4865,12 @@
                     "args": [
                         {
                             "finish": [
-                                145,
+                                110,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                145,
+                                110,
                                 8
                             ],
                             "type": "self",
@@ -3868,33 +4878,174 @@
                         },
                         {
                             "finish": [
-                                145,
-                                51
+                                110,
+                                49
                             ],
-                            "name": "senderAddress",
+                            "name": "clientId",
                             "start": [
-                                145,
-                                38
+                                110,
+                                41
                             ],
                             "type": "local",
                             "view": "string"
                         },
                         {
                             "finish": [
-                                145,
+                                110,
                                 60
                             ],
-                            "name": "message",
+                            "name": "publicKey",
                             "start": [
-                                145,
-                                53
+                                110,
+                                51
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                110,
+                                70
+                            ],
+                            "name": "publicId",
+                            "start": [
+                                110,
+                                62
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                110,
+                                79
+                            ],
+                            "name": "address",
+                            "start": [
+                                110,
+                                72
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                111,
+                                46
+                            ],
+                            "name": "nonce",
+                            "start": [
+                                111,
+                                41
+                            ],
+                            "type": "local",
+                            "view": "integer"
+                        },
+                        {
+                            "finish": [
+                                111,
+                                54
+                            ],
+                            "name": "bankId",
+                            "start": [
+                                111,
+                                48
                             ],
                             "type": "local",
                             "view": "string"
                         }
                     ],
                     "finish": [
-                        171,
+                        115,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "string"
+                        }
+                    ],
+                    "start": [
+                        110,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) SecureNetwork:generateSignature(clientId: string, publicKey: string, publicId: string, address: string, nonce: integer, bankId: string)\n  -> string"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    110,
+                    40
+                ],
+                "name": "generateSignature",
+                "start": [
+                    110,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                234,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                234,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "SecureNetwork"
+                        },
+                        {
+                            "finish": [
+                                234,
+                                42
+                            ],
+                            "name": "bank",
+                            "start": [
+                                234,
+                                38
+                            ],
+                            "type": "local",
+                            "view": "Bank"
+                        },
+                        {
+                            "finish": [
+                                234,
+                                57
+                            ],
+                            "name": "senderAddress",
+                            "start": [
+                                234,
+                                44
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                234,
+                                66
+                            ],
+                            "name": "message",
+                            "start": [
+                                234,
+                                59
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        }
+                    ],
+                    "finish": [
+                        300,
                         3
                     ],
                     "returns": [
@@ -3904,20 +5055,20 @@
                         }
                     ],
                     "start": [
-                        145,
+                        234,
                         0
                     ],
                     "type": "function",
-                    "view": "(method) SecureNetwork:handleIncoming(senderAddress: string, message: string)\n  -> EncryptedConnection|nil"
+                    "view": "(method) SecureNetwork:handleIncoming(bank: Bank, senderAddress: string, message: string)\n  -> EncryptedConnection|nil"
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    145,
+                    234,
                     37
                 ],
                 "name": "handleIncoming",
                 "start": [
-                    145,
+                    234,
                     9
                 ],
                 "type": "setmethod",
@@ -3931,12 +5082,12 @@
                     "args": [
                         {
                             "finish": [
-                                56,
+                                62,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                56,
+                                62,
                                 8
                             ],
                             "type": "self",
@@ -3944,25 +5095,27 @@
                         },
                         {
                             "finish": [
-                                56,
+                                62,
                                 45
                             ],
                             "name": "encryptionKeyFile",
                             "start": [
-                                56,
+                                62,
                                 28
                             ],
                             "type": "local",
                             "view": "string"
                         },
                         {
+                            "desc": " Module handling network communications using an OC modem component",
                             "finish": [
-                                56,
+                                62,
                                 54
                             ],
                             "name": "network",
+                            "rawdesc": " Module handling network communications using an OC modem component",
                             "start": [
-                                56,
+                                62,
                                 47
                             ],
                             "type": "local",
@@ -3970,20 +5123,33 @@
                         },
                         {
                             "finish": [
-                                56,
+                                62,
                                 64
+                            ],
+                            "name": "clientId",
+                            "start": [
+                                62,
+                                56
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                62,
+                                74
                             ],
                             "name": "dataCard",
                             "start": [
-                                56,
-                                56
+                                62,
+                                66
                             ],
                             "type": "local",
                             "view": "table"
                         }
                     ],
                     "finish": [
-                        77,
+                        84,
                         3
                     ],
                     "returns": [
@@ -3993,20 +5159,20 @@
                         }
                     ],
                     "start": [
-                        56,
+                        62,
                         0
                     ],
                     "type": "function",
-                    "view": "(method) SecureNetwork:init(encryptionKeyFile: string, network: Network, dataCard: table)\n  -> SecureNetwork"
+                    "view": "(method) SecureNetwork:init(encryptionKeyFile: string, network: Network, clientId: string, dataCard: table)\n  -> SecureNetwork"
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    56,
+                    62,
                     27
                 ],
                 "name": "init",
                 "start": [
-                    56,
+                    62,
                     9
                 ],
                 "type": "setmethod",
@@ -4020,12 +5186,12 @@
                     "args": [
                         {
                             "finish": [
-                                81,
+                                88,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                81,
+                                88,
                                 8
                             ],
                             "type": "self",
@@ -4033,12 +5199,12 @@
                         },
                         {
                             "finish": [
-                                81,
+                                88,
                                 38
                             ],
                             "name": "timeout",
                             "start": [
-                                81,
+                                88,
                                 31
                             ],
                             "type": "local",
@@ -4046,8 +5212,8 @@
                         }
                     ],
                     "finish": [
-                        83,
-                        3
+                        88,
+                        81
                     ],
                     "returns": [
                         {
@@ -4060,7 +5226,7 @@
                         }
                     ],
                     "start": [
-                        81,
+                        88,
                         0
                     ],
                     "type": "function",
@@ -4068,12 +5234,12 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    81,
+                    88,
                     30
                 ],
                 "name": "receive",
                 "start": [
-                    81,
+                    88,
                     9
                 ],
                 "type": "setmethod",
@@ -4087,12 +5253,12 @@
                     "args": [
                         {
                             "finish": [
-                                88,
+                                93,
                                 8
                             ],
                             "name": "self",
                             "start": [
-                                88,
+                                93,
                                 8
                             ],
                             "type": "self",
@@ -4100,12 +5266,12 @@
                         },
                         {
                             "finish": [
-                                88,
+                                93,
                                 35
                             ],
                             "name": "address",
                             "start": [
-                                88,
+                                93,
                                 28
                             ],
                             "type": "local",
@@ -4113,12 +5279,12 @@
                         },
                         {
                             "finish": [
-                                88,
+                                93,
                                 44
                             ],
                             "name": "message",
                             "start": [
-                                88,
+                                93,
                                 37
                             ],
                             "type": "local",
@@ -4126,7 +5292,7 @@
                         }
                     ],
                     "finish": [
-                        90,
+                        95,
                         3
                     ],
                     "returns": [
@@ -4136,7 +5302,7 @@
                         }
                     ],
                     "start": [
-                        88,
+                        93,
                         0
                     ],
                     "type": "function",
@@ -4144,12 +5310,259 @@
                 },
                 "file": "src/network/SecureNetwork.lua",
                 "finish": [
-                    88,
+                    93,
                     27
                 ],
                 "name": "send",
                 "start": [
-                    88,
+                    93,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                99,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                99,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "SecureNetwork"
+                        },
+                        {
+                            "finish": [
+                                99,
+                                32
+                            ],
+                            "name": "data",
+                            "start": [
+                                99,
+                                28
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        }
+                    ],
+                    "finish": [
+                        101,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "string"
+                        }
+                    ],
+                    "start": [
+                        99,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) SecureNetwork:sign(data: string)\n  -> string"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    99,
+                    27
+                ],
+                "name": "sign",
+                "start": [
+                    99,
+                    9
+                ],
+                "type": "setmethod",
+                "view": "function",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        14,
+                        35
+                    ],
+                    "start": [
+                        14,
+                        30
+                    ],
+                    "type": "doc.type",
+                    "types": [
+                        {
+                            "finish": [
+                                14,
+                                35
+                            ],
+                            "start": [
+                                14,
+                                30
+                            ],
+                            "type": "doc.type.name",
+                            "view": "table"
+                        }
+                    ],
+                    "view": "table"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    14,
+                    35
+                ],
+                "name": "trustedKeys",
+                "start": [
+                    14,
+                    10
+                ],
+                "type": "doc.field",
+                "view": "table",
+                "visible": "private"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "args": [
+                        {
+                            "finish": [
+                                125,
+                                8
+                            ],
+                            "name": "self",
+                            "start": [
+                                125,
+                                8
+                            ],
+                            "type": "self",
+                            "view": "SecureNetwork"
+                        },
+                        {
+                            "finish": [
+                                125,
+                                47
+                            ],
+                            "name": "clientId",
+                            "start": [
+                                125,
+                                39
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                125,
+                                58
+                            ],
+                            "name": "publicKey",
+                            "start": [
+                                125,
+                                49
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                125,
+                                68
+                            ],
+                            "name": "publicId",
+                            "start": [
+                                125,
+                                60
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                125,
+                                77
+                            ],
+                            "name": "address",
+                            "start": [
+                                125,
+                                70
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                126,
+                                44
+                            ],
+                            "name": "nonce",
+                            "start": [
+                                126,
+                                39
+                            ],
+                            "type": "local",
+                            "view": "integer"
+                        },
+                        {
+                            "finish": [
+                                126,
+                                52
+                            ],
+                            "name": "bankId",
+                            "start": [
+                                126,
+                                46
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        },
+                        {
+                            "finish": [
+                                126,
+                                63
+                            ],
+                            "name": "signature",
+                            "start": [
+                                126,
+                                54
+                            ],
+                            "type": "local",
+                            "view": "string"
+                        }
+                    ],
+                    "finish": [
+                        132,
+                        3
+                    ],
+                    "returns": [
+                        {
+                            "type": "function.return",
+                            "view": "boolean"
+                        }
+                    ],
+                    "start": [
+                        125,
+                        0
+                    ],
+                    "type": "function",
+                    "view": "(method) SecureNetwork:verifySignature(clientId: string, publicKey: string, publicId: string, address: string, nonce: integer, bankId: string, signature: string)\n  -> boolean"
+                },
+                "file": "src/network/SecureNetwork.lua",
+                "finish": [
+                    125,
+                    38
+                ],
+                "name": "verifySignature",
+                "start": [
+                    125,
                     9
                 ],
                 "type": "setmethod",
@@ -4484,11 +5897,11 @@
             {
                 "file": "src/db/database.lua",
                 "finish": [
-                    18,
+                    59,
                     56
                 ],
                 "start": [
-                    18,
+                    59,
                     10
                 ],
                 "type": "doc.alias",
@@ -4565,6 +5978,34 @@
                 "rawdesc": " test_db.lua",
                 "start": [
                     1,
+                    0
+                ],
+                "type": "setindex",
+                "view": "unknown",
+                "visible": "public"
+            },
+            {
+                "async": false,
+                "deprecated": false,
+                "extends": {
+                    "finish": [
+                        0,
+                        39
+                    ],
+                    "start": [
+                        0,
+                        36
+                    ],
+                    "type": "nil",
+                    "view": "nil"
+                },
+                "file": "tests/one_db_item.lua",
+                "finish": [
+                    0,
+                    33
+                ],
+                "start": [
+                    0,
                     0
                 ],
                 "type": "setindex",
