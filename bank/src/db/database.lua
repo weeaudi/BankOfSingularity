@@ -71,15 +71,16 @@ local function loadTable(tableName)
     if not fs.exists(p) then return {}, 0, nil end
 
     local h = assert(io.open(p, 'r'))
-    local data = h:read('*a')
+    local headerLine = h:read('*l')
+    local header = headerLine and serialization.unserialize(headerLine) or {}
+    local rows, lastId, meta = {}, header.lastId or 0, header.meta
+
+    for line in h:lines() do
+        local row = serialization.unserialize(line)
+        if type(row) == 'table' then rows[#rows + 1] = row end
+    end
+
     h:close()
-
-    local t = serialization.unserialize(data)
-    if type(t) ~= 'table' then return {}, 0, nil end
-
-    local rows = t.rows or {}
-    local lastId = t.lastId or 0
-    local meta = t.meta
 
     if meta then
         normalizeMeta(meta)
@@ -97,10 +98,35 @@ end
 ---@return nil
 local function saveTable(tableName, rows, lastId, meta)
     ensureRoot()
-    local p = pathFor(tableName)
-    local h = assert(io.open(p, 'w'))
-    h:write(serialization.serialize({rows = rows, lastId = lastId, meta = meta}))
+    local path = pathFor(tableName)
+
+    local tmp = path .. '.tmp'
+    local bak = path .. '.bak'
+
+    local header = {lastId = lastId, meta = meta}
+
+    local h = assert(io.open(tmp, 'w'))
+    h:write(serialization.serialize(header), '\n')
+
+    for i = 1, #rows do h:write(serialization.serialize(rows[i]), '\n') end
+
+    h:flush()
     h:close()
+
+    ---@diagnostic disable-next-line: undefined-field
+    if fs.exists(path) then
+        pcall(function()
+            ---@diagnostic disable-next-line: undefined-field
+            if fs.exists(bak) then fs.remove(bak) end
+            ---@diagnostic disable-next-line: undefined-field
+            fs.rename(path, bak)
+        end)
+    end
+
+    ---@diagnostic disable-next-line: undefined-field
+    if fs.exists(path) then fs.remove(path) end
+    ---@diagnostic disable-next-line: undefined-field
+    fs.rename(tmp, path)
 end
 
 --- Returns whether a row matches a WhereClause.

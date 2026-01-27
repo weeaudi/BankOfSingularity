@@ -4,7 +4,7 @@ local computer = require("computer")
 
 local TABLE = "tiny_users"
 local TOTAL = 50000
-local CHUNK = 25 -- keep this small on 16MB
+local CHUNK = 500 -- keep this small on 16MB
 
 ---@diagnostic disable-next-line undefined-field
 math.randomseed((os.time() % 2147483647) + math.floor(computer.uptime() * 1000))
