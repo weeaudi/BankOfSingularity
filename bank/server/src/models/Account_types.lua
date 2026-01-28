@@ -1,0 +1,6 @@
+---@class Account
+---@field id integer
+---@field account_name string
+---@field account_status AccountStatus
+---@class AccountWithBalance : Account
+---@field balance number

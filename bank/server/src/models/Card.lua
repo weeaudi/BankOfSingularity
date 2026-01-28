@@ -1,29 +1,18 @@
-local db = require('src.db.database')
+local db = require('src.db')
 local ENV = require('env')
-
----@enum CardStatus
-local CardStatus = {Active = 0, Inactive = 1, Revoked = 2}
-
----@class Card
----@field uid string
----@field card_data string
----@field account_id integer
----@field meta CardMetadata|nil
----@field status CardStatus
-
----@class CardMetadata
----@field revoked_reason string
----@field last_used_at number
 
 local Card = {}
 Card.__index = Card
 Card._tableName = 'cards'
 
+---@enum CardStatus
+Card.CardStatus = {Active = 0, Inactive = 1, Revoked = 2}
+
 --- Insert a new card into the database
 ---@param card Card
 ---@return integer cardId
 function Card.issueCard(card)
-    local cardId = db.insert(Card._tableName, card)
+    local cardId = db.database.insert(Card._tableName, card)
     return cardId
 end
 
@@ -32,8 +21,9 @@ end
 ---@return Card[] An unordered list of Card objects
 function Card.getCardsByAccountId(accountId)
     ---@type Card[]
-    local cardsList = db.select(Card._tableName):where({account_id = accountId})
-                          :all()
+    local cardsList = db.database.select(Card._tableName):where({
+        account_id = accountId
+    }):all()
     return cardsList
 end
 
@@ -43,8 +33,8 @@ end
 ---@return boolean ok
 ---@return string|nil error
 function Card.setCardStatus(cardUid, newStatus)
-    local numUpdated = db.update(Card._tableName, {uid = cardUid},
-                                 {status = newStatus})
+    local numUpdated = db.database.update(Card._tableName, {uid = cardUid},
+                                          {status = newStatus})
     if numUpdated == 0 then
         return false, 'Nothing was updated. Card UID may be incorrect.'
     end
@@ -55,7 +45,7 @@ end
 ---@param cardUid string
 ---@return Card|nil
 function Card.getCardByUid(cardUid)
-    return db.select(Card._tableName):where({uid = cardUid}):first()
+    return db.database.select(Card._tableName):where({uid = cardUid}):first()
 end
 
 ---@param cardUid string
@@ -63,7 +53,7 @@ end
 ---@return boolean success
 ---@return string|nil error 
 function Card.revoke(cardUid, reason)
-    return Card.setCardStatus(cardUid, CardStatus.Revoked)
+    return Card.setCardStatus(cardUid, Card.CardStatus.Revoked)
 end
 
 function Card.replaceCard(oldCardUid, newCardUid)
@@ -80,7 +70,7 @@ function Card.isUsable(cardUid)
     local card = Card.getCardByUid(cardUid)
     if not card then return false, 'CARD_NOT_FOUND' end
 
-    return card.status == CardStatus.Active
+    return card.status == Card.CardStatus.Active
 end
 
 --- Update meta.last_used_at for monitoring
@@ -96,7 +86,8 @@ function Card.touchLastUsed(cardUid)
     local now = os.time()
     meta.last_used_at = now
 
-    local updated = db.update(Card._tableName, {uid = cardUid}, {meta = meta})
+    local updated = db.database.update(Card._tableName, {uid = cardUid},
+                                       {meta = meta})
     if updated == 0 then return false, 'CARD_UPDATE_FAILED' end
 
     return true

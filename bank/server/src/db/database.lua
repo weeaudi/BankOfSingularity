@@ -1,14 +1,16 @@
 local fs = require('filesystem')
 local serialization = require('serialization')
 
+local DB = {}
+DB.root = '/bank/db'
+
 ---@class DbTable
 ---@field rows table
 ---@field meta table|nil
-
 ---@class DB
 ---@field root string
-local DB = {}
-DB.root = '/bank/db'
+---@class DbUpdateOptions
+---@field rebuildIndex boolean|nil
 
 ---@param tableName string
 ---@return string tablePath
@@ -316,9 +318,6 @@ function DB.upsert(tableName, where, createRow, patch)
     return DB.insert(tableName, createRow)
 end
 
----@class DbUpdateOptions
----@field rebuildIndex boolean|nil
-
 --- Update rows in a table that match a WhereClause, applying the given patch.
 --- Ensures unique constraints remain valid and keeps meta indexes consistent.
 ---@param tableName string
@@ -434,7 +433,7 @@ end
 
 ---@class Query
 ---@field tableName string
----@field _where WhereClause
+---@field _where WhereClause|nil
 ---@field _orderKey string|nil
 ---@field _orderDir '"asc"'|'"desc"'
 ---@field _limit integer|nil

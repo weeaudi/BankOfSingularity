@@ -25,33 +25,6 @@ local TransactionType = {
     LoginOk = 18
 }
 
----@class TransactionById
----@field id integer
----@field accountId integer
----@field data table|nil
----@field amount number
----@field transactionType TransactionType
----@field createdAt number
-
----@class AccountBalance
----@field accountId integer
----@field balance number
-
----@class LedgerTransaction
----@field id integer
----@field accountId integer
----@field playerName string
----@field amount number
----@field data table|nil
----@field transactionType TransactionType
----@field createdAt number|nil
-
----@class Ledger
----@field db table
----@field root string
----@field logPath string
----@field metaPath string
----@field private nextId integer
 local Ledger = {}
 Ledger.__index = Ledger
 

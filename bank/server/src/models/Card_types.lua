@@ -1,0 +1,9 @@
+---@class Card
+---@field uid string
+---@field card_data string
+---@field account_id integer
+---@field meta CardMetadata|nil
+---@field status CardStatus
+---@class CardMetadata
+---@field revoked_reason string
+---@field last_used_at number
