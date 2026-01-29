@@ -1,1 +1,12 @@
-!./bank/
+# Ignore everything
+*
+
+!*/
+
+# Bank
+!bank/
+!bank/**
+
+# Allow some root files
+!.gitignore
+!init.lua
