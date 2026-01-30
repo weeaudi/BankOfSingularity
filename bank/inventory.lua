@@ -353,6 +353,7 @@ local function restock()
                         if transfered == 0 then
                             print("Failed to transfer from stock for " ..
                                       entryName .. ". Waiting...")
+                            ---@diagnostic disable-next-line: undefined-field
                             os.sleep(1)
                         end
                         remaining = remaining - transfered

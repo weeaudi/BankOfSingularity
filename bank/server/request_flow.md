@@ -30,3 +30,36 @@ network → decode → validate → handler → service
                                  ↓
                               response
 ```
+
+Service layer should not directly access the database; instead it should call the functions that are currenly located in the models layer.
+
+Responses are shaped like:
+
+```lua
+---@class Response
+---@field v number Protocol version
+---@field kind "res"
+---@field op string Requested operation
+---@field id string request ID
+---@field from string Sender
+---@field to string Recipient
+---@field ok boolean
+---@field data table|nil Payload
+---@field err Error|nil
+---@class Event
+---@field v number
+---@field kind "evt"
+---@field op string
+---@field from string
+---@field to string|nil
+---@field ts number
+---@field data table
+```
+
+Errors should follow the shape:
+
+```lua
+---@class Error
+---@field code string 
+---@field message string Error message
+```

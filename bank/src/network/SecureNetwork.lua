@@ -5,7 +5,6 @@ end
 
 local serialization = devRequire("serialization")
 local fs = require("filesystem")
-local db = require("src.db.database")
 
 ---@class EncryptionKeys
 ---@field public public table
