@@ -1,14 +1,20 @@
-local card = require('src.models.Card')
-local protocol = require('shared.src.protocol')
-local Services = {}
+local CardModel = require('src.models.Card')
+local Cards = {}
 
 ---@param accountId integer
----@return boolean success
----@return any
-function Services.cards.getCardsByAccountId(accountId)
-    local cardsList = card.getCardsByAccountId(accountId)
-    if cardsList and #cardsList < 1 then return false, 'NO_CARDS_FOUND' end
-    return true, cardsList
+---@return table|nil cardsList
+---@return nil|Error
+function Cards.getByAccountId(accountId)
+    local cardsList = CardModel.getCardsByAccountId(accountId)
+
+    if not cardsList or #cardsList == 0 then
+        return nil, {
+            code = 'CARD_NOT_FOUND',
+            message = ('No cards found for account id %s'):format(accountId)
+        }
+    end
+
+    return cardsList
 end
 
-return Services
+return Cards
