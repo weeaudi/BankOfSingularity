@@ -1,19 +1,18 @@
-local ROOT = '/bank'
-package.path =
-    ROOT .. '/clients/atm/?.lua;' ..
-    ROOT .. '/clients/atm/?/init.lua;' ..
-    ROOT .. '/shared/?.lua;' ..
-    ROOT .. '/shared/?/init.lua;' ..
-    package.path
+local ROOT = '/mnt/bf9'
+package.path = ROOT .. '/clients/atm/?.lua;' .. ROOT ..
+    '/clients/atm/?/init.lua;' .. ROOT .. '/shared/?.lua;' ..
+    ROOT .. '/shared/?/init.lua;' .. package.path
 
 local component = require('component')
 local event = require('event')
+local serialization = require('serialization')
 local serialization = require('serialization')
 
 local modem = component.modem
 local event = require('event')
 local Protocol = require('src.protocol')
 
+local PORT = 100
 local PORT = 100
 local DISCOVERY_PORT = 999
 

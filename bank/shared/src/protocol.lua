@@ -19,7 +19,7 @@ local _seq = 0
 function M.newId(prefix)
     _seq = _seq + 1
     prefix = prefix or "r"
-    return ("%s-%d-%d"):format(prefix, os.time(), _seq)
+    return ("%s-%s-%d"):format(prefix, os.time(), _seq)
 end
 
 ---@class MakeRequestOps
@@ -70,11 +70,21 @@ function M.makeError(code, message) return {code = code, message = message} end
 ---@return true|nil ok
 ---@return Error|nil err
 function M.validatePacket(p)
-    if type(p) ~= 'table' then return nil, M.makeError('BAD_PACKET', 'Packet is not a table') end
-    if p.v ~= M.VERSION then return nil, M.makeError('VERSION_MISMATCH', 'Invalid packet version') end
-    if not M.Kind[p.kind] then return nil, M.makeError('BAD_KIND', 'invalid kind') end
-    if type(p.op) ~= 'string' then return nil, M.makeError('BAD_OP', 'Requested invalid op') end
-    if type(p.from) ~= 'string' then return nil, M.makeError('BAD_FROM', 'Packet missing from address') end
+    if type(p) ~= 'table' then
+        return nil, M.makeError('BAD_PACKET', 'Packet is not a table')
+    end
+    if p.v ~= M.VERSION then
+        return nil, M.makeError('VERSION_MISMATCH', 'Invalid packet version')
+    end
+    if not M.Kind[p.kind] then
+        return nil, M.makeError('BAD_KIND', 'invalid kind')
+    end
+    if type(p.op) ~= 'string' then
+        return nil, M.makeError('BAD_OP', 'Requested invalid op')
+    end
+    if type(p.from) ~= 'string' then
+        return nil, M.makeError('BAD_FROM', 'Packet missing from address')
+    end
     if p.kind ~= "evt" and type(p.id) ~= "string" then
         return nil, M.makeError('BAD_ID', 'EVT Packet ID missing')
     end
@@ -90,8 +100,9 @@ local okSer, ser = pcall(require, 'serialization')
 ---@return string|nil s
 ---@return Error|nil err
 function M.encode(pkt)
-    if not okSer then 
-        return nil, M.makeError('SERIALIZATION_MISSING', 'Serialization not available') 
+    if not okSer then
+        return nil, M.makeError('SERIALIZATION_MISSING',
+                                'Serialization not available')
     end
 
     if type(pkt) ~= "table" then
@@ -110,21 +121,20 @@ end
 ---@return Error|nil err
 function M.decode(s)
     if not okSer then
-        return nil, M.makeError('SERIALIZATION_MISSING', 'Serialization not available')
+        return nil, M.makeError('SERIALIZATION_MISSING',
+                                'Serialization not available')
     end
     if type(s) ~= 'string' then
         return nil, M.makeError('BAD_PAYLOAD', 'Payload not string')
     end
-    
+
     local ok, pkt = pcall(ser.unserialize, s)
     if not ok or type(pkt) ~= 'table' then
         return nil, M.makeError('DECODE_FAILED', 'Unable to decode string')
     end
 
     local vok, verr = M.validatePacket(pkt)
-    if not vok then
-        return nil, verr
-    end
+    if not vok then return nil, verr end
 
     return pkt
 end
@@ -132,15 +142,11 @@ end
 ---@param req Request
 ---@param data table|nil
 ---@return Response res
-function M.resOk(req, data)
-    return M.makeResponse(req, true, data or {}, nil)
-end
+function M.resOk(req, data) return M.makeResponse(req, true, data or {}, nil) end
 
 ---@param req Request
 ---@param err Error
 ---@return Response
-function M.resErr(req, err)
-    return M.makeResponse(req, false, nil, err)
-end
+function M.resErr(req, err) return M.makeResponse(req, false, nil, err) end
 
 return M
