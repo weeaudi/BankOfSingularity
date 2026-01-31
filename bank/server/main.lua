@@ -36,6 +36,10 @@ local function sendResponse(toAddr, port, res)
     modem.send(toAddr, port, payload)
 end
 
+---@param localAddr string
+---@param fromAddr string
+---@param port integer
+---@param payload string
 local function handleRpc(localAddr, fromAddr, port, payload)
     local req, err = Protocol.decode(payload)
     if not req then
@@ -65,9 +69,9 @@ local function handleRpc(localAddr, fromAddr, port, payload)
     }, { __index = baseCtx })
 
     -- Dispatch routes to handler; responses should be Response|nil, Error|nil
-    local res, err = Dispatch.handle(req, ctx)
+    local res, resErr = Dispatch.handle(req, ctx)
     if not res then
-        res = ctx.resErr(req, err or ctx.makeError('HANDLER_ERROR', 'Handler failed'))
+        res = ctx.resErr(req, resErr or ctx.makeError('HANDLER_ERROR', 'Handler failed'))
     end
 
     sendResponse(fromAddr, port, res)
