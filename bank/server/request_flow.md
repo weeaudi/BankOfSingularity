@@ -46,6 +46,8 @@ Responses are shaped like:
 ---@field ok boolean
 ---@field data table|nil Payload
 ---@field err Error|nil
+
+---
 ---@class Event
 ---@field v number
 ---@field kind "evt"

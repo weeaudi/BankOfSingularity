@@ -5,17 +5,12 @@ local Req = {}
 ---@type table<string, RequestHandler>
 Req.ops = {
     ['Card.GetByAccountId'] = function(req, ctx)
-        print('Card.GetByAccountId invoked !')
         local cards, err = card.getByAccountId(req.data.accountId)
 
-        if not cards then
-            print(err and err.code, err and err.message)
-            return ctx.resErr(req, err)
-        end
+        if not cards then return ctx.resErr(req, err) end
 
-        print('Cards fetched ' .. #cards)
         return ctx.resOk(req, cards)
-    end,
+    end
 
     -- ['Accounts.CreateAccount'] = function (req, ctx)
 
@@ -26,11 +21,10 @@ Req.ops = {
 ---@param ctx ExecutionContext
 ---@return Response
 function Req.handle(req, ctx)
-    print('Handling req')
     local fn = Req.ops[req.op]
     if not fn then
-        print('fn not found ' .. req.op)
-        return ctx.resErr(req, ctx.makeError('BAD_REQ_OP', 'unknown request operation'))
+        return ctx.resErr(req, ctx.makeError('BAD_REQ_OP',
+                                             'unknown request operation'))
     end
     return fn(req, ctx)
 end
