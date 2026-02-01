@@ -16,12 +16,22 @@ end
 local modem = component.modem
 
 local Dispatch = require('src.dispatch')
-local Protocol = require('src.protocol')
+local Protocol = require('src.net.protocol')
 
 -- Config
 local PORT = 100
 local DISCOVERY_PORT = 999
 
+---@class ExecutionContext
+---@field resOk function
+---@field resErr function
+---@field makeError function
+---@field fromAddr string
+---@field localAddr string
+---@field port integer
+---@field receivedAt number
+
+---@type ExecutionContext
 local baseCtx = setmetatable({
     resOk = Protocol.resOk,
     resErr = Protocol.resErr,
@@ -33,6 +43,7 @@ local baseCtx = setmetatable({
 ---@param res any
 local function sendResponse(toAddr, port, res)
     local payload = Protocol.encode(res)
+    print('Sending response.. ' .. require('serialization').serialize(res))
     modem.send(toAddr, port, payload)
 end
 
@@ -41,8 +52,10 @@ end
 ---@param port integer
 ---@param payload string
 local function handleRpc(localAddr, fromAddr, port, payload)
+    print('Initiating RPC manager')
     local req, err = Protocol.decode(payload)
     if not req then
+        print('There was an issue with the request')
         local pseudoReq = {
             v = Protocol.VERSION,
             kind = Protocol.kind.req,
@@ -55,11 +68,16 @@ local function handleRpc(localAddr, fromAddr, port, payload)
         }
         local res = Protocol.resErr(pseudoReq,
             err or Protocol.makeError('BAD_PACKET', 'decode failed due to bad request packet'))
+
+        print(res.err)
         sendResponse(fromAddr, port, res)
         return
     end
 
-    if req.to ~= localAddr then return end
+    if req.to ~= localAddr then
+        print('req.to does not match local address ' .. localAddr)
+        return
+    end
 
     local ctx = setmetatable({
         fromAddr = fromAddr,
@@ -68,12 +86,14 @@ local function handleRpc(localAddr, fromAddr, port, payload)
         receivedAt = os.time()
     }, { __index = baseCtx })
 
+    print('Sending req to Dispatch')
     -- Dispatch routes to handler; responses should be Response|nil, Error|nil
-    local res, resErr = Dispatch.handle(req, ctx)
+    local res = Dispatch.handle(req, ctx)
     if not res then
-        res = ctx.resErr(req, resErr or ctx.makeError('HANDLER_ERROR', 'Handler failed'))
+        res = ctx.resErr(req, ctx.makeError('HANDLER_ERROR', 'Handler failed'))
     end
 
+    print('Sending response ' .. require('serialization').serialize(res))
     sendResponse(fromAddr, port, res)
 end
 

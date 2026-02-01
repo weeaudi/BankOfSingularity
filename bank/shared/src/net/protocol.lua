@@ -2,7 +2,7 @@ local M = {}
 
 M.VERSION = 1
 
-M.Kind = {req = 'req', res = 'res', evt = 'evt'}
+M.Kind = { req = 'req', res = 'res', evt = 'evt' }
 
 M.ErrorCode = {
     NOT_FOUND = "NOT_FOUND",
@@ -51,7 +51,7 @@ end
 ---@param err Error|nil
 ---@return Response res
 function M.makeResponse(req, ok, data, err)
-    return {
+    local res = {
         v = M.VERSION,
         kind = M.Kind.res,
         op = req.op,
@@ -63,9 +63,10 @@ function M.makeResponse(req, ok, data, err)
         data = ok and (data or {}) or nil,
         err = ok and nil or err
     }
+    return res
 end
 
-function M.makeError(code, message) return {code = code, message = message} end
+function M.makeError(code, message) return { code = code, message = message } end
 
 ---@return true|nil ok
 ---@return Error|nil err
@@ -102,7 +103,7 @@ local okSer, ser = pcall(require, 'serialization')
 function M.encode(pkt)
     if not okSer then
         return nil, M.makeError('SERIALIZATION_MISSING',
-                                'Serialization not available')
+            'Serialization not available')
     end
 
     if type(pkt) ~= "table" then
@@ -122,7 +123,7 @@ end
 function M.decode(s)
     if not okSer then
         return nil, M.makeError('SERIALIZATION_MISSING',
-                                'Serialization not available')
+            'Serialization not available')
     end
     if type(s) ~= 'string' then
         return nil, M.makeError('BAD_PAYLOAD', 'Payload not string')
@@ -147,6 +148,8 @@ function M.resOk(req, data) return M.makeResponse(req, true, data or {}, nil) en
 ---@param req Request
 ---@param err Error
 ---@return Response
-function M.resErr(req, err) return M.makeResponse(req, false, nil, err) end
+function M.resErr(req, err)
+    return M.makeResponse(req, false, nil, err)
+end
 
 return M

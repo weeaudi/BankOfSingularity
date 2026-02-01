@@ -1,22 +1,38 @@
 local card = require('src.services.cardService')
 local Req = {}
 
+---@alias RequestHandler fun(req: Request, ctx: ExecutionContext): Response
+---@type table<string, RequestHandler>
 Req.ops = {
     ['Card.GetByAccountId'] = function(req, ctx)
+        print('Card.GetByAccountId invoked !')
         local cards, err = card.getByAccountId(req.data.accountId)
 
         if not cards then
+            print(err and err.code, err and err.message)
             return ctx.resErr(req, err)
         end
 
+        print('Cards fetched ' .. #cards)
         return ctx.resOk(req, cards)
-    end
+    end,
+
+    -- ['Accounts.CreateAccount'] = function (req, ctx)
+
+    -- end
 }
 
-function Req.handle(p, ctx)
-    local fn = Req.ops[p.op]
-    if not fn then return nil, { code = 'BAD_REQ_OP', message = 'unknow request operation' } end
-    return fn(p, ctx)
+---@param req Request
+---@param ctx ExecutionContext
+---@return Response
+function Req.handle(req, ctx)
+    print('Handling req')
+    local fn = Req.ops[req.op]
+    if not fn then
+        print('fn not found ' .. req.op)
+        return ctx.resErr(req, ctx.makeError('BAD_REQ_OP', 'unknown request operation'))
+    end
+    return fn(req, ctx)
 end
 
-return Req.handle
+return Req

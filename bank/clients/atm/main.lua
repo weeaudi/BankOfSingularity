@@ -1,33 +1,32 @@
-local ROOT = '/mnt/bf9'
+local ROOT = '/bank'
 package.path = ROOT .. '/clients/atm/?.lua;' .. ROOT ..
     '/clients/atm/?/init.lua;' .. ROOT .. '/shared/?.lua;' ..
     ROOT .. '/shared/?/init.lua;' .. package.path
 
 local component = require('component')
-local event = require('event')
-local serialization = require('serialization')
 local serialization = require('serialization')
 
 local modem = component.modem
 local event = require('event')
-local Protocol = require('src.protocol')
+local Protocol = require('src.net.protocol')
+local RequestManager = require('src.net.requestManager')
 
-local PORT = 100
 local PORT = 100
 local DISCOVERY_PORT = 999
 
-local function fetch(toAddr, port, packet)
-  modem.open(port)
-  modem.send(toAddr, port, packet)
+local function ensureOpen(port)
+  if not modem.isOpen(port) then modem.open(port) end
+end
 
-  ::pullevent::
-  local _, _, serverAddr, serverPort, _, msg = event.pull('modem_message')
-
-  if serverAddr ~= toAddr or serverPort ~= port then
-    goto pullevent
-  end
-
-  return Protocol.decode(msg)
+---@param toAddr string
+---@param port integer
+---@param req Request
+---@param timeout number
+---@param callback fun(res: Response|nil, err: Error|nil)
+local function fetch(toAddr, port, req, timeout, callback)
+  ensureOpen(port)
+  modem.send(toAddr, port, Protocol.encode(req))
+  RequestManager.register(req.id, timeout, callback)
 end
 
 local function discoverServer()
@@ -53,16 +52,22 @@ while not server do
 end
 
 local req = Protocol.makeRequest(
-  'GetCardsByAccountId',
+  'Card.GetCardsByAccountId',
   modem.address,
   server,
   { accountId = 42 },
   nil
 )
 
-local res, err = fetch(server, PORT, req)
-
-print(serialization.serialize(res))
+fetch(server, PORT, req, 2.0, function(res, err)
+  if not res and err then
+    print(err.code, err.message)
+    return
+  end
+  if not res then return end
+  print('ok: ' .. res.ok)
+  print('Total cards: ' .. serialization.serialize(res.data))
+end)
 
 
 -- local req = Protocol.makeRequest(
