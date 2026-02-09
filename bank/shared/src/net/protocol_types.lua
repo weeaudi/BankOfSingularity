@@ -1,5 +1,4 @@
 ---@enum RequestType
-
 --- Request shape
 ---@class Request
 ---@field v number Protocol version
@@ -10,11 +9,13 @@
 ---@field to string Recipient
 ---@field ts number Timestamp (os.time)
 ---@field data table Payload
+req = {}
 
 --- Error shape
 ---@class Error
 ---@field code string
 ---@field message string Error message
+err = {}
 
 --- Response shape
 ---@class Response
@@ -27,6 +28,7 @@
 ---@field ok boolean
 ---@field data table|nil Payload
 ---@field err Error|nil
+res = {}
 
 --- Event shape
 ---@class Event
@@ -37,3 +39,4 @@
 ---@field to string|nil
 ---@field ts number
 ---@field data table
+evnt = {}

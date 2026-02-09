@@ -146,59 +146,71 @@ SecureNetwork
 
 ---
 
+# Card
+
+## account_id
+
+
+```lua
+integer
+```
+
+## card_data
+
+
+```lua
+string
+```
+
+## meta
+
+
+```lua
+CardMetadata|nil
+```
+
+## status
+
+
+```lua
+CardStatus
+```
+
+## uid
+
+
+```lua
+string
+```
+
+
+---
+
+# CardMetadata
+
+## last_used_at
+
+
+```lua
+number
+```
+
+## revoked_reason
+
+
+```lua
+string
+```
+
+
+---
+
+# CardStatus
+
+
+---
+
 # DB
-
-## createTable
-
-
-```lua
-function DB.createTable(tableName: string, meta: table|nil)
-  -> success: boolean
-  2. err: string|nil
-```
-
- Create a new table
-
-## delete
-
-
-```lua
-function DB.delete(tableName: string, where: table|fun(row: table):boolean|nil)
-  -> deleted: number
-```
-
-## getByIndexedField
-
-
-```lua
-function DB.getByIndexedField(tableName: string, field: string, value: any)
-  -> row: table|nil
-```
-
- Perform a lookup on a table using an indexed field.
-
-@*param* `tableName` — The name of the database being searched
-
-@*param* `field` — The indexed field
-
-@*param* `value` — The value being searched
-
-@*return* `row` — The matching row, or nil if not found/index is missing
-
-## insert
-
-
-```lua
-function DB.insert(tableName: string, row: table)
-  -> id: number
-```
-
-## replaceTable
-
-
-```lua
-function DB.replaceTable(tableName: any, rows: any, lastId: any)
-```
 
 ## root
 
@@ -206,48 +218,6 @@ function DB.replaceTable(tableName: any, rows: any, lastId: any)
 ```lua
 string
 ```
-
-## select
-
-
-```lua
-function DB.select(tableName: string)
-  -> Query
-```
-
-## truncate
-
-
-```lua
-function DB.truncate(tableName: any)
-```
-
-## update
-
-
-```lua
-function DB.update(tableName: string, where: table|fun(row: table):boolean|nil, patch: table, opts: DbUpdateOptions|nil)
-  -> changed: number
-```
-
- Update rows in a table that match a WhereClause, applying the given patch.
- Ensures unique constraints remain valid and keeps meta indexes consistent.
-
-@*return* `changed` — Number of rows modified
-
-## upsert
-
-
-```lua
-function DB.upsert(tableName: string, where: table|fun(row: table):boolean|nil, createRow: table, patch: table)
-  -> id: number
-```
-
- Insert or update a row based on a lookup clause.
- If a matching row exists, updates it using `patch` and returns its `id`.
- If none exists, inserts `createRow` and returns the new `id`.
-
-@*return* `id` — The existing or newly-created row id
 
 
 ---
@@ -349,39 +319,194 @@ table
 
 ---
 
+# Error
+
+ Error shape
+
+## code
+
+
+```lua
+string
+```
+
+## message
+
+
+```lua
+string
+```
+
+Error message
+
+
+---
+
+# Event
+
+ Event shape
+
+## data
+
+
+```lua
+table
+```
+
+## from
+
+
+```lua
+string
+```
+
+## kind
+
+
+```lua
+"evt"
+```
+
+## op
+
+
+```lua
+string
+```
+
+## to
+
+
+```lua
+string|nil
+```
+
+## ts
+
+
+```lua
+number
+```
+
+## v
+
+
+```lua
+number
+```
+
+
+---
+
+# ExecutionContext
+
+## fromAddr
+
+
+```lua
+string
+```
+
+## localAddr
+
+
+```lua
+string
+```
+
+## makeError
+
+
+```lua
+function
+```
+
+## port
+
+
+```lua
+integer
+```
+
+## receivedAt
+
+
+```lua
+number
+```
+
+## resErr
+
+
+```lua
+function
+```
+
+## resOk
+
+
+```lua
+function
+```
+
+
+---
+
+# HandlerExpect
+
+## dataPredicate
+
+
+```lua
+fun(data: any):boolean|nil
+```
+
+## hasErr
+
+
+```lua
+boolean
+```
+
+## ok
+
+
+```lua
+boolean
+```
+
+
+---
+
+# HandlerTestCase
+
+## expect
+
+
+```lua
+HandlerExpect
+```
+
+## name
+
+
+```lua
+string
+```
+
+## req
+
+
+```lua
+Request
+```
+
+ Request shape
+
+
+---
+
 # Ledger
-
-## __index
-
-
-```lua
-Ledger
-```
-
-## _applyMaterialized
-
-
-```lua
-(method) Ledger:_applyMaterialized(tx: any)
-```
-
-## _nextId
-
-
-```lua
-(method) Ledger:_nextId()
-  -> integer
-```
-
-## append
-
-
-```lua
-(method) Ledger:append(tx: LedgerTransaction)
-  -> id: integer
-```
-
- Append a transaction to the ledger
 
 ## db
 
@@ -404,33 +529,11 @@ string
 string
 ```
 
-## new
-
-
-```lua
-(method) Ledger:new(db: table, root: string|nil)
-  -> Ledger
-```
-
 ## nextId
 
 
 ```lua
 integer
-```
-
-## rebuildMaterialized
-
-
-```lua
-(method) Ledger:rebuildMaterialized()
-```
-
-## rebuildMaterializedFast
-
-
-```lua
-(method) Ledger:rebuildMaterializedFast()
 ```
 
 ## root
@@ -439,16 +542,6 @@ integer
 ```lua
 string
 ```
-
-## scan
-
-
-```lua
-(method) Ledger:scan(where: table|fun(row: table):boolean|nil, onRow: fun(tx: LedgerTransaction):nil, opts: any)
-  -> nil
-```
-
- Stream transactions; avoids loading whole ledger
 
 
 ---
@@ -508,6 +601,20 @@ TransactionType
 ---
 
 # LuaLS
+
+
+---
+
+# MakeRequestOps
+
+## ts
+
+
+```lua
+number
+```
+
+timestamp
 
 
 ---
@@ -611,6 +718,25 @@ port number used for communications
 
 ```lua
 table
+```
+
+
+---
+
+# PendingRequest
+
+## callback
+
+
+```lua
+fun(res: Response|nil, err: Error|nil)
+```
+
+## deadline
+
+
+```lua
+number
 ```
 
 
@@ -720,6 +846,187 @@ string
 (method) Query:where(w: table|fun(row: table):boolean|nil)
   -> self: Query
 ```
+
+
+---
+
+# QueryAndCleanBuffer
+
+
+```lua
+function QueryAndCleanBuffer()
+```
+
+
+---
+
+# Request
+
+ Request shape
+
+## data
+
+
+```lua
+table
+```
+
+Payload
+
+## from
+
+
+```lua
+string
+```
+
+Sender
+
+## id
+
+
+```lua
+string
+```
+
+Request ID
+
+## kind
+
+
+```lua
+"req"
+```
+
+## op
+
+
+```lua
+string
+```
+
+Requested operation
+
+## to
+
+
+```lua
+string
+```
+
+Recipient
+
+## ts
+
+
+```lua
+number
+```
+
+Timestamp (os.time)
+
+## v
+
+
+```lua
+number
+```
+
+Protocol version
+
+
+---
+
+# RequestHandler
+
+
+---
+
+# RequestType
+
+
+---
+
+# Response
+
+ Response shape
+
+## data
+
+
+```lua
+table|nil
+```
+
+Payload
+
+## err
+
+
+```lua
+Error|nil
+```
+
+ Error shape
+
+## from
+
+
+```lua
+string
+```
+
+Sender
+
+## id
+
+
+```lua
+string
+```
+
+request ID
+
+## kind
+
+
+```lua
+"res"
+```
+
+## ok
+
+
+```lua
+boolean
+```
+
+## op
+
+
+```lua
+string
+```
+
+Requested operation
+
+## to
+
+
+```lua
+string
+```
+
+Recipient
+
+## v
+
+
+```lua
+number
+```
+
+Protocol version
 
 
 ---
@@ -913,11 +1220,6 @@ nil
 ```
 
 
-```lua
-nil
-```
-
-
 ---
 
 # package.loaded.src.models.Account
@@ -950,7 +1252,52 @@ nil
 
 ---
 
+# package.loaded.src.tests.utils
+
+
+```lua
+nil
+```
+
+
+---
+
 # package.path
+
+
+```lua
+string
+```
+
+
+```lua
+string
+```
+
+
+```lua
+string
+```
+
+
+```lua
+string
+```
+
+
+```lua
+string
+```
+
+
+```lua
+string
+```
+
+
+```lua
+string
+```
 
 
 ```lua

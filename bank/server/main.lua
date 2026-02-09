@@ -1,17 +1,12 @@
 local ROOT = '/bank'
 package.path =
-    ROOT .. '/server/?.lua;' ..
-    ROOT .. '/server/?/init.lua;' ..
-    ROOT .. '/shared/?.lua;' ..
-    ROOT .. '/shared/?/init.lua;' ..
-    package.path
+    ROOT .. '/server/?.lua;' .. ROOT .. '/server/?/init.lua;' .. ROOT ..
+        '/shared/?.lua;' .. ROOT .. '/shared/?/init.lua;' .. package.path
 
 local component = require('component')
 local event = require('event')
 
-while not component.isAvailable('modem') do
-    event.pull('component_added')
-end
+while not component.isAvailable('modem') do event.pull('component_added') end
 
 local modem = component.modem
 
@@ -36,7 +31,7 @@ local baseCtx = setmetatable({
     resOk = Protocol.resOk,
     resErr = Protocol.resErr,
     makeError = Protocol.makeError
-}, { __newindex = function() error('baseCtx is read-only') end })
+}, {__newindex = function() error('baseCtx is read-only') end})
 
 ---@param toAddr any
 ---@param port any
@@ -66,8 +61,9 @@ local function handleRpc(localAddr, fromAddr, port, payload)
             ts = os.time(),
             data = {}
         }
-        local res = Protocol.resErr(pseudoReq,
-            err or Protocol.makeError('BAD_PACKET', 'decode failed due to bad request packet'))
+        local res = Protocol.resErr(pseudoReq, err or
+                                        Protocol.makeError('BAD_PACKET',
+                                                           'decode failed due to bad request packet'))
 
         print(res.err)
         sendResponse(fromAddr, port, res)
@@ -84,7 +80,7 @@ local function handleRpc(localAddr, fromAddr, port, payload)
         localAddr = localAddr,
         port = port,
         receivedAt = os.time()
-    }, { __index = baseCtx })
+    }, {__index = baseCtx})
 
     print('Sending req to Dispatch')
     -- Dispatch routes to handler; responses should be Response|nil, Error|nil
@@ -108,9 +104,7 @@ local function onModemMessage(_, localAddr, fromAddr, port, _, payload)
         return handleDiscovery(fromAddr, port, payload)
     end
 
-    if port == PORT then
-        return handleRpc(localAddr, fromAddr, port, payload)
-    end
+    if port == PORT then return handleRpc(localAddr, fromAddr, port, payload) end
 end
 
 -- Boot
@@ -119,12 +113,13 @@ modem.open(DISCOVERY_PORT)
 event.listen('modem_message', onModemMessage)
 
 print(modem.isOpen(PORT))
-print(('Server listening on port %d (rpc) and %d (discovery)'):format(PORT, DISCOVERY_PORT))
+print(('Server listening on port %d (rpc) and %d (discovery)'):format(PORT,
+                                                                      DISCOVERY_PORT))
 print(('Server address: %s'):format(modem.address))
 
 while true do
-    local e = { event.pull() }
-    if e[1] == "interrupted" then
-        break
-    end
+    local e = {event.pull()}
+    if e[1] == "interrupted" then break end
 end
+
+event.ignore('modem_message', onModemMessage)
