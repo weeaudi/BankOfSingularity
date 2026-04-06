@@ -1,0 +1,66 @@
+Discovering server...
+Server: aadace1e-0e16-42d8-8566-9d5137d58e18
+Announcing as BANK-TEST (admin)...
+Key exchange...
+Secure session established.
+
+Resolving test accounts...
+  NetTest_A = #1,  NetTest_B = #2
+
+── Accounts ─────────────────────────────────────────
+  [PASS] GetByName
+  [PASS] GetById
+  [PASS] GetByName unknown → ACC_NOT_FOUND
+  [PASS] CreateAccount duplicate → ACC_EXSIST
+
+── Mint / Burn ──────────────────────────────────────
+  [PASS] Mint 1000 cents
+  [PASS] Burn 200 cents
+  [PASS] Burn overdraft → INSUFFICIENT_FUNDS
+  [PASS] Mint negative → BAD_AMOUNT
+
+── Cards ────────────────────────────────────────────
+  [PASS] IssueCard
+  [PASS] IssueCard duplicate → CARD_EXISTS
+  [PASS] GetByAccountId (1 card(s))
+  [PASS] GetByAccountId unknown account → CARD_NOT_FOUND
+
+── Authentication ───────────────────────────────────
+  [PASS] Authenticate wrong PIN → AUTH_FAILED
+  [PASS] Authenticate unknown UID → CARD_NOT_FOUND
+  [PASS] Authenticate correct PIN → token issued
+
+── Ledger ───────────────────────────────────────────
+  [PASS] GetBalance (balance = 800 cents)
+  [PASS] GetBalance bad token → UNAUTHORIZED
+  [PASS] Deposit 500 cents
+  [PASS] Deposit zero → BAD_AMOUNT
+  [PASS] Withdraw 200 cents
+  [PASS] Withdraw overdraft → INSUFFICIENT_FUNDS
+  [PASS] Transfer 100 → NetTest_B
+  [PASS] Transfer to self → SAME_ACCOUNT
+  [PASS] Deauthenticate
+  [PASS] Deauthenticated token → UNAUTHORIZED
+
+── Holds ────────────────────────────────────────────
+  [PASS] Hold 300 cents (holdId=8, captureIn=3 days)
+  [PASS] Adjust hold 300 → 150 (releases 150 back)
+  [PASS] Adjust hold above original → BAD_AMOUNT
+  [PASS] Release adjusted hold
+  [PASS] Release settled hold → HOLD_NOT_FOUND
+  [PASS] Hold 100 cents
+  [PASS] Immediate release
+  [PASS] Hold overdraft → INSUFFICIENT_FUNDS
+
+── Freeze / Unfreeze ────────────────────────────────
+  [PASS] Freeze NetTest_B
+  [PASS] Freeze already-frozen → ACC_ALREADY_FROZEN
+  [PASS] Mint to frozen account → ACC_NOT_ACTIVE
+  [PASS] Unfreeze NetTest_B
+  [PASS] Unfreeze active account → ACC_NOT_FROZEN
+  [PASS] Mint after unfreeze → OK
+
+══════════════════════════════════════════════════════
+Passed: 39 / 39
+All tests passed.
+

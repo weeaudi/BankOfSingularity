@@ -1,6 +1,37 @@
-local fs = require('filesystem')
+---@diagnostic disable: undefined-field, undefined-doc-name  -- OC API extensions; AccountBalance defined in Account.lua
+--- bank/server/src/models/Ledger.lua
+--- Append-only transaction log and materialized-view manager.
+---
+--- Storage layout (`/bank/db/`):
+---   ledger.log   — newline-delimited serialized LedgerTransaction records
+---   ledger.meta  — plain-text next-TX-ID counter (healed from log on missing/corrupt)
+---
+--- Materialized views (kept in-memory DB, rebuilt on boot via rebuildMaterialized):
+---   account_balance   — {accountId, balance}  (sum of all `amount` fields)
+---   account_tx_index  — {accountId, txIds[]}  (last 200 TX IDs per account)
+---
+--- Key methods:
+---   Ledger:new(db, root)         — constructor; `root` defaults to "/bank/db"
+---   Ledger:append(tx)            — write a TX, update materialized views, return id
+---   Ledger:scan(where, onRow)    — stream TX rows; `where` = nil|table|function
+---   Ledger:rebuildMaterialized() — full replay from log (called on server boot)
+
+---@class LedgerTransaction
+---@field id              integer|nil      Assigned by append(); nil before write
+---@field accountId       integer          Account this TX applies to
+---@field transactionType TransactionType  Kind of transaction (see TransactionType enum)
+---@field amount          number           Signed cents delta (negative = debit)
+---@field meta            table|nil        Arbitrary extra data (holdId, toAccountId, …)
+---@field createdAt       integer|nil      os.time() stamp; set by append()
+
+---@diagnostic disable-next-line: duplicate-doc-alias
+---@alias WhereClause nil | table | fun(tx: LedgerTransaction): boolean
+
+local Config        = require('config')
+local fs            = require('filesystem')
 local serialization = require('serialization')
-local computer = require('computer')
+local computer      = require('computer')
+local Log           = require('src.util.log')
 
 ---@enum TransactionType
 local TransactionType = {
@@ -20,11 +51,16 @@ local TransactionType = {
     PinChange = 13,
     CardIssue = 14,
     CardRevoke = 15,
-    Denied = 16,
-    LoginFail = 17,
-    LoginOk = 18
+    LoginFail = 16,
+    LoginOk = 17
 }
 
+---@class Ledger
+---@field db       table   In-memory database handle
+---@field root     string  Path to DB directory (default "/bank/db")
+---@field logPath  string  Path to ledger.log
+---@field metaPath string  Path to ledger.meta (TX ID counter)
+---@field nextId   integer In-memory TX ID counter (0 = not yet loaded)
 local Ledger = {}
 Ledger.__index = Ledger
 
@@ -32,7 +68,7 @@ Ledger.__index = Ledger
 ---@param root string|nil
 ---@return Ledger
 function Ledger:new(db, root)
-    local r = root or "/bank/db"
+    local r = root or Config.DB_ROOT
     local obj = {
         db = db,
         root = r,
@@ -54,49 +90,57 @@ local function ensureDir(path)
     if not fs.exists(path) then fs.makeDirectory(path) end
 end
 
+--- Scan the ledger log for the highest id present.
+function Ledger:_maxIdInLog()
+    local max = 0
+    ---@diagnostic disable-next-line: param-type-mismatch
+    self:scan(function() return true end, function(tx)
+        local id = tx['id']
+        if type(id) == "number" and id > max then max = id end
+    end)
+    return max
+end
+
+--- Persist the id counter to disk.
+function Ledger:_saveMeta(n)
+    ensureDir(self.root)
+    local h = assert(io.open(self.metaPath, "w"))
+    h:write(tostring(n))
+    h:close()
+end
+
 ---@return integer
 function Ledger:_nextId()
     ensureDir(self.root)
 
+    -- Fast path: counter already loaded into memory this session.
     if self.nextId > 0 then
         self.nextId = self.nextId + 1
-        h = assert(io.open(self.metaPath, "w"))
-        h:write(tostring(self.nextId))
-        h:close()
+        self:_saveMeta(self.nextId)
         return self.nextId
     end
 
+    -- Read persisted counter (may be absent or stale after a crash).
+    local persisted = 0
     ---@diagnostic disable-next-line: undefined-field
-    if not fs.exists(self.metaPath) then
-        local h0 = assert(io.open(self.metaPath, "w"))
-        h0:write("0")
-        h0:close()
+    if fs.exists(self.metaPath) then
+        local h = assert(io.open(self.metaPath, "r"))
+        persisted = tonumber(h:read("*a")) or 0
+        h:close()
     end
 
-    local h = assert(io.open(self.metaPath, "r"))
-    local n = tonumber(h:read("*a")) or 0
-    h:close()
+    -- If meta is missing or looks lower than what the log already contains,
+    -- scan the log and heal the counter so IDs are never reused.
+    if persisted == 0 then
+        Log.info('ledger.meta missing or zero — scanning log for max id')
+        persisted = self:_maxIdInLog()
+        Log.info('max id in log: ' .. tostring(persisted))
+    end
 
-    n = n + 1
-    h = assert(io.open(self.metaPath, "w"))
-    h:write(tostring(n))
-    h:close()
-
+    local n = persisted + 1
+    self:_saveMeta(n)
     self.nextId = n
-
     return n
-end
-
----@param tx LedgerTransaction
----@return TransactionById
-local function toTxById(tx)
-    return {
-        id = tx.id,
-        accountId = tx.accountId,
-        amount = tx.amount,
-        transactionType = tx.transactionType,
-        createdAt = tx.createdAt
-    }
 end
 
 function Ledger:_applyMaterialized(tx)
@@ -158,7 +202,7 @@ function Ledger:rebuildMaterializedFast()
 
     local MAX = 200
 
-    print('Performing scan')
+    Log.info('Performing scan')
     self:scan(nil, function(tx)
         -- balance
         local a = tx.accountId
@@ -174,7 +218,7 @@ function Ledger:rebuildMaterializedFast()
         if #list > MAX then table.remove(list, 1) end
     end)
 
-    print('scan complete, writing materialized data')
+    Log.info('scan complete, writing materialized data')
 
     local balRows = {}
     for accountId, bal in pairs(balances) do
@@ -283,10 +327,11 @@ function Ledger:scan(where, onRow, opts)
     if #buf > 0 then handleLine(buf) end
 
     h:close()
-    print(
-        ("[Ledger.scan] reads=%d bytes=%d lines=%d matched=%d parseTime=%f onRowTime=%f"):format(
-            stats.readCalls, stats.bytesRead, stats.linesSeen,
-            stats.rowsMatched, stats.parseTime, stats.onRowTime))
 end
 
-return {Ledger = Ledger, TransactionType = TransactionType}
+-- Shared singleton — all services must use this instance so the in-memory
+-- nextId counter stays consistent. Creating multiple Ledger instances causes
+-- each one to cache its own counter after first read, leading to ID collisions.
+local _sharedInstance = Ledger:new(require('src.db').database)
+
+return {Ledger = Ledger, TransactionType = TransactionType, instance = _sharedInstance}

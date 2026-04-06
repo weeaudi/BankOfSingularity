@@ -14,6 +14,4 @@ function M.now()
     end
 end
 
-print(('OC Env: %s'):format(M.isOc))
-
 return M

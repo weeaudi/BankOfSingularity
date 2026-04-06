@@ -1,5 +1,25 @@
+---@diagnostic disable: unused-local  -- reason/newCardUid are intentional stub params
+--- bank/server/src/models/Card.lua
+--- Low-level data-access layer for the `cards` table.
+---
+--- A Card is a physical payment card linked to one Account.  Statuses:
+---   Active   (0) — can be used for authentication and transactions
+---   Inactive (1) — issued but not yet activated (unused in current flow)
+---   Revoked  (2) — permanently blocked; cannot be reactivated
+---
+--- PIN security: the card row stores `pin_hash` = base64(sha256(pin..salt))
+--- where the salt is derived from the card's OC reader data at issue time.
+--- The raw PIN is never stored server-side.
+
+---@class Card
+---@field id?        integer     Auto-assigned primary key (nil before DB insert)
+---@field account_id integer     FK → Account.id
+---@field uid        string      Unique OC card reader identifier (physical card UID)
+---@field pin_hash   string      base64-encoded sha256(pin..salt)
+---@field status     CardStatus  Current card status (Active=0, Inactive=1, Revoked=2)
+---@field meta       table       Arbitrary metadata (e.g. last_used_at timestamp)
+
 local db = require('src.db')
-local ENV = require('env')
 
 local Card = {}
 Card.__index = Card
@@ -71,6 +91,17 @@ function Card.isUsable(cardUid)
     if not card then return false, 'CARD_NOT_FOUND' end
 
     return card.status == Card.CardStatus.Active
+end
+
+---@param cardUid string
+---@param pinHash string New base64-encoded SHA256(pin..salt)
+---@return boolean success
+---@return string|nil error
+function Card.updatePin(cardUid, pinHash)
+    local updated = db.database.update(Card._tableName, {uid = cardUid},
+                                       {pin_hash = pinHash})
+    if updated == 0 then return false, 'CARD_NOT_FOUND' end
+    return true
 end
 
 --- Update meta.last_used_at for monitoring

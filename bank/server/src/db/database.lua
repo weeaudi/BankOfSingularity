@@ -1,8 +1,10 @@
 local fs = require('filesystem')
 local serialization = require('serialization')
 
+local Config = require('config')
+
 local DB = {}
-DB.root = '/bank/db'
+DB.root = Config.DB_ROOT
 
 ---@class DbTable
 ---@field rows table

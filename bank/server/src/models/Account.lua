@@ -1,4 +1,29 @@
+--- bank/server/src/models/Account.lua
+--- Low-level data-access layer for the `accounts` and related tables.
+---
+--- An Account is a named wallet.  Statuses:
+---   Active (0) — normal operation
+---   Frozen (1) — no debits allowed; admin-only override
+---   Closed (2) — permanently deactivated
+---
+--- Balances are NOT stored on the account row.  They live in the materialized
+--- `account_balance` table and are updated by the Ledger on every append.
+
+---@class Account
+---@field id             integer       Auto-assigned primary key
+---@field account_name   string        Human-readable account name (unique)
+---@field account_status AccountStatus Current status (Active=0, Frozen=1, Closed=2)
+
+---@class AccountBalance
+---@field id        integer  Mirrors accountId (used as primary key)
+---@field accountId integer  FK → Account.id
+---@field balance   number   Current balance in cents (materialized view)
+
+---@class AccountWithBalance : Account
+---@field balance number  Current balance in cents
+
 local db = require('src.db')
+db = db.database
 
 local Account = {}
 Account.__index = Account
@@ -18,10 +43,17 @@ function Account.getOrCreate(name)
     })
 end
 
+---@param name string
+---@return Account|nil
+function Account.get(name)
+    local acct = db.select('accounts'):where({account_name = name}):first()
+    if acct then return acct end
+    return nil
+end
+
 ---@param id integer
 ---@return Account|nil
 function Account.getById(id)
-    print('Running getById: ' .. id)
     ---@type Account|nil
     local acct = db.select('accounts'):where({id = id}):first()
     return acct
@@ -42,17 +74,22 @@ local function appendBalanceToAccount(account, balance)
 end
 
 ---@param id integer
+---@param status AccountStatus
+---@return boolean
+function Account.setStatus(id, status)
+    local updated = db.update('accounts', {id = id}, {account_status = status})
+    return updated > 0
+end
+
+---@param id integer
 ---@return AccountWithBalance|nil
 function Account.getWithBalance(id)
-    print('Running getWithBalance: ' .. id)
     ---@type Account|nil
     local acct = Account.getById(id)
     if not acct or not acct.id then return end
-    print('Account found: ' .. acct.id)
     ---@type AccountBalance|nil
     local bal = db.select('account_balance'):where({accountId = id}):first()
     if not bal then return appendBalanceToAccount(acct, 0) end
-    print('balance: ' .. bal.balance)
 
     return appendBalanceToAccount(acct, bal.balance)
 

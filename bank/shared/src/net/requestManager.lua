@@ -47,7 +47,7 @@ function RM.onPacket(payload)
     end
   end
 
-  return true
+  return true, nil
 end
 
 return RM

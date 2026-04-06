@@ -1,0 +1,32 @@
+[1971-04-09 15:47:06] [INFO] Server up — RPC:100  HS:101  Reg:102  Discovery:999
+[1971-04-09 15:47:06] [INFO] Address: aadace1e-0e16-42d8-8566-9d5137d58e18
+[1971-04-09 16:23:42] [INFO] ledger.meta missing or zero — scanning log for max id
+[1971-04-09 16:23:42] [INFO] max id in log: 0
+[1971-04-09 17:29:13] [INFO] [Device] Announce: POS-1 (pos) status=pending new=true
+[1971-04-09 17:41:24] [INFO] [Device] Announce: POS-1 (pos) status=active new=false
+[1971-04-09 17:41:45] [INFO] [Device] Handshake OK: POS-1 (pos) from 94362869-ebbd-47c4-8007-9a4019acb142
+[1971-04-09 17:49:48] [INFO] [Device] Announce: CASINO-1 (pos) status=pending new=true
+[1971-04-09 18:02:31] [INFO] [Device] Announce: CASINO-1 (pos) status=active new=false
+[1971-04-09 18:03:25] [INFO] [Device] Handshake OK: CASINO-1 (pos) from 25b4300c-8d17-4ad3-a9a3-5f7c7bacf295
+[1971-04-09 18:43:12] [INFO] [Device] Announce: CASINO-1 (pos) status=active new=false
+[1971-04-09 18:44:06] [INFO] [Device] Handshake OK: CASINO-1 (pos) from 25b4300c-8d17-4ad3-a9a3-5f7c7bacf295
+[1971-04-09 19:02:16] [INFO] [Hold] Placed holdId=6  amount=100000  captureIn=3 days
+[1971-04-09 22:05:38] [INFO] [Hold] Placed holdId=9  amount=100000  captureIn=3 days
+[1971-04-10 00:45:00] [INFO] [Hold] Placed holdId=12  amount=100000  captureIn=3 days
+[1971-04-10 07:40:30] [INFO] [Hold] Placed holdId=15  amount=100000  captureIn=3 days
+[1971-04-12 20:15:03] [INFO] [Device] Announce: CASINO-1 (pos) status=active new=false
+[1971-04-12 20:15:57] [INFO] [Device] Handshake OK: CASINO-1 (pos) from 25b4300c-8d17-4ad3-a9a3-5f7c7bacf295
+[1971-04-18 08:27:36] [INFO] [Device] Announce: CASINO-1 (pos) status=active new=false
+[1971-04-18 08:28:37] [INFO] [Device] Handshake OK: CASINO-1 (pos) from 25b4300c-8d17-4ad3-a9a3-5f7c7bacf295
+[1971-04-18 08:49:22] [INFO] [Device] Announce: CASINO-1 (pos) status=active new=false
+[1971-04-18 08:50:16] [INFO] [Device] Handshake OK: CASINO-1 (pos) from 25b4300c-8d17-4ad3-a9a3-5f7c7bacf295
+[1971-04-18 09:07:08] [INFO] [Hold] Placed holdId=18  amount=100000  captureIn=3 days
+[1971-04-18 12:02:02] [INFO] [Device] Announce: POS-1 (pos) status=active new=false
+[1971-04-18 12:02:24] [INFO] [Device] Handshake OK: POS-1 (pos) from 94362869-ebbd-47c4-8007-9a4019acb142
+[1971-04-18 14:33:07] [INFO] [Hold] Placed holdId=21  amount=7560  captureIn=3 days
+[1971-04-21 10:01:58] [INFO] [Device] Announce: CASINO-1 (pos) status=active new=false
+[1971-04-21 10:02:52] [INFO] [Device] Handshake OK: CASINO-1 (pos) from 25b4300c-8d17-4ad3-a9a3-5f7c7bacf295
+[1971-04-21 15:20:42] [INFO] [Device] Announce: POS-1 (pos) status=active new=false
+[1971-04-21 15:21:07] [INFO] [Device] Handshake OK: POS-1 (pos) from 94362869-ebbd-47c4-8007-9a4019acb142
+[1971-04-21 17:32:34] [INFO] [Device] Announce: POS-1 (pos) status=active new=false
+[1971-04-21 17:33:00] [INFO] [Device] Handshake OK: POS-1 (pos) from 94362869-ebbd-47c4-8007-9a4019acb142

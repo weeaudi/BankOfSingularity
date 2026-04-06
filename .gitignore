@@ -7,6 +7,14 @@
 !bank/
 !bank/**
 
+# Shop
+!shop/
+!shop/**
+
+# Casino
+!casino/
+!casino/**
+
 # Allow some root files
 !.gitignore
 !init.lua
