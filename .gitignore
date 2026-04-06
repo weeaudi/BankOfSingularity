@@ -15,6 +15,10 @@
 !casino/
 !casino/**
 
+# Install
+!install/
+!install/**
+
 # Allow some root files
 !.gitignore
 !init.lua
