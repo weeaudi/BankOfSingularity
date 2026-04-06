@@ -2,6 +2,14 @@
 -- Run once on the casino computer to download all casino files.
 -- Usage: lua /install/casino.lua
 local shell = require("shell")
+local fs    = require("filesystem")
+
+local function ensureDir(path)
+    local dir = path:match("^(.*)/[^/]+$")
+    if dir and dir ~= "" and not fs.exists(dir) then
+        fs.makeDirectory(dir)
+    end
+end
 
 local BASE =
     "https://raw.githubusercontent.com/weeaudi/BankOfSingularity/refs/heads/main"
@@ -29,6 +37,7 @@ print("Downloading " .. tostring(#files) .. " files...\n")
 local ok, fail = 0, 0
 for path, url in pairs(files) do
     io.write("  " .. path .. " ... ")
+    ensureDir(path)
     local result = shell.execute("wget -f " .. url .. " " .. path)
     if result then
         print("ok")
