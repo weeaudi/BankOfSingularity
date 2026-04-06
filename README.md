@@ -4,19 +4,22 @@ Run these commands on each computer (requires an internet card).
 
 ### Bank Server
 ```
-wget -f https://raw.githubusercontent.com/weeaudi/BankOfSingularity/main/install/server.lua /install/server.lua
+mkdir /install
+wget -f https://raw.githubusercontent.com/weeaudi/BankOfSingularity/refs/heads/main/install/server.lua /install/server.lua
 lua /install/server.lua
 ```
 
 ### Shop (POS)
 ```
-wget -f https://raw.githubusercontent.com/weeaudi/BankOfSingularity/main/install/shop.lua /install/shop.lua
+mkdir /install
+wget -f https://raw.githubusercontent.com/weeaudi/BankOfSingularity/refs/heads/main/install/shop.lua /install/shop.lua
 lua /install/pos.lua
 ```
 
 ### Casino
 ```
-wget -f https://raw.githubusercontent.com/weeaudi/BankOfSingularity/main/install/casino.lua /install/casino.lua
+mkdir /install
+wget -f https://raw.githubusercontent.com/weeaudi/BankOfSingularity/refs/heads/main/install/casino.lua /install/casino.lua
 lua /install/casino.lua
 ```
 
