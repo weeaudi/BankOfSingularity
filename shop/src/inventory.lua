@@ -20,7 +20,7 @@ function Inventory.setSides(inputSide, outputSide)
 end
 
 local function itemKey(item)
-    return item.name .. '#' .. item.damage
+    return item.name .. '#' .. item.damage .. '#' .. (item.label or '')
 end
 
 --- Snapshot all items currently in the ME network.

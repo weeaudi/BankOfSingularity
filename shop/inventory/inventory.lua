@@ -13,7 +13,7 @@ local tOut = sides.south
 
 local restockAmount = 10 -- number of stacks to restock to
 
-local function itemKey(item) return item.name .. "#" .. item.damage end
+local function itemKey(item) return item.name .. "#" .. item.damage .. "#" .. (item.label or "") end
 
 local function snapshotInventory()
     local inv = {}
