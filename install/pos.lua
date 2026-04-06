@@ -3,7 +3,8 @@
 -- Usage: lua /install/pos.lua
 local shell = require("shell")
 
-local BASE = "https://raw.githubusercontent.com/weeaudi/BankOfSingularity/main"
+local BASE =
+    "https://raw.githubusercontent.com/weeaudi/BankOfSingularity/refs/heads/main"
 
 local files = {
     -- Entry point
