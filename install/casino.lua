@@ -21,6 +21,7 @@ local files = {
     -- Core
     ["/casino/src/casinoCore.lua"] = BASE .. "/casino/src/casinoCore.lua",
     ["/casino/src/ui.lua"] = BASE .. "/casino/src/ui.lua",
+    ["/casino/common.lua"] = BASE .. "/casino/common.lua",
 
     -- Networking
     ["/casino/src/net/protocol.lua"] = BASE .. "/casino/src/net/protocol.lua",
